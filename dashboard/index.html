@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insight Dashboard · Nha khoa Paris</title>
+<!--
+  ⛔ TRANG NAY KHONG BAO GIO SUA (pd-D §1).
+  Moi ky chi sinh them mot file JSON trong dashboard/data/.
+
+  HAI BO CUC, mot trang: file ky tu khai qua truong `bo_cuc`.
+    "insight" -> 6 tab, ve KHACH      (schema insight-dashboard-paris/1)
+    "qc"      -> 5 tab, ve NHAN VIEN  (schema qc-trucpage-paris/1)
+
+  ★ Ban MOT FILE gui duoc: nhung file ky vao <script id="pd-data"> ben duoi
+    roi publish file nay. Trang doc khoi nhung TRUOC data/index.json nen
+    ⛔ khong can may chu tinh.
+
+  ⚠ File qc-*.json ⛔ KHONG publish ra link cong khai (pd-D §6).
+-->
+<script type="application/json" id="pd-data">null</script>
+<style>
+:root{
+  --bg:#f6f7f9; --card:#fff; --line:#e3e6ea; --ink:#15181c; --mo:#5b636d;
+  --xanh:#0f6fd6; --xanh-nhat:#e8f1fb;
+  --do:#c62828; --do-nhat:#fdecec; --cam:#b36b00; --cam-nhat:#fff4e0;
+  --luc:#1b7a45; --luc-nhat:#e7f5ec; --tim:#6b3fa0;
+  --A:#1b7a45; --B:#0f6fd6; --C:#b36b00; --D:#c62828;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#12151a; --card:#1a1f26; --line:#2b323b; --ink:#e8ebef; --mo:#9aa4b0;
+    --xanh:#63a9f0; --xanh-nhat:#15283d;
+    --do:#ef7b7b; --do-nhat:#361f20; --cam:#e0a44a; --cam-nhat:#36291a;
+    --luc:#5fc98c; --luc-nhat:#16301f; --tim:#b18ae0;
+    --A:#5fc98c; --B:#63a9f0; --C:#e0a44a; --D:#ef7b7b;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#12151a; --card:#1a1f26; --line:#2b323b; --ink:#e8ebef; --mo:#9aa4b0;
+  --xanh:#63a9f0; --xanh-nhat:#15283d;
+  --do:#ef7b7b; --do-nhat:#361f20; --cam:#e0a44a; --cam-nhat:#36291a;
+  --luc:#5fc98c; --luc-nhat:#16301f; --tim:#b18ae0;
+  --A:#5fc98c; --B:#63a9f0; --C:#e0a44a; --D:#ef7b7b;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:20px 16px 72px}
+header{display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;margin-bottom:4px}
+h1{font-size:20px;margin:0;letter-spacing:-.2px}
+.ky{color:var(--mo);font-size:13px}
+.luong{font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;letter-spacing:.3px}
+.luong.i{background:var(--xanh-nhat);color:var(--xanh)}
+.luong.q{background:var(--cam-nhat);color:var(--cam)}
+select{margin-left:auto;background:var(--card);color:var(--ink);border:1px solid var(--line);
+  border-radius:8px;padding:6px 10px;font:inherit;font-size:13px}
+nav{display:flex;gap:4px;overflow-x:auto;margin:16px 0 18px;
+  border-bottom:1px solid var(--line);padding-bottom:0}
+nav button{background:none;border:0;border-bottom:2px solid transparent;color:var(--mo);
+  padding:9px 13px;font:inherit;font-size:14px;cursor:pointer;white-space:nowrap;border-radius:6px 6px 0 0}
+nav button:hover{color:var(--ink);background:var(--card)}
+nav button[aria-selected="true"]{color:var(--xanh);border-bottom-color:var(--xanh);font-weight:600}
+section{display:none} section.on{display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:16px}
+.card>h2{font-size:14px;margin:0 0 12px;letter-spacing:.2px;text-transform:uppercase;color:var(--mo)}
+.the{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:12px;margin-bottom:16px}
+.the>div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+.the .n{font-size:13px;color:var(--mo);margin-bottom:6px}
+.the .v{font-size:27px;font-weight:650;letter-spacing:-.5px;line-height:1.1}
+.the .p{font-size:12px;color:var(--mo);margin-top:4px}
+.the>div.canh{border-color:var(--do);background:var(--do-nhat)}
+.the>div.canh .v{color:var(--do)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;color:var(--mo);font-weight:600;text-transform:uppercase;letter-spacing:.3px;white-space:nowrap}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.chip{display:inline-block;font-size:11px;padding:2px 7px;border-radius:999px;white-space:nowrap}
+.chip.cho{background:var(--cam-nhat);color:var(--cam)}
+.chip.do{background:var(--do-nhat);color:var(--do)}
+.chip.luc{background:var(--luc-nhat);color:var(--luc)}
+.chip.xanh{background:var(--xanh-nhat);color:var(--xanh)}
+.canh-bao{background:var(--do-nhat);color:var(--do);border:1px solid var(--do);
+  border-radius:10px;padding:10px 14px;margin-bottom:14px;font-size:13.5px}
+.luu-y{background:var(--cam-nhat);color:var(--cam);border-radius:10px;padding:10px 14px;
+  margin-bottom:14px;font-size:13.5px}
+.chu-thich{font-size:12.5px;color:var(--mo);margin-top:10px;font-style:italic}
+.chan-bang{font-size:12.5px;color:var(--mo);border-top:1px dashed var(--line);
+  margin-top:12px;padding-top:10px}
+.the-cd{border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:12px;background:var(--bg)}
+.the-cd h3{margin:0 0 4px;font-size:15.5px}
+.the-cd .meta{font-size:12px;color:var(--mo);margin-bottom:8px}
+.the-cd dl{margin:0;display:grid;grid-template-columns:minmax(104px,auto) 1fr;gap:5px 12px;font-size:13.5px}
+.the-cd dt{color:var(--mo);font-weight:600}
+.the-cd dd{margin:0}
+.bar{height:7px;border-radius:999px;background:var(--line);overflow:hidden;min-width:70px}
+.bar>i{display:block;height:100%;background:var(--xanh)}
+.pb{display:flex;gap:8px;flex-wrap:wrap}
+.pb>span{font-size:13px;padding:5px 11px;border-radius:8px;font-weight:600}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:92%;
+  background:var(--bg);padding:1px 5px;border-radius:4px}
+.trong{color:var(--mo);font-style:italic;font-size:13.5px}
+@media (max-width:620px){
+  .wrap{padding:16px 16px 64px} h1{font-size:18px}
+  .the{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+  table{font-size:13px} th,td{padding:7px 7px}
+  .the-cd dl{grid-template-columns:1fr;gap:2px}
+  .the-cd dt{margin-top:6px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1 id="tieu-de">Insight Dashboard · Nha khoa Paris</h1>
+    <span class="ky" id="ky"></span>
+    <span class="luong" id="nhan-luong"></span>
+    <select id="chon-ky" hidden></select>
+  </header>
+  <nav id="nav" role="tablist"></nav>
+  <div id="than"></div>
+</div>
+
+<script>
+"use strict";
+
+/* ── Ba quy tac hien thi (pd-D §5) ──────────────────────────────────
+   ① Nhom duoi 10 HT -> AN TY LE, chi hien so dem. Trang tu lam.
+   ② Bang chia theo V-xx / rao can / S / CD -> PHAI co cot HOT*.
+      Thieu -> hien canh bao do ngay tren bang.
+   ③ O khong co du lieu -> chip "⏸ cho du kien".
+      ⛔ KHONG hien 0 (0 va "chua do" trong giong nhau tren bieu do). */
+
+var NGUONG_NHOM = 10;
+
+function e(t, a, c){
+  var n = document.createElement(t), k;
+  if (a) for (k in a){
+    if (k === "class") n.className = a[k];
+    else if (k === "html") n.innerHTML = a[k];
+    else n.setAttribute(k, a[k]);
+  }
+  if (c != null) n.textContent = c;
+  return n;
+}
+function txt(v){ return (v == null || v === "") ? null : String(v); }
+
+/* ③ — o thieu du lieu */
+function o(v, ten){
+  if (v == null || v === "" ) {
+    var s = e("span", {class:"chip cho"}, "⏸ chờ dữ kiện" + (ten ? " · " + ten : ""));
+    return s;
+  }
+  return document.createTextNode(String(v));
+}
+
+function bang(cols, rows, opt){
+  opt = opt || {};
+  var t = e("table"), th = e("tr"), i;
+  for (i = 0; i < cols.length; i++)
+    th.appendChild(e("th", {class: cols[i].num ? "num" : ""}, cols[i].t));
+  t.appendChild(e("thead")).appendChild(th);
+  var tb = e("tbody");
+  for (i = 0; i < rows.length; i++){
+    var tr = e("tr"), j;
+    for (j = 0; j < cols.length; j++){
+      var td = e("td", {class: cols[j].num ? "num" : ""});
+      var v = cols[j].f(rows[i]);
+      if (v instanceof Node) td.appendChild(v);
+      else if (v == null) td.appendChild(o(null));
+      else td.textContent = String(v);
+      tr.appendChild(td);
+    }
+    tb.appendChild(tr);
+  }
+  t.appendChild(tb);
+  if (!rows.length) return e("p", {class:"trong"}, opt.trong || "⛔ Không có dòng nào trong kỳ.");
+  return t;
+}
+
+function the(card, ds){
+  var g = e("div", {class:"the"});
+  (ds || []).forEach(function(x){
+    var d = e("div", {class: x.canh_bao ? "canh" : ""});
+    d.appendChild(e("div", {class:"n"}, x.nhan));
+    var v = e("div", {class:"v"});
+    v.appendChild(o(x.so));
+    d.appendChild(v);
+    if (txt(x.phu)) d.appendChild(e("div", {class:"p"}, x.phu));
+    g.appendChild(d);
+  });
+  card.appendChild(g);
+}
+
+function khoi(tieu_de, noi_dung, chu_thich, chan){
+  var c = e("div", {class:"card"});
+  if (tieu_de) c.appendChild(e("h2", null, tieu_de));
+  (Array.isArray(noi_dung) ? noi_dung : [noi_dung]).forEach(function(n){
+    if (n) c.appendChild(n);
+  });
+  if (chu_thich) c.appendChild(e("p", {class:"chu-thich"}, chu_thich));
+  if (chan) c.appendChild(e("div", {class:"chan-bang"}, chan));
+  return c;
+}
+
+/* ① + ② — bang truc, luon co cot HOT* */
+function bang_truc(ds, nhan_ma){
+  var canh = null;
+  if (ds && ds.length && ds[0].hot_sao === undefined)
+    canh = e("div", {class:"canh-bao"},
+      "⛔ Bảng này chia nhóm theo một thuộc tính vốn là tín hiệu chấm điểm nhưng "
+      + "THIẾU cột HOT* → kết luận so sánh giữa các nhóm là kết luận giả (pd-I2 §4).");
+  var t = bang([
+    {t: nhan_ma || "Mã", f: function(r){
+        var s = e("span");
+        s.appendChild(document.createTextNode(r.ma));
+        if (txt(r.ten)) s.appendChild(e("span", {class:"ky"}, " · " + r.ten));
+        if (!r.du_mau) s.appendChild(e("span", {class:"chip cho"}, " ⚠ chưa đủ mẫu"));
+        return s;
+      }},
+    {t:"HT", num:1, f: function(r){ return r.n; }},
+    {t:"HOT", num:1, f: function(r){ return r.hot; }},
+    {t:"HOT*", num:1, f: function(r){ return r.hot_sao; }},
+    {t:"% có SĐT", num:1, f: function(r){ return r.co_sdt; }}
+  ], ds || []);
+  return canh ? [canh, t] : [t];
+}
+
+/* ══ BO CUC `insight` — 6 tab ══════════════════════════════════════ */
+var BC_INSIGHT = [
+{ten:"Tổng quan", ve: function(d, h){
+  the(h, d.the_so);
+  var r = d.tu_kiem_4_rui_ro || {};
+  h.appendChild(khoi("Bốn rủi ro đọc số — tự kiểm", bang([
+    {t:"Rủi ro", f:function(x){ return x[0]; }},
+    {t:"Kết quả kiểm kỳ này", f:function(x){ return x[1]; }}
+  ], [["Mẫu bị lọc", r.mau_bi_loc], ["Mẫu nhỏ", r.mau_nho],
+      ["Lặp vòng", r.lap_vong], ["Lạm phát HOT", r.lam_phat_hot]])));
+  if (d.l6_7_ngo_vat_lieu)
+    h.appendChild(khoi("L6.7 · Ngờ vật liệu — mã riêng của ngành nha",
+      e("p", null, d.l6_7_ngo_vat_lieu.doc_ra),
+      "⛔ Không gộp L6.7 vào L6.2: khách không tự kiểm được vật liệu trong miệng mình."));
+  if ((d.nhom_n_vang_mat || []).length)
+    h.appendChild(khoi("Nhóm khách vắng mặt trong kỳ",
+      e("ul", {html: d.nhom_n_vang_mat.map(function(x){ return "<li>" + x + "</li>"; }).join("")}),
+      "★ Nhóm vắng mặt là một PHÁT HIỆN, không phải ô trống — nghĩa là kỳ này không có nội dung nào nhắm nhóm đó."));
+}},
+{ten:"Ba trục", ve: function(d, h){
+  var t = d.truc || {};
+  h.appendChild(khoi("Vấn đề răng · V-01…V-11", bang_truc(t.v_rang, "Vấn đề răng")));
+  h.appendChild(khoi("Nhóm giá trị · V1 / V2 / V3", bang_truc(t.nhom_gt, "Nhóm"),
+    "★ Một lead HOT·V3 (cạo vôi) không bằng một lead WARM·V1 (All-On) về giá trị kỳ vọng. Gộp lại thì V3 che mất việc V1 đang rò."));
+  h.appendChild(khoi("Giai đoạn · S1 / S2 / S3 / CS", bang_truc(t.giai_doan, "Giai đoạn"),
+    "★ S3 là điểm quyết định của ngành nha — phần lớn lead rơi ở đây, không rơi ở S1."));
+  h.appendChild(khoi("Trạng thái vận hành · L-code", bang_truc(t.l_code, "L-code")));
+  h.appendChild(khoi("Nhóm khách · N1…N6", bang_truc(t.nhom_khach, "Nhóm")));
+  h.appendChild(khoi("Rào cản chốt", bang([
+      {t:"Rào cản", f:function(r){ return r.ma; }},
+      {t:"Lượt", num:1, f:function(r){ return r.luot; }},
+      {t:"% lượt", num:1, f:function(r){ return r.pc_luot; }}
+    ], t.rao_can || []), d.cach_dem_rao_can));
+}},
+{ten:"Chân dung", ve: function(d, h){
+  if (d.cho_cong_0){
+    h.appendChild(e("div", {class:"luu-y"}, "⏸ " + (d.ghi_chu_cong_0 || "Chưa qua CỔNG 0.")));
+    var nl = d.nguyen_lieu_chan_dung || {};
+    h.appendChild(khoi("Nguyên liệu phác họa ① — cụm chữ khách tự nói", bang([
+      {t:"Cụm", f:function(r){ return r.cum; }},
+      {t:"Lượt", num:1, f:function(r){ return r.luot; }}
+    ], nl.cum_chu_khach_tu_noi || [])));
+    var ch = nl.cau_hoi_dau || {};
+    h.appendChild(khoi("Nguyên liệu ② — câu hỏi đầu tiên của khách", bang([
+      {t:"Loại", f:function(r){ return r[0]; }},
+      {t:"HT", num:1, f:function(r){ return r[1]; }}
+    ], [["Hỏi giá ngay ở tin đầu", ch.hoi_gia_ngay], ["Nêu tình trạng", ch.neu_tinh_trang]])));
+    h.appendChild(khoi("Nguyên liệu ④ — dấu hiệu người thứ ba",
+      e("p", null, (nl.dau_hieu_nguoi_thu_ba != null ? nl.dau_hieu_nguoi_thu_ba : "—")
+        + " hội thoại có dấu hiệu người nhà (bố/mẹ/con/vợ/chồng/cả nhà)."),
+      "★ Người quyết định thường không phải người nhắn. Nhóm này hay bị chấm COLD oan mà lại là tệp LTV cao nhất."));
+    return;
+  }
+  (d.chan_dung || []).forEach(function(c){
+    var w = e("div", {class:"the-cd"});
+    w.appendChild(e("h3", null, c.cd + " · " + c.ten));
+    w.appendChild(e("div", {class:"meta"}, c.n + " HT · " + (c.pc_mau || "—")
+      + " mẫu · " + (c.gt || "—") + " · HOT " + (c.hot || "—")
+      + " · HOT* " + (c.hot_sao || "—") + " · có SĐT " + (c.co_sdt || "—")));
+    var dl = e("dl");
+    [["Họ là ai", c.ho_la_ai], ["Insight", c.insight],
+     ["Câu hỏi ngầm", (c.cau_hoi_ngam || []).join(" · ")],
+     ["Rào chủ đạo", c.rao_chu_dao], ["Bằng chứng gỡ", (c.bang_chung_go || []).join(" · ")],
+     ["Rơi ở đâu", c.roi_o_dau], ["Làm bằng", (c.lam_bang || []).join(" · ")]
+    ].forEach(function(p){
+      dl.appendChild(e("dt", null, p[0]));
+      var dd = e("dd"); dd.appendChild(o(p[1])); dl.appendChild(dd);
+    });
+    w.appendChild(dl);
+    h.appendChild(w);
+  });
+  if (d.cd0) h.appendChild(khoi("CD0 · hội thoại không vào chân dung nào",
+    e("p", null, d.cd0.n + " HT · " + (d.cd0.pc_mau || "—") + " mẫu"),
+    "CD0 vượt 25% mẫu → bản phác họa CHƯA ĐỦ, phác lại. ⛔ Không nhét bừa vào chân dung gần nhất."));
+}},
+{ten:"Quảng cáo", ve: function(d, h){
+  var a = d.ads || {};
+  if (!a.co_so_lieu)
+    h.appendChild(e("div", {class:"luu-y"}, "⏸ Kỳ này chưa có file số ads. "
+      + "Mục này đọc CHẤT của tệp từng post, ⛔ không đọc GIÁ của tệp — ⛔ không có CPI/CPL nào."));
+  h.appendChild(khoi("★ Post hứa gì ↔ khách hỏi gì ngay sau đó", bang([
+    {t:"Post", f:function(r){
+        var s = e("span");
+        s.appendChild(document.createTextNode(r.ma));
+        if (!r.du_mau) s.appendChild(e("span", {class:"chip cho"}, " ⚠ chưa đủ mẫu"));
+        return s;
+      }},
+    {t:"Lời hứa của post", f:function(r){ return r.loi_hua; }},
+    {t:"HT", num:1, f:function(r){ return r.n_ht; }},
+    {t:"Hỏi giá ở tin đầu", num:1, f:function(r){ return r.hoi_gia_dau; }},
+    {t:"Có SĐT", num:1, f:function(r){ return r.co_sdt; }},
+    {t:"Khuôn hình", f:function(r){
+        var m = {"khop":["luc","khớp"],
+                 "hua-nhanh-khach-hoi-gia":["do","hứa nhanh → khách hỏi giá"],
+                 "neu-hang-khach-van-ngo":["cho","nêu hãng → khách vẫn ngờ"]};
+        var k = m[r.khuon] || ["xanh", r.khuon];
+        return e("span", {class:"chip " + k[0]}, k[1]);
+      }}
+  ], a.post || []), "★ Khuôn \"nêu hãng → khách vẫn ngờ\" là phát hiện quý nhất của ngành nha: rào L6.7 ⛔ không gỡ được bằng cách nói tên hãng to hơn, mà bằng cách cho khách THỨ TỰ KIỂM ĐƯỢC (mã trụ · phiếu bảo hành · được xem trước khi cấy)."));
+  var p = a.phe_u || {};
+  h.appendChild(khoi("Phễu nha khoa", bang([
+      {t:"Chặng", f:function(r){ return r[0]; }},
+      {t:"Số", num:1, f:function(r){ return r[1]; }}
+    ], [["Inbox", p.inbox], ["Có SĐT", p.co_sdt], ["Kết nối (gọi được)", p.ket_noi],
+        ["Đặt lịch khám", p.dat_lich], ["★ ĐẾN KHÁM (show-up)", p.den_kham]]),
+    a.canh_bao_phe_u));
+  if ((d.doi_thu_bi_so_sanh || []).length)
+    h.appendChild(khoi("Đối thủ bị so sánh trong kỳ (L6.2)", bang([
+      {t:"Đơn vị", f:function(r){ return r[0]; }},
+      {t:"Lượt", num:1, f:function(r){ return r[1]; }}
+    ], d.doi_thu_bi_so_sanh), "⛔ Chỉ dùng nội bộ để ĐẾM. ⛔ Không nêu tên đối thủ để hạ thấp trong bất kỳ nội dung gửi khách."));
+}},
+{ten:"Việc & hook", ve: function(d, h){
+  if (!(d.ma_tran || []).length)
+    h.appendChild(e("div", {class:"luu-y"}, "⏸ Chưa qua CỔNG 1 — ma trận ưu tiên chưa được duyệt nên ⛔ chưa sinh hook."));
+  if ((d.ma_tran || []).length)
+    h.appendChild(khoi("Ma trận ưu tiên", bang([
+      {t:"#", num:1, f:function(r){ return r.stt; }},
+      {t:"Việc", f:function(r){ return r.viec; }},
+      {t:"Vì sao", f:function(r){ return r.vi_sao; }},
+      {t:"Nhắm ai", f:function(r){ return r.nham; }},
+      {t:"Chặn gì", f:function(r){ return r.chan; }},
+      {t:"Ai làm", f:function(r){ return r.ai_lam; }},
+      {t:"Đo bằng", f:function(r){ return r.do_bang; }}
+    ], d.ma_tran), d.cach_xep_ma_tran));
+  if ((d.hook || []).length)
+    h.appendChild(khoi("Ngân hàng hook", bang([
+      {t:"Mã", f:function(r){ return r.ma; }},
+      {t:"Câu hook", f:function(r){ return r.cau; }},
+      {t:"Chặng", f:function(r){ return r.chang; }},
+      {t:"Nhắm", f:function(r){ return r.nham; }},
+      {t:"Gỡ rào", f:function(r){ return (r.go_rao || "") + " " + (r.l_code || ""); }},
+      {t:"Làm bằng", f:function(r){ return (r.lam_bang || []).join(" "); }},
+      {t:"Pháp chế", f:function(r){
+          var c = {"🟢":"luc","🟠":"cho","🔴":"do"}[r.co_phap_che] || "xanh";
+          return e("span", {class:"chip " + c}, r.co_phap_che + (r.ly_do_co ? " " + r.ly_do_co : ""));
+        }}
+    ], d.hook)));
+  if ((d.khe_con_trong || []).length)
+    h.appendChild(khoi("★ Khe còn trống — rào cản chưa có hook nào gỡ", bang([
+      {t:"Rào cản", f:function(r){ return r.rao; }},
+      {t:"Vì sao chưa có", f:function(r){ return r.vi_sao; }}
+    ], d.khe_con_trong), "★ Ô này quan trọng hơn cả ngân hàng hook. Khe trống thường không vì thiếu ý tưởng, mà vì HỆ CHƯA CẤP BẰNG CHỨNG."));
+}},
+{ten:"Việc hệ thống", ve: function(d, h){
+  h.appendChild(khoi("Slot dữ kiện còn chờ", bang([
+    {t:"#", num:1, f:function(r){ return r.stt; }},
+    {t:"Slot", f:function(r){ return r.ten; }},
+    {t:"Chặn gì", f:function(r){ return r.chan; }},
+    {t:"Chờ mấy kỳ", num:1, f:function(r){ return r.cho_may_ky; }}
+  ], d.slot_cho || []), "⚠ Slot chờ ≥3 kỳ → đưa lên ĐẦU báo cáo, ⛔ không để trong phụ lục."));
+  h.appendChild(khoi("Việc hệ thống phát hiện trong kỳ", bang([
+    {t:"Nhóm", f:function(r){ return r.nhom; }},
+    {t:"HT bị ảnh hưởng", num:1, f:function(r){ return r.n_ht; }},
+    {t:"Ai cấp", f:function(r){ return r.ai_cap; }}
+  ], d.viec_he_thong || []), "⛔ Mục này không được gộp vào \"khuyến nghị\". Nó phải là mục riêng, có tên người chịu trách nhiệm cấp dữ kiện."));
+  h.appendChild(khoi("Cờ đỏ pháp chế — bản ĐÃ LỌC cho Marketing", bang([
+    {t:"Mã", f:function(r){ return r.ma; }},
+    {t:"Cờ", f:function(r){ return r.ten; }},
+    {t:"Lượt", num:1, f:function(r){ return r.luot; }},
+    {t:"Nhóm V hay gặp", f:function(r){ return (r.v_rang_hay_gap || []).join(" · "); }},
+    {t:"HT", f:function(r){ return (r.ht || []).join(" "); }}
+  ], d.co_do_tong || []),
+    "★ Cờ đỏ đi qua tường ngăn được, nhưng MỘT CHIỀU và BỊ LỌC: ⛔ không nguyên văn, ⛔ không tên người. "
+    + "Dùng để rà xem POST ADS và TRANG ĐÍCH có đang nói câu tương tự không — nếu có thì nhân viên đang nhắc lại chữ của chính chúng ta."));
+}}
+];
+
+/* ══ BO CUC `qc` — 5 tab ═══════════════════════════════════════════ */
+var BC_QC = [
+{ten:"Tổng quan", ve: function(d, h){
+  the(h, d.the_so);
+  var p = d.phan_bo || {}, g = e("div", {class:"pb"});
+  [["A", p.A], ["B", p.B], ["C", p.C], ["D", p.D]].forEach(function(x){
+    g.appendChild(e("span", {style:"background:var(--" + x[0] + ");color:#fff"},
+      "Loại " + x[0] + ": " + (x[1] || 0)));
+  });
+  g.appendChild(e("span", {class:"chip cho", style:"padding:5px 11px;font-size:13px"},
+    "Chưa đủ mẫu: " + (p.chua_du_mau || 0)));
+  h.appendChild(khoi("Phân bố xếp loại", g,
+    "A ≥9,0 · B 8,0–8,9 (đạt chuẩn P8) · C 6,5–7,9 · D <6,5. "
+    + "Người dưới 10 HT ⛔ không phân loại. Một cờ đỏ trong kỳ → ⛔ không được xếp loại A.",
+    d.chan_bang));
+  if ((d.canh_bao || []).length)
+    h.appendChild(khoi("Cảnh báo mẫu",
+      e("ul", {html: d.canh_bao.map(function(x){ return "<li>" + x + "</li>"; }).join("")})));
+  if (d.chua_duoc_cham)
+    h.appendChild(khoi("Tin khách chưa được chạm",
+      e("p", null, (d.chua_duoc_cham.n || 0) + " HT · " + (d.chua_duoc_cham.ht || []).join(" ")),
+      d.chua_duoc_cham.doc_ra));
+}},
+{ten:"Chỉ số đội", ve: function(d, h){
+  h.appendChild(khoi("% đạt từng tiêu chí — TC-1…TC-10", bang([
+    {t:"Mã", f:function(r){ return r.tc; }},
+    {t:"Tiêu chí", f:function(r){ return r.ten; }},
+    {t:"% đạt", num:1, f:function(r){ return r.dat; }},
+    {t:"", f:function(r){
+        var m = /^(\d+)%$/.exec(r.dat || "");
+        if (!m) return e("span", {class:"chip cho"}, "⛔ không chấm được");
+        var b = e("div", {class:"bar"});
+        b.appendChild(e("i", {style:"width:" + m[1] + "%"}));
+        return b;
+      }},
+    {t:"Ô chấm", num:1, f:function(r){ return r.n_cham; }},
+    {t:"Ô miễn", num:1, f:function(r){ return r.n_mien; }},
+    {t:"Lý do miễn", f:function(r){ return r.ly_do_mien; }}
+  ], d.chi_so_doi || []),
+    "⛔ Ô \"—\" và \"?\" LOẠI KHỎI MẪU SỐ, ⛔ không tính là trượt. "
+    + "Tiêu chí có số ô miễn lớn hơn số ô chấm là tiêu chí mà phần lớn là LỖI HỆ.",
+    d.chan_bang));
+  if ((d.tc_yeu_nhat_khoi || []).length)
+    h.appendChild(khoi("Ba tiêu chí yếu nhất → nội dung đào tạo kỳ sau",
+      e("p", null, d.tc_yeu_nhat_khoi.join(" · "))));
+  if ((d.tc_loai_khoi_dao_tao || []).length)
+    h.appendChild(khoi("⛔ Tiêu chí bị LOẠI khỏi nội dung đào tạo", bang([
+      {t:"Mã", f:function(r){ return r.tc; }},
+      {t:"Vì sao", f:function(r){ return r.vi_sao; }}
+    ], d.tc_loai_khoi_dao_tao),
+      "★ Hỏi: \"nếu khối được đào tạo hoàn hảo về việc này thì tỷ lệ đạt có lên được không?\" "
+      + "Nếu không, vì vẫn chưa có dữ kiện, thì đó là việc hệ thống — ⛔ không phải việc đào tạo."));
+}},
+{ten:"Cờ đỏ", ve: function(d, h){
+  h.appendChild(e("div", {class:"canh-bao"},
+    "⛔ Không phát sổ tay, ⛔ không đăng hook khi còn cờ 🔴 chưa gỡ — CỔNG 2."));
+  (d.co_do || []).forEach(function(c){
+    var w = e("div", {class:"the-cd"});
+    w.appendChild(e("h3", null, c.ma + " · " + c.ten));
+    w.appendChild(e("div", {class:"meta"}, c.ht + " · " + c.nv + " · " + (c.v_rang || "")));
+    var dl = e("dl");
+    [["① Nguyên văn", c.nguyen_van], ["③ Ngữ cảnh", c.ngu_canh],
+     ["④ Sai ở đâu", c.sai_o_dau], ["⑤ Câu đúng", c.cau_dung],
+     ["⑥ Người xử lý", c.nguoi_xu_ly], ["Hạn", c.han], ["Gốc lỗi", c.goc]
+    ].forEach(function(p){
+      dl.appendChild(e("dt", null, p[0]));
+      var dd = e("dd"); dd.appendChild(o(p[1])); dl.appendChild(dd);
+    });
+    w.appendChild(dl);
+    h.appendChild(w);
+  });
+  if (!(d.co_do || []).length)
+    h.appendChild(khoi(null, e("p", {class:"trong"}, "⛔ Không có cờ đỏ nào trong kỳ.")));
+}},
+{ten:"Chờ đối chiếu", ve: function(d, h){
+  h.appendChild(khoi("Ô \"?\" — cần dữ kiện NGOÀI hội thoại mới kết luận được", bang([
+    {t:"Tiêu chí", f:function(r){ return r.tc; }},
+    {t:"HT", f:function(r){ return r.ht; }},
+    {t:"Nguyên văn", f:function(r){ return r.nguyen_van; }},
+    {t:"Câu hỏi cần trả lời", f:function(r){ return r.cau_hoi; }},
+    {t:"Ba nhánh", f:function(r){
+        var n = r.nhanh || {};
+        return "khớp → " + n.co_va_khop + " | lệch → " + n.co_va_lech + " | chưa cấp → " + n.chua_cap;
+      }},
+    {t:"Người đối chiếu", f:function(r){ return r.nguoi_doi_chieu; }}
+  ], d.cho_doi_chieu || []),
+    "⛔ Ô \"?\" không phải ô \"✗\". Mỗi ô phải có đủ NĂM thứ: HT-nnn · nguyên văn · "
+    + "câu hỏi cần trả lời · ba nhánh kết luận · người đối chiếu."));
+}},
+{ten:"Việc hệ thống", ve: function(d, h){
+  h.appendChild(khoi("Gom theo NGUYÊN NHÂN — ⛔ không theo người", bang([
+    {t:"Nhóm lỗi hệ", f:function(r){ return r.nhom; }},
+    {t:"Số ô", num:1, f:function(r){ return r.n_o; }},
+    {t:"Ô nào", f:function(r){ return (r.o || []).join(" "); }},
+    {t:"Ai cấp", f:function(r){ return r.ai_cap; }},
+    {t:"★ Cấp rồi gỡ được gì", f:function(r){ return r.cap_roi_go_duoc; }}
+  ], d.viec_he_thong || []),
+    "★ Ô cuối là ô quyết định. \"Chưa có số năm bảo hành\" nghe như một ghi chú. "
+    + "\"Cấp số năm bảo hành thì n cờ CĐ-P8 tự hết và m ô TC-4 chuyển từ '—' thành chấm được\" là một việc có giá."));
+  h.appendChild(e("div", {class:"luu-y"},
+    "★ ST-HT là sổ DUY NHẤT của luồng Q được gửi cho người ngoài khối trực page. "
+    + "Nên nó ⛔ KHÔNG chứa tên nhân viên — việc hệ thống là việc của hệ thống."));
+}}
+];
+
+/* ══ Khoi dong ════════════════════════════════════════════════════ */
+var BO_CUC = {insight: BC_INSIGHT, qc: BC_QC};
+
+function ve(d){
+  var bc = BO_CUC[d.bo_cuc] || BC_INSIGHT;
+  var la_qc = d.bo_cuc === "qc";
+  document.getElementById("tieu-de").textContent =
+    (la_qc ? "QC Trực page · " : "Insight khách hàng · ") + (d.thuong_hieu || "Nha khoa Paris");
+  document.title = (la_qc ? "QC Trực page" : "Insight khách hàng") + " · Nha khoa Paris";
+  document.getElementById("ky").textContent = "Kỳ " + (d.ky || "—");
+  var nl = document.getElementById("nhan-luong");
+  nl.textContent = la_qc ? "LUỒNG Q · chỉ trưởng nhóm" : "LUỒNG I · Marketing";
+  nl.className = "luong " + (la_qc ? "q" : "i");
+
+  var nav = document.getElementById("nav"), than = document.getElementById("than");
+  nav.innerHTML = ""; than.innerHTML = "";
+  bc.forEach(function(tab, i){
+    var b = e("button", {role:"tab", "aria-selected": i === 0 ? "true" : "false"}, tab.ten);
+    var s = e("section", {class: i === 0 ? "on" : ""});
+    try { tab.ve(d, s); }
+    catch (err) {
+      s.appendChild(e("div", {class:"canh-bao"}, "⛔ Lỗi dựng tab: " + err.message));
+    }
+    b.onclick = function(){
+      nav.querySelectorAll("button").forEach(function(x){ x.setAttribute("aria-selected", "false"); });
+      than.querySelectorAll("section").forEach(function(x){ x.className = ""; });
+      b.setAttribute("aria-selected", "true");
+      s.className = "on";
+    };
+    nav.appendChild(b); than.appendChild(s);
+  });
+}
+
+function loi(msg){
+  document.getElementById("than").appendChild(e("div", {class:"canh-bao"}, msg));
+}
+
+(function(){
+  /* Khoi nhung doc TRUOC data/index.json -> ban mot file khong can may chu tinh */
+  var raw = (document.getElementById("pd-data") || {}).textContent || "null";
+  var nhung = null;
+  try { nhung = JSON.parse(raw); } catch (x) { nhung = null; }
+  if (nhung) { ve(nhung); return; }
+
+  fetch("data/index.json").then(function(r){ return r.json(); }).then(function(ds){
+    var sel = document.getElementById("chon-ky");
+    sel.hidden = false;
+    ds.forEach(function(x, i){
+      sel.appendChild(e("option", {value: x.file}, (x.bo_cuc === "qc" ? "QC · " : "Insight · ") + x.ky));
+      if (i === 0) sel.value = x.file;
+    });
+    function tai(f){
+      fetch("data/" + f).then(function(r){ return r.json(); }).then(ve)
+        .catch(function(){ loi("⛔ Không đọc được data/" + f); });
+    }
+    sel.onchange = function(){ tai(sel.value); };
+    if (ds.length) tai(ds[0].file);
+    else loi("⛔ data/index.json rỗng.");
+  }).catch(function(){
+    loi("⛔ Chưa có data/index.json, và trang cũng không có khối JSON nhúng. "
+      + "Mở bằng máy chủ tĩnh: cd dashboard && python -m http.server 8080 — "
+      + "hoặc nhúng file kỳ vào <script id=\"pd-data\"> rồi mở trực tiếp.");
+  });
+})();
+</script>
+</body>
+</html>

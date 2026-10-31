@@ -1,0 +1,1082 @@
+{
+  "_doc": "Từ điển nha khoa cho Agent-InsightDashboard-Paris. Mã lấy từ Paris-Agent-Factory (P2·P4·P6·P8) — ⛔ KHÔNG đặt mã mới ở đây. Thêm từ khoá thì thêm vào nhóm đã có.",
+  "v_rang": {
+    "_doc": "11 nhóm vấn đề răng — P4 §2. XÉT THEO THỨ TỰ V-01 → V-11, đúng nhóm đầu tiên thì lấy, KHÔNG xét tiếp.",
+    "_thu_tu": [
+      "V-01",
+      "V-02",
+      "V-03",
+      "V-04",
+      "V-05",
+      "V-06",
+      "V-07",
+      "V-08",
+      "V-09",
+      "V-10",
+      "V-11"
+    ],
+    "V-01": {
+      "ten": "Làm lại / sửa ca lỗi",
+      "gt": "V1",
+      "tu": [
+        "sửa lại",
+        "làm lại",
+        "làm lai",
+        "bị hỏng",
+        "bị lỗi",
+        "sứ lệch",
+        "sứ bị cộm",
+        "cộm",
+        "trụ đào thải",
+        "đào thải",
+        "niềng dở",
+        "niềng dở dang",
+        "làm ở chỗ khác",
+        "làm ở nơi khác",
+        "bọc ở chỗ khác",
+        "niềng ở chỗ khác",
+        "chỗ cũ",
+        "nơi cũ",
+        "phòng khám cũ",
+        "bác sĩ cũ",
+        "làm bên kia",
+        "tháo ra làm lại",
+        "sửa giúp em",
+        "khắc phục"
+      ]
+    },
+    "V-02": {
+      "ten": "Mất nhiều răng / mất cả hàm",
+      "gt": "V1",
+      "tu": [
+        "mất hết răng",
+        "mất gần hết",
+        "mất cả hàm",
+        "mất nhiều răng",
+        "hàm giả",
+        "tháo lắp",
+        "all on",
+        "all-on",
+        "allon",
+        "nguyên hàm",
+        "toàn hàm dưới",
+        "toàn hàm trên",
+        "mất 10 răng",
+        "rụng gần hết"
+      ]
+    },
+    "V-03": {
+      "ten": "Mất răng lẻ / trồng lại",
+      "gt": "V1",
+      "tu": [
+        "mất răng",
+        "rụng răng",
+        "mất răng số",
+        "trồng răng",
+        "trồng lại",
+        "implant",
+        "im-plant",
+        "cấy ghép",
+        "cấy trụ",
+        "cầu răng",
+        "ghép xương",
+        "nâng xoang",
+        "tiêu xương"
+      ]
+    },
+    "V-04": {
+      "ten": "Răng lệch · khấp khểnh · thưa · hô · khớp cắn",
+      "gt": "V2",
+      "tu": [
+        "niềng",
+        "nieng",
+        "khấp khểnh",
+        "khap khenh",
+        "răng thưa",
+        "thưa răng",
+        "khớp cắn",
+        "invisalign",
+        "mắc cài",
+        "mac cai",
+        "chỉnh nha",
+        "trong suốt",
+        "khay niềng",
+        "răng chen chúc",
+        "cắn sâu",
+        "cắn ngược",
+        "lệch khớp cắn",
+        "răng lệch",
+        "hàm lệch",
+        "cắn lệch",
+        "răng hô",
+        "bị hô"
+      ]
+    },
+    "V-05": {
+      "ten": "Răng xỉn màu · vỡ · sứt · mòn",
+      "gt": "V2",
+      "tu": [
+        "bọc sứ",
+        "boc su",
+        "răng sứ",
+        "răng vỡ",
+        "sứt",
+        "xỉn",
+        "xỉn màu",
+        "vàng răng",
+        "răng vàng",
+        "veneer",
+        "dán răng",
+        "mặt dán",
+        "chết tủy đổi màu",
+        "mòn răng",
+        "mẻ răng",
+        "bọc răng",
+        "làm răng sứ",
+        "phôi sứ",
+        "dòng sứ",
+        "nacera",
+        "zirconia",
+        "cercon",
+        "emax"
+      ]
+    },
+    "V-06": {
+      "ten": "Đau nhức · viêm tủy · áp xe",
+      "gt": "V3",
+      "tu": [
+        "đau",
+        "nhức",
+        "ê buốt dữ",
+        "buốt quá",
+        "áp xe",
+        "ap xe",
+        "viêm tủy",
+        "viem tuy",
+        "nhiễm trùng",
+        "mủ",
+        "đau quá",
+        "đau không chịu được",
+        "sưng má",
+        "nhức buốt",
+        "lấy tủy",
+        "điều trị tủy",
+        "sưng nướu",
+        "sưng lợi",
+        "bị sưng"
+      ]
+    },
+    "V-07": {
+      "ten": "Viêm nướu · chảy máu · vôi răng · hôi miệng",
+      "gt": "V3",
+      "tu": [
+        "chảy máu chân răng",
+        "viêm nướu",
+        "viêm nha chu",
+        "nha chu",
+        "vôi răng",
+        "cao vôi",
+        "cạo vôi",
+        "hôi miệng",
+        "tụt nướu",
+        "tụt lợi",
+        "lợi sưng",
+        "nướu sưng",
+        "chảy máu khi đánh răng"
+      ]
+    },
+    "V-08": {
+      "ten": "Răng khôn · nhổ răng",
+      "gt": "V3",
+      "tu": [
+        "răng khôn",
+        "rang khon",
+        "răng số 8",
+        "mọc lệch",
+        "nhổ răng",
+        "nho rang",
+        "lợi trùm",
+        "cắt lợi trùm",
+        "răng ngầm",
+        "nhổ giúp em"
+      ]
+    },
+    "V-09": {
+      "ten": "Tẩy trắng · thẩm mỹ nhẹ",
+      "gt": "V3",
+      "tu": [
+        "tẩy trắng",
+        "tay trang",
+        "làm trắng",
+        "đính đá",
+        "dinh da",
+        "teeth spa",
+        "whitemax",
+        "trắng răng"
+      ]
+    },
+    "V-10": {
+      "ten": "Răng trẻ em",
+      "gt": "V3",
+      "tu": [
+        "cho con",
+        "cho bé",
+        "con em",
+        "bé nhà em",
+        "răng sữa",
+        "cháu em",
+        "con gái em",
+        "con trai em",
+        "niềng cho con",
+        "bé 5 tuổi",
+        "bé 8 tuổi",
+        "trẻ em",
+        "niềng sớm"
+      ]
+    },
+    "V-11": {
+      "ten": "Chưa rõ / hỏi chung",
+      "gt": "",
+      "tu": [
+        "làm răng",
+        "tư vấn",
+        "khám răng",
+        "giá bao nhiêu",
+        "bảng giá",
+        "cho em hỏi",
+        "tư vấn giúp em",
+        "có làm không"
+      ]
+    }
+  },
+  "nhom_gt": {
+    "_doc": "P4 §3. Suy từ v_rang + dịch vụ khách nêu. ⛔ KHÔNG suy từ độ nóng, ⛔ KHÔNG suy từ số tiền khách nói.",
+    "nang_len_v1": {
+      "_doc": "Các cụm này nâng nhóm giá trị lên V1 dù v_rang mặc định thấp hơn.",
+      "tu": [
+        "all on",
+        "all-on",
+        "allon",
+        "nguyên hàm",
+        "toàn hàm",
+        "invisalign",
+        "trong suốt",
+        "implant",
+        "ghép xương",
+        "nâng xoang",
+        "sứ toàn hàm",
+        "cả hàm"
+      ]
+    }
+  },
+  "l_code": {
+    "_doc": "P6 §2. Trạng thái vận hành L1.1…L6.7. Xét L4.1 và L6.x trước, L2.x sau, L1.1 là mặc định.",
+    "L6.7": {
+      "ten": "Ngờ vật liệu",
+      "rao": "NGỜ",
+      "tu": [
+        "trụ gì",
+        "trụ nào",
+        "loại trụ",
+        "phôi sứ",
+        "sứ gì",
+        "dòng sứ",
+        "chính hãng",
+        "chinh hang",
+        "có bị tráo",
+        "tráo trụ",
+        "tráo vật liệu",
+        "hàng thật",
+        "hàng giả",
+        "phiếu bảo hành",
+        "mã trụ",
+        "có giấy tờ",
+        "xuất xứ",
+        "của hãng nào",
+        "hãng nào"
+      ]
+    },
+    "L6.5": {
+      "ten": "Sợ đau · sợ mài răng · sợ biến chứng",
+      "rao": "SỢ",
+      "tu": [
+        "có đau không",
+        "sợ đau",
+        "đau lắm không",
+        "mài răng",
+        "mài mất",
+        "mài hết",
+        "hại răng",
+        "hỏng răng thật",
+        "mất răng thật",
+        "biến chứng",
+        "sợ hỏng",
+        "có nguy hiểm",
+        "rủi ro",
+        "sợ khoan",
+        "ghê răng",
+        "sợ tiêm"
+      ]
+    },
+    "L6.3": {
+      "ten": "Chưa đủ ngân sách · hỏi trả góp",
+      "rao": "NGẠI",
+      "tu": [
+        "trả góp",
+        "tra gop",
+        "chia nhỏ",
+        "đóng nhiều lần",
+        "đắt quá",
+        "cao quá",
+        "chưa đủ tiền",
+        "hơi quá",
+        "không đủ",
+        "giảm giá được không",
+        "bớt được không",
+        "ưu đãi gì"
+      ]
+    },
+    "L6.4": {
+      "ten": "Chưa sắp xếp được thời gian · lo đi nhiều buổi",
+      "rao": "NGẠI",
+      "tu": [
+        "không có thời gian",
+        "bận",
+        "đi mấy lần",
+        "mấy buổi",
+        "bao nhiêu lần",
+        "lâu không",
+        "mất mấy ngày",
+        "phải đi lại",
+        "xa",
+        "đi lại bất tiện"
+      ]
+    },
+    "L6.6": {
+      "ten": "Cần hỏi ý kiến người thân",
+      "rao": "NGỜ+NGẠI",
+      "tu": [
+        "hỏi nhà",
+        "hỏi chồng",
+        "hỏi vợ",
+        "hỏi bố mẹ",
+        "bàn với gia đình",
+        "để em hỏi lại",
+        "hỏi người nhà",
+        "bàn lại đã"
+      ]
+    },
+    "L6.2": {
+      "ten": "Đang so sánh nơi khác",
+      "rao": "NGỜ",
+      "tu": [
+        "tham khảo thêm",
+        "xem thêm vài nơi",
+        "đang so sánh",
+        "chỗ khác báo",
+        "nơi khác báo",
+        "bên kia rẻ hơn",
+        "so với",
+        "đã khám ở",
+        "hỏi mấy nơi"
+      ]
+    },
+    "L6.1": {
+      "ten": "Có nhu cầu, chưa xác định được rào cản",
+      "rao": "?",
+      "tu": []
+    },
+    "L2.5": {
+      "ten": "Ngoài 7 tỉnh/thành có cơ sở",
+      "rao": "NGẠI",
+      "tu": []
+    },
+    "L2.4": {
+      "ten": "Khách chủ động hẹn nhắn lại sau",
+      "rao": "",
+      "tu": [
+        "để em nhắn lại",
+        "mai em nhắn",
+        "em liên hệ lại",
+        "khi nào cần em nhắn"
+      ]
+    },
+    "L2.3": {
+      "ten": "Đã tư vấn nhưng chưa phản hồi lại",
+      "rao": "",
+      "tu": []
+    },
+    "L2.1": {
+      "ten": "Có nhu cầu thật, chưa cho số",
+      "rao": "",
+      "tu": []
+    },
+    "L4.1": {
+      "ten": "Có SĐT + dịch vụ quan tâm",
+      "rao": "",
+      "tu": []
+    },
+    "L1.1": {
+      "ten": "Lần đầu nhắn, chưa được tư vấn",
+      "rao": "",
+      "tu": []
+    }
+  },
+  "tin_hieu_nong": {
+    "_doc": "P8 §1 — 5 tín hiệu, bitmask 5 chữ số. Tín hiệu ① dùng v_rang != V-11.",
+    "2_moc_thoi_gian": [
+      "hôm nay",
+      "mai",
+      "ngày mai",
+      "tuần này",
+      "tuần sau",
+      "cuối tuần",
+      "tháng này",
+      "trong tháng",
+      "sớm nhất",
+      "càng sớm càng tốt",
+      "đang trên đường",
+      "em đang ở",
+      "chiều nay",
+      "sáng mai"
+    ],
+    "3_hoi_theo_ca_minh": [
+      "ca của em",
+      "ca của chị",
+      "trường hợp của em",
+      "của em thì bao nhiêu",
+      "em thì mất bao nhiêu",
+      "bác sĩ nào",
+      "ai làm",
+      "mai có lịch",
+      "còn lịch không",
+      "đặt lịch",
+      "hẹn lịch",
+      "trả góp của em",
+      "em có làm được không"
+    ],
+    "4_gui_anh_mo_ta": [
+      "[ảnh]",
+      "[tệp]",
+      "gửi ảnh",
+      "em gửi hình",
+      "có phim",
+      "phim x-quang",
+      "x quang",
+      "xquang",
+      "đã chụp phim",
+      "scan rồi"
+    ],
+    "5_de_lai_so": [
+      "0",
+      "zalo",
+      "số của em",
+      "sđt"
+    ]
+  },
+  "ghi_de_nong": {
+    "_doc": "P8 §1 — ba luật ghi đè. Luật ② là luật dễ bỏ sót và đắt nhất.",
+    "hot_da_dat_lich": [
+      "đã đặt lịch",
+      "em đặt lịch rồi",
+      "có hẹn lúc",
+      "đang đến",
+      "em đang trên đường",
+      "đã hẹn bác sĩ"
+    ],
+    "hot_da_co_phim": [
+      "có phim rồi",
+      "đã chụp phim",
+      "đã khám ở",
+      "họ báo giá",
+      "bên kia báo giá",
+      "đã có phác đồ",
+      "có kết quả chụp",
+      "đã scan"
+    ],
+    "warm_dau_cap": [
+      "đau",
+      "nhức",
+      "sưng má",
+      "áp xe",
+      "mủ"
+    ]
+  },
+  "tc": {
+    "_doc": "Cụm nhận diện 10 tiêu chí P8 §6. Dùng để GỢI Ý, mọi ô ✗ vẫn phải có cặp câu nguyên văn làm bằng (pd-Q1 §6 rào ②).",
+    "TC-3_thu_thong_tin": {
+      "_doc": "P8 §6 ③ — 'THU ĐỦ 4 thông tin'. Thông tin THU ĐƯỢC, bất kể nhân viên hỏi hay khách tự nói → khớp trên CẢ lời khách lẫn lời NV. Nha khoa cần 4, trong đó hai cái riêng: vị trí răng & thời gian bị, và đã điều trị ở đâu chưa (P6 §5).",
+      "vi_tri_thoi_gian": [
+        "bên nào",
+        "bên phải",
+        "bên trái",
+        "vị trí nào",
+        "răng số",
+        "hàm trên",
+        "hàm dưới",
+        "răng trước",
+        "bao lâu rồi",
+        "từ khi nào",
+        "mấy năm",
+        "mấy tháng",
+        "từ bé",
+        "từ lâu",
+        "cách đây",
+        "năm rồi",
+        "tháng rồi",
+        "thấy từ khi",
+        "bị từ",
+        "mọc lệch",
+        "cả hai hàm",
+        "6 răng",
+        "4 răng",
+        "2 răng"
+      ],
+      "da_dieu_tri_chua": [
+        "đã điều trị",
+        "đã làm ở",
+        "từng làm",
+        "đã khám ở",
+        "trước đây có",
+        "trước đây chưa",
+        "ở đâu chưa",
+        "đã niềng",
+        "đã bọc",
+        "chưa làm ở đâu",
+        "chưa làm gì",
+        "làm ở chỗ khác",
+        "đã chỉnh nha",
+        "đã có phim",
+        "đã đưa đi khám",
+        "chưa lấy vôi",
+        "chưa làm",
+        "lần nào chưa",
+        "bên kia"
+      ],
+      "mong_muon": [
+        "chị muốn",
+        "anh muốn",
+        "em muốn",
+        "mong muốn",
+        "chị mong",
+        "muốn giữ",
+        "muốn làm lại",
+        "muốn ăn",
+        "muốn biết",
+        "chủ yếu là",
+        "cho hết",
+        "muốn niềng",
+        "muốn bọc",
+        "muốn dán",
+        "nhu cầu của"
+      ],
+      "thoi_gian_du_kien": [
+        "dự kiến",
+        "chị tính làm khi nào",
+        "khi nào chị tiện",
+        "thời gian nào",
+        "làm khi nào",
+        "trong tháng",
+        "tuần này",
+        "tuần sau",
+        "cuối tuần",
+        "cuối tháng",
+        "càng sớm càng tốt",
+        "hôm nay",
+        "ngày mai",
+        "sớm nhất"
+      ]
+    },
+    "TC-4_bang_chung": {
+      "_doc": "pd-E §2 — bốn trụ. Tính từ trấn an KHÔNG phải bằng chứng.",
+      "that": [
+        "straumann",
+        "invisalign",
+        "black diamond",
+        "nacera",
+        "ormco",
+        "diamond star",
+        "piezotome",
+        "reciproc",
+        "whitemax",
+        "đại học y",
+        "chứng chỉ hành nghề",
+        "cchn",
+        "bộ y tế",
+        "giấy phép",
+        "2032/hno",
+        "đối tác",
+        "phiếu bảo hành",
+        "mã trụ",
+        "iti",
+        "icoi",
+        "escd"
+      ],
+      "tinh_tu_tran_an": [
+        "yên tâm",
+        "an tâm",
+        "uy tín",
+        "chất lượng",
+        "tốt nhất",
+        "hiện đại nhất",
+        "không sao",
+        "không vấn đề gì",
+        "đảm bảo",
+        "chuẩn"
+      ]
+    },
+    "TC-5_ly_do_xin_so": {
+      "co_loi_cho_khach": [
+        "để bác sĩ xem",
+        "bác sĩ báo lộ trình",
+        "báo chi phí sát",
+        "để em kiểm tra lịch",
+        "bác sĩ đánh giá",
+        "xem phim",
+        "tư vấn sát tình trạng",
+        "bác sĩ xem phim",
+        "bác sĩ xem",
+        "báo lộ trình",
+        "lộ trình cụ thể",
+        "chi phí sát",
+        "tư vấn lộ trình",
+        "bác sĩ đánh giá",
+        "xem lịch giúp",
+        "xếp lịch"
+      ],
+      "khong_dat": [
+        "gửi ưu đãi",
+        "để em tư vấn chi tiết",
+        "cho em xin số",
+        "để lại số",
+        "em gọi tư vấn"
+      ]
+    },
+    "TC-6_xac_thuc_so": [
+      "có zalo không",
+      "số này có zalo",
+      "đúng số này",
+      "em lưu số",
+      "xác nhận số",
+      "số này có zalo đúng không",
+      "có zalo đúng không",
+      "số này đúng không"
+    ],
+    "TC-10_buoc_tiep": [
+      "sẽ gọi",
+      "gọi từ số",
+      "lúc",
+      "giờ",
+      "chị hoa",
+      "tổng đài",
+      "để ý máy",
+      "em hẹn",
+      "sẽ gọi chị",
+      "sẽ gọi anh",
+      "gọi chị từ số tổng đài",
+      "từ số tổng đài",
+      "chị hoa sẽ gọi",
+      "để ý máy giúp em"
+    ]
+  },
+  "co_do": {
+    "_doc": "pd-Q2 §2 — 11 cờ đỏ. Mỗi cờ là RỦI RO PHÁP LÝ, báo riêng kèm nguyên văn + người xử lý.",
+    "CĐ-P1": {
+      "ten": "Cam kết kết quả / an toàn tuyệt đối",
+      "tu": [
+        "khỏi 100",
+        "100% thành công",
+        "chắc chắn thành công",
+        "chắc chắn khỏi",
+        "an toàn tuyệt đối",
+        "an toàn 100",
+        "cam kết 100",
+        "không biến chứng",
+        "không đau",
+        "không hề đau",
+        "không hại gì",
+        "không ảnh hưởng gì",
+        "cam kết kết quả",
+        "đẹp như hình",
+        "giống hình",
+        "hoàn hảo 100"
+      ]
+    },
+    "CĐ-P2": {
+      "ten": "Gắn \"chính hãng\" cho vật liệu ngoài 4 hãng",
+      "_doc": "Bắt bằng LOGIC: có chữ 'chính hãng' mà KHÔNG có tên nào trong hang_duyet trong cùng câu.",
+      "tu": [
+        "chính hãng",
+        "chinh hang",
+        "hàng hãng",
+        "đồ hãng"
+      ]
+    },
+    "CĐ-P3": {
+      "ten": "Hứa thời gian điều trị cứng",
+      "tu": [
+        "xong trong 12 tháng",
+        "niềng 12 tháng là xong",
+        "xong sau 6 tháng",
+        "3 ngày có răng",
+        "1 ngày có răng",
+        "một lần hẹn là xong",
+        "chỉ 1 buổi là xong",
+        "đúng 18 tháng",
+        "chắc chắn xong trong"
+      ]
+    },
+    "CĐ-P4": {
+      "ten": "Chẩn đoán qua ảnh/mô tả, hoặc kê đơn",
+      "tu": [
+        "ảnh của chị thì",
+        "nhìn ảnh thì chị bị",
+        "chị bị viêm tủy",
+        "chị bị nha chu",
+        "trường hợp này phải nhổ",
+        "phải nhổ rồi trồng",
+        "chị uống kháng sinh",
+        "em kê cho chị",
+        "uống thuốc giảm đau trước",
+        "chị bị tiêu xương rồi"
+      ]
+    },
+    "CĐ-P5": {
+      "ten": "Chốt giá cứng cho ca cụ thể / giá lệch bảng",
+      "tu": [
+        "ca của chị đúng",
+        "của chị là",
+        "tổng hết",
+        "chốt giá",
+        "giá cuối là",
+        "em chốt cho chị"
+      ]
+    },
+    "CĐ-P6": {
+      "ten": "Nói quá chức danh bác sĩ / nêu tên ngoài danh sách duyệt",
+      "_doc": "Bắt bằng LOGIC: tên sau 'bác sĩ'/'bs'/'ts' mà không có trong bac_si_duyet.",
+      "tu": [
+        "giáo sư",
+        "tiến sĩ hàng đầu",
+        "số 1 việt nam",
+        "giỏi nhất",
+        "chuyên gia hàng đầu",
+        "30 năm kinh nghiệm"
+      ]
+    },
+    "CĐ-P7": {
+      "ten": "Trả lời bệnh nền / chống chỉ định thay bác sĩ",
+      "tu": [
+        "tiểu đường vẫn",
+        "huyết áp vẫn làm được",
+        "đang uống thuốc không sao",
+        "loãng xương vẫn cấy",
+        "tim mạch vẫn được",
+        "có bầu vẫn làm được",
+        "vẫn cấy được bình thường"
+      ]
+    },
+    "CĐ-P8": {
+      "ten": "Nêu con số bảo hành chưa có văn bản",
+      "tu": [
+        "bảo hành trọn đời",
+        "trọn đời",
+        "vĩnh viễn",
+        "dùng mãi",
+        "bảo hành 20 năm",
+        "bảo hành 15 năm",
+        "bảo hành 10 năm",
+        "dùng cả đời",
+        "bảo hành suốt đời"
+      ]
+    },
+    "CĐ-P9": {
+      "ten": "Dìm đối thủ / gắt với khách",
+      "_doc": "Bắt bằng LOGIC: tên đối thủ trong doi_thu + từ hạ thấp trong cùng câu.",
+      "tu": [
+        "chỗ đó làm không tốt",
+        "bên đó rẻ vì",
+        "họ làm hàng kém",
+        "chị đừng làm ở",
+        "nơi đó hay lỗi",
+        "em nói rồi mà",
+        "chị đọc kỹ đi"
+      ]
+    },
+    "CĐ-P10": {
+      "ten": "Lộ thông tin khách khác",
+      "tu": [
+        "chị a hôm trước",
+        "khách hôm qua của em",
+        "có chị kia cũng",
+        "số của chị khác"
+      ]
+    },
+    "CĐ-P11": {
+      "ten": "Gửi ảnh before–after chưa rõ đã duyệt",
+      "tu": [
+        "ảnh case",
+        "hình trước sau",
+        "before after",
+        "ảnh khách đã làm",
+        "em gửi hình khách"
+      ]
+    }
+  },
+  "hang_duyet": {
+    "_doc": "pd-E §3 — CHỈ 4 hãng này được gắn chữ \"chính hãng\". Tuyên bố pháp lý, ⛔ không phải từ marketing.",
+    "ten": [
+      "straumann",
+      "invisalign",
+      "nacera",
+      "ormco"
+    ]
+  },
+  "bac_si_duyet": {
+    "_doc": "pd-E §4 — CHỈ 3 bác sĩ này được nêu tên. Tên khác → CĐ-P6.",
+    "ten": [
+      "đàm ngọc trâm",
+      "hồ hiệp anh tuấn",
+      "nguyễn ngọc linh"
+    ]
+  },
+  "doi_thu": {
+    "_doc": "pd-E §4 — chỉ dùng nội bộ để ĐẾM (L6.2). ⛔ Không nêu tên để hạ thấp.",
+    "ten": [
+      "elite dental",
+      "thùy anh",
+      "nha khoa kim",
+      "việt pháp",
+      "i-dent",
+      "ident",
+      "lạc việt intech",
+      "parkway"
+    ]
+  },
+  "tinh_co_so": {
+    "_doc": "pd-E §5 — 7 tỉnh/thành có cơ sở. Khách NGOÀI → L2.5; TRONG mà bảo xa → L6.4 (còn cửa).",
+    "co": [
+      "hà nội",
+      "ha noi",
+      "hanoi",
+      "hải phòng",
+      "hai phong",
+      "quảng ninh",
+      "quang ninh",
+      "hạ long",
+      "vinh",
+      "nghệ an",
+      "nghe an",
+      "đà nẵng",
+      "da nang",
+      "tp.hcm",
+      "hcm",
+      "sài gòn",
+      "sai gon",
+      "hồ chí minh",
+      "bình dương",
+      "binh duong"
+    ],
+    "ngoai_hay_gap": [
+      "thanh hóa",
+      "nam định",
+      "thái bình",
+      "hưng yên",
+      "bắc ninh",
+      "bắc giang",
+      "phú thọ",
+      "vĩnh phúc",
+      "hà nam",
+      "ninh bình",
+      "quảng bình",
+      "huế",
+      "quảng nam",
+      "bình định",
+      "nha trang",
+      "khánh hòa",
+      "đắk lắk",
+      "lâm đồng",
+      "cần thơ",
+      "đồng nai",
+      "long an",
+      "tiền giang",
+      "an giang",
+      "kiên giang",
+      "vũng tàu",
+      "tây ninh",
+      "lào cai",
+      "yên bái",
+      "sơn la",
+      "điện biên",
+      "cao bằng",
+      "hà giang",
+      "tuyên quang",
+      "lạng sơn",
+      "thái nguyên"
+    ]
+  },
+  "dau_gia_dinh": {
+    "_doc": "pd-I1 §2 bảng ④ — người quyết định thường KHÔNG phải người nhắn. Tệp LTV cao nhất, hay bị chấm COLD oan.",
+    "tu": [
+      "bố em",
+      "mẹ em",
+      "ba em",
+      "má em",
+      "cho bố",
+      "cho mẹ",
+      "con em",
+      "cho con",
+      "bé nhà em",
+      "vợ em",
+      "chồng em",
+      "cả nhà",
+      "gia đình em",
+      "ông em",
+      "bà em",
+      "cho người nhà",
+      "anh trai em",
+      "chị gái em"
+    ]
+  },
+  "hoi_gia": {
+    "_doc": "Dùng cho TC-9 và cho bảng \"câu hỏi đầu tiên\" của pd-I1 §2.",
+    "tu": [
+      "bao nhiêu tiền",
+      "giá bao nhiêu",
+      "bao nhiêu ạ",
+      "giá thế nào",
+      "chi phí",
+      "hết bao nhiêu",
+      "mất bao nhiêu",
+      "bảng giá",
+      "giá sao",
+      "tầm bao nhiêu"
+    ]
+  },
+  "ne_gia": {
+    "_doc": "pd-E §6 — giá ĐÃ CÔNG KHAI nên né hẳn là LỖI NGƯỜI. Nhưng dòng trụ/dòng sứ chưa cấp → ô \"?\".",
+    "cau_ne": [
+      "để lại số em tư vấn",
+      "cho em xin số em báo giá",
+      "inbox lại",
+      "em tư vấn chi tiết qua điện thoại",
+      "để em gọi báo giá",
+      "giá tùy tình trạng"
+    ],
+    "co_nêu_khung": [
+      "từ",
+      "khoảng",
+      "dao động",
+      "triệu đến",
+      "tr đến",
+      "-",
+      "–"
+    ]
+  },
+  "mien_tc": {
+    "_doc": "pd-Q1 §4 — LỖI HỆ, chấm \"—\" hoặc \"?\", ⛔ KHÔNG trừ điểm người.",
+    "hoi_bao_hanh": [
+      "bảo hành",
+      "bao lâu thì phải làm lại",
+      "dùng được bao lâu",
+      "hỏng thì sao",
+      "bảo hành mấy năm"
+    ],
+    "xin_anh_case": [
+      "cho em xem ảnh",
+      "có hình khách",
+      "ảnh trước sau",
+      "case đã làm",
+      "cho xem kết quả"
+    ],
+    "hoi_benh_nen": [
+      "tiểu đường",
+      "huyết áp",
+      "tim mạch",
+      "loãng xương",
+      "đang uống thuốc",
+      "có bầu",
+      "mang thai",
+      "ung thư",
+      "hiv",
+      "viêm gan",
+      "dị ứng thuốc"
+    ],
+    "hoi_tra_gop": [
+      "trả góp",
+      "lãi suất",
+      "chia nhỏ",
+      "đóng nhiều lần"
+    ]
+  },
+  "gio_lam": {
+    "_doc": "pd-E §5 — 8h30–18h30. Ngoài khung → TC-1 chấm \"—\", đẩy lên việc hệ thống.",
+    "mo": 8.5,
+    "dong": 18.5,
+    "sla_phut": 2
+  },
+  "nguong": {
+    "_doc": "pd-A §7 — ⛔ KHÔNG hạ ngưỡng.",
+    "ky_khong_ket_luan": 10,
+    "ky_mau_nho": 50,
+    "ky_du": 100,
+    "nhom_du": 10,
+    "nv_khong_cham": 5,
+    "nv_phan_loai": 10,
+    "cd0_toi_da_pc": 25
+  },
+  "phan_loai": {
+    "_doc": "pd-Q1 §7 — thang 10 của P8 §6. Chuẩn đạt P8 là ≥8,0.",
+    "A": 9.0,
+    "B": 8.0,
+    "C": 6.5
+  },
+  "mien_tru_co_do": {
+    "_doc": "★ CAU MIEN TRU — neu cum nay xuat hien TRONG CUNG CAU voi cum bat co, thi ⛔ KHONG gan co. Ly do: nhan vien NOI VE viec do de TU CHOI / HOAN / DAN KHACH theo dung quy trinh. Gan co cho nguoi lam dung la loi te nhat ma repo nay co the sinh ra (pd-Q1 §6 rao ③).",
+    "chung": [
+      "xin phép xác nhận lại",
+      "em xác nhận lại",
+      "chưa dám nói",
+      "em không muốn nói",
+      "phải có sự đồng ý",
+      "được phép sử dụng",
+      "đã được duyệt",
+      "em chưa gửi",
+      "không gửi được",
+      "bác sĩ xác định sau",
+      "bác sĩ sẽ xác định",
+      "tuỳ tình trạng",
+      "tùy tình trạng",
+      "tuỳ từng ca",
+      "tùy từng ca",
+      "em chưa nói trước",
+      "phải khám mới",
+      "bác sĩ khám mới",
+      "em xin phép hỏi lại",
+      "chờ bác sĩ",
+      "em không dám"
+    ],
+    "CĐ-P8": [
+      "theo khuyến cáo của hãng",
+      "theo đúng dòng sứ",
+      "chế độ bảo hành ghi trên phiếu"
+    ],
+    "CĐ-P11": [
+      "có giấy đồng ý",
+      "giấy đồng ý của khách",
+      "danh sách ảnh"
+    ],
+    "CĐ-P3": [
+      "tuỳ mức độ",
+      "tùy mức độ",
+      "sau khi chụp phim",
+      "sau khi scan"
+    ],
+    "CĐ-P5": [
+      "khung giá",
+      "bảng giá công khai",
+      "công khai tại bảng giá",
+      "giá tham khảo"
+    ]
+  }
+}

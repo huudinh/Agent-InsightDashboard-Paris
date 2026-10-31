@@ -1,0 +1,8 @@
+du-lieu/
+data/
+out/*
+!out/.gitkeep
+dashboard/data/
+tools/__pycache__/
+*.pyc
+so-tay/
