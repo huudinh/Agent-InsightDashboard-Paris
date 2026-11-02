@@ -208,5 +208,4 @@ python tools/dem-ngan.py   # kiểm bản ngắn còn trong giới hạn
 
 `du-lieu/` · `data/` · `out/` · `dashboard/data/` · `so-tay/` **đã bị `.gitignore` chặn**. ⛔ Không commit dữ liệu khách.
 
-⛔ Không nạp CCCD · hồ sơ bệnh án · ảnh X-quang của khách lên công cụ công cộng.
-"# Agent-InsightDashboard-Paris" 
+⛔ Không nạp CCCD · hồ sơ bệnh án · ảnh X-quang của khách lên công cụ công cộng. 
