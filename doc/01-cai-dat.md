@@ -2,7 +2,7 @@
 
 Ba cách dùng agent này. Chọn một.
 
-> ⚠️ Đây là bản **NHA KHOA** (`nhakhoaparis.vn`). Bản thẩm mỹ là [`Agent-InsightDashboard-Kangnam`](../../Agent-InsightDashboard-Kangnam/). ⛔ **Không nạp lẫn tri thức của hai bản vào cùng một Project** — khác ngành, khác bộ mã (`V-xx`/`L-code`/`S` vs `5A`/`O-01…O-12`), khác luật hiển thị giá, khác giờ làm.
+> ⚠️ Agent này dựng riêng cho **Nha khoa Paris** (`nhakhoaparis.vn`) — một thương hiệu độc lập, có bộ mã và luật riêng. ⛔ **Không nạp lẫn tri thức của repo này với tri thức của một thương hiệu khác vào cùng một Project** — khác bộ mã, khác luật hiển thị giá, khác giờ làm. Trộn vào là hai hệ mã cùng mô tả một thứ và ⛔ không ai biết bảng nào đúng.
 
 ---
 
@@ -63,7 +63,7 @@ du-lieu/
 - **03/11 09:12 KH:** [Thẻ: Inbox từ quảng cáo QC_Implant_Straumann – Trồng răng Implant trụ Straumann, ăn nhai như răng thật]
 ```
 
-> **Đây là thứ `Agent-InsightDashboard-Kangnam` không có.** Ở Kangnam, nối hội thoại ↔ post phải khớp bằng thời gian và đoán. Ở Paris, thẻ nằm ngay trong hội thoại nên nối chính xác 1:1 — và tách ra được **hai** cột: mã post (`post_ads`) và **lời hứa của post** (`loi_hua_post`).
+> **Thẻ nằm ngay trong hội thoại**, nên nối hội thoại ↔ post chính xác **1:1** — ⛔ không phải khớp bằng thời gian rồi đoán. Và tách ra được **hai** cột: mã post (`post_ads`) và **lời hứa của post** (`loi_hua_post`).
 
 ★ `loi_hua_post` là cột đắt nhất của luồng I. Nó cho đọc được câu *"post hứa `nụ cười mới chỉ sau 1 lần hẹn`, và 9/11 khách vào từ post đó hỏi giá ở tin đầu rồi rơi"* — một kết luận về **nội dung**, ⛔ không về người.
 
@@ -100,7 +100,7 @@ python tools/gui-dashboard.py out/bao-cao-insight.json
 | `insight-dashboard-paris/1` | `insight` — 6 tab | Marketing · nội dung · ads |
 | `qc-trucpage-paris/1` | `qc` — 5 tab | ⛔ **Chỉ** trưởng nhóm trực page |
 
-⚠️ **Hai schema ⛔ không tương thích với nhau**, và ⛔ không tương thích với `insight-dashboard-kangnam/1`. Hai thư mục `data/` riêng là **không** đủ — phải **hai file riêng**, vì tường ngăn là tường giữa hai file.
+⚠️ **Hai schema ⛔ không tương thích với nhau**, và ⛔ không tương thích với schema của bất kỳ hệ dashboard nào khác. Hai thư mục `data/` riêng là **không** đủ — phải **hai file riêng**, vì tường ngăn là tường giữa hai file.
 
 ### ⚠️ Trước khi publish — ba câu
 

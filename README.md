@@ -2,7 +2,7 @@
 
 > Đọc hội thoại chat của khách **Nha khoa Paris** (`nhakhoaparis.vn`) được nhập vào, đọc **đúng một lần**, rồi từ cùng một lần đọc sinh ra **hai bộ đầu ra tách rời nhau**: một bộ nói về **khách**, một bộ nói về **người trực page**.
 
-`v1.0` · 31/10/2026 · ngành **nha khoa** · bản thẩm mỹ là [`Agent-InsightDashboard-Kangnam`](../Agent-InsightDashboard-Kangnam/)
+`v1.0` · 31/10/2026 · ngành **nha khoa**
 
 ---
 
@@ -139,7 +139,7 @@ Mọi mã dưới đây **đã tồn tại** trong [`Paris-Agent-Factory`](../Pa
 Chỉ có ở repo này: `CD1…CDn` (chân dung **của kỳ**) · `TC-1…TC-10` (10 tiêu chí, ánh xạ 1:1 với `P8` §6) · `CĐ-P1…CĐ-P11` (cờ đỏ).
 
 ⚠️ ⛔ **Không gọi tiêu chí chấm là `N1…N6`** — `N` đã là nhóm khách.
-⚠️ ⛔ **Không dùng `5A` / `O-01…O-12`** — đó là bộ mã của bản thẩm mỹ Kangnam. **`P8` thắng khi mâu thuẫn.**
+⚠️ ⛔ **Không dùng `5A` / `O-01…O-12`** — ⛔ không phải bộ mã của hệ này. **`P8` thắng khi mâu thuẫn.**
 
 ---
 
@@ -200,7 +200,7 @@ python tools/dem-ngan.py   # kiểm bản ngắn còn trong giới hạn
 | Trả lời khách · thao tác CRM | ⛔ Không agent nào — hệ này chỉ **đọc dữ liệu đã xảy ra** |
 | Báo giá ca cụ thể | ⛔ Bác sĩ, sau khi khám và chụp phim |
 
-⛔ **Không nạp lẫn tri thức repo này với `Agent-InsightDashboard-Kangnam` vào cùng một Project** — khác ngành, khác bộ mã, khác luật hiển thị giá.
+⛔ **Không nạp lẫn tri thức của repo này với tri thức của một thương hiệu khác vào cùng một Project** — khác bộ mã, khác luật hiển thị giá, khác giờ làm.
 
 ---
 

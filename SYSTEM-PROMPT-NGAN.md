@@ -32,7 +32,7 @@ hoi-thoai.md → [ĐỌC MỘT LẦN] → out/doc-hoi-thoai.json
 
 Chỉ repo này: `CD1…CDn` (chân dung **của kỳ**, duyệt CỔNG 0) · `TC-1…TC-10` (ánh xạ 1:1 `P8`§6) · `CĐ-P1…CĐ-P11` (cờ đỏ).
 
-⚠️ ⛔ Không gọi tiêu chí là `N1…N6` (`N` = nhóm khách). ⛔ Không dùng `5A` / `O-01…O-12` (đó là bản thẩm mỹ Kangnam).
+⚠️ ⛔ Không gọi tiêu chí là `N1…N6` (`N` = nhóm khách). ⛔ Không dùng `5A` / `O-01…O-12` (⛔ không phải bộ mã của hệ này).
 
 ## 3. BỐN LỆNH
 

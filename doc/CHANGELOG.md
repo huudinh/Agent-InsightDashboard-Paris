@@ -2,22 +2,22 @@
 
 ## v1.0 — 31/10/2026 · bản đầu
 
-Dựng `Agent-InsightDashboard-Paris` cho **Nha khoa Paris** (`nhakhoaparis.vn`), tham khảo `Agent-InsightDashboard-Kangnam` nhưng **tách riêng hai luồng**.
+Dựng `Agent-InsightDashboard-Paris` cho **Nha khoa Paris** (`nhakhoaparis.vn`) — một thương hiệu độc lập, có bộ mã và luật riêng.
 
-### Khác bản Kangnam ở đâu
+### Mười quyết định thiết kế của bản này
 
-| | Kangnam (thẩm mỹ) | Paris (nha khoa) |
+| | Quyết định | Vì sao |
 |---|---|---|
-| **Luồng** | Một pipeline 8 bước, một bộ đầu ra | ★ **Hai luồng** có tường ngăn, một lần đọc chung |
-| **Lệnh** | `AUTO` chạy suốt | ★ `ĐỌC` → `INSIGHT` / `QC` **độc lập**. ⛔ Không có `AUTO` |
-| **Phễu** | `5A`, dừng ở lịch hẹn | `S1/S2/S3/CS`, ★ dừng ở **đến khám** |
-| **Mã rào cản** | `O-01…O-12` | `L1.1…L6.7` + `SỢ·NGỜ·NGẠI` (tái dùng của `Paris-Agent-Factory`) |
-| **Trục giá trị** | ⛔ không có | ★ **`V1/V2/V3`** — dải giá nha khoa rộng gấp nhiều lần |
-| **Tiêu chí chấm** | `N1…N6`, thang 100 | `TC-1…TC-10`, thang 10 (`P8` §6 thắng) |
-| **Cờ đỏ** | `CĐ-1…CĐ-6` | `CĐ-P1…CĐ-P11` — thêm 4 cờ riêng ngành nha |
-| **Giờ làm** | 8h30–22h | **8h30–18h30** |
-| **Giá** | nhiều dịch vụ chưa cấp giá | ★ **công khai** → né giá là **lỗi người** |
-| **Cổng** | 3 cổng | **4 cổng** — thêm **CỔNG T** kiểm tường ngăn bằng máy |
+| ① | ★ **Hai luồng** có tường ngăn, **một lần đọc** chung | Cùng một bằng chứng, hai luồng đọc ra hai nghĩa trái nhau. Gộp lại thì lỗi nội dung và lỗi hệ thống bị ghi thành lỗi nhân viên |
+| ② | `ĐỌC` → `INSIGHT` / `QC` **độc lập**. ⛔ ⛔ Không có `AUTO` | Một file thì tường ngăn ⛔ không tồn tại. Và luồng Q ⛔ không phải chờ một cái duyệt ⛔ không liên quan đến nó |
+| ③ | Phễu `S1/S2/S3/CS`, ★ dừng ở **đến khám** | Quyết định tiền thật xảy ra **trên ghế khám**, ⛔ không trong inbox. Chỉ số trực page dừng ở show-up |
+| ④ | Rào cản `L1.1…L6.7` + `SỢ·NGỜ·NGẠI` | Tái dùng nguyên văn của `Paris-Agent-Factory` — ⛔ không đặt mã trùng nghĩa |
+| ⑤ | ★ Thêm **trục giá trị `V1/V2/V3`** | Dải giá nha khoa rộng gấp nhiều lần: một ca All-On và một ca cạo vôi ⛔ không thể cùng mức ưu tiên dù cả hai đều `HOT` |
+| ⑥ | Tiêu chí `TC-1…TC-10`, **thang 10** | `P8` §6 là thước đo của cả hệ báo cáo Paris — **`P8` thắng** khi mâu thuẫn |
+| ⑦ | **11 cờ đỏ** `CĐ-P1…CĐ-P11`, 4 cờ riêng ngành nha | *"Chính hãng"* là tuyên bố pháp lý; hứa thời gian điều trị cứng; chẩn đoán qua ảnh; chốt giá ca |
+| ⑧ | Giờ làm **8h30–18h30** | Giờ thật của Paris (`pd-E` §5) — ngoài khung thì `TC-1` chấm `—`, ⛔ không trừ ai |
+| ⑨ | Giá **đã công khai** → né giá là **lỗi người** | Bảng giá niêm yết tại `/hoan-my-bang-gia-dich-vu-nha-khoa.html`, khách tra được trước khi nhắn |
+| ⑩ | **Bốn cổng** — thêm **CỔNG T** kiểm tường ngăn **bằng máy** | Chạy tay thì ⛔ sẽ có kỳ quên. Lọt tên nhân viên vào báo cáo insight là lỗi ⛔ không gỡ được sau khi đã gửi đi |
 
 ### Bộ mã — tái dùng, ⛔ không đặt mới
 

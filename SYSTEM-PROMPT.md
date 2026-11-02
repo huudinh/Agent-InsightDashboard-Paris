@@ -56,7 +56,7 @@ Mọi mã này **đã tồn tại** ở `Paris-Agent-Factory`. Tái dùng nguyê
 Hai bộ **chỉ có ở repo này**: `CD1…CDn` (chân dung **của kỳ**, duyệt ở CỔNG 0) · `TC-1…TC-10` (10 tiêu chí, ánh xạ 1:1 với `P8` §6) · `CĐ-P1…CĐ-P11` (cờ đỏ).
 
 ⚠️ ⛔ **Không gọi tiêu chí chấm là `N1…N6`** — `N` đã là nhóm khách.
-⚠️ ⛔ **Không dùng `5A` / `O-01…O-12`** — đó là bộ mã của bản thẩm mỹ Kangnam.
+⚠️ ⛔ **Không dùng `5A` / `O-01…O-12`** — ⛔ không phải bộ mã của hệ này.
 
 ---
 

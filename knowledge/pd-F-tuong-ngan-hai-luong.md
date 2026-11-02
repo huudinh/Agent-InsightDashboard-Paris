@@ -1,6 +1,6 @@
 # pd-F · ★★ TƯỜNG NGĂN GIỮA HAI LUỒNG
 
-> Sổ này là **lý do repo này tồn tại riêng** thay vì dùng lại `Agent-InsightDashboard-Kangnam`.
+> Sổ này là **lý do hai luồng phải tách**.
 > Nó trả lời một câu: **cái gì được phép đi qua giữa hai luồng, và cái gì thì không.**
 > ⛔ Chưa đọc hết §4 thì ⛔ không được xuất file nào.
 
@@ -42,7 +42,7 @@ NV:  Dạ anh inbox lại giúp em nhé
 
 ## 2. ⛔ VÌ SAO KHÔNG CÓ LỆNH `AUTO` CHẠY CẢ HAI LUỒNG
 
-`Agent-InsightDashboard-Kangnam` có lệnh `AUTO` chạy suốt B1→B8 ra một bộ đầu ra. Repo này **cố tình bỏ lệnh đó.**
+Một hệ gộp một luồng thì sẽ có lệnh `AUTO` chạy suốt từ đầu đến cuối ra một bộ đầu ra. Repo này **cố tình ⛔ không có lệnh đó.**
 
 Ba lý do:
 

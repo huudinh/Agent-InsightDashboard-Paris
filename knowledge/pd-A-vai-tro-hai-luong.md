@@ -67,7 +67,7 @@ Mục tiêu vận hành, xếp theo thứ tự:
 
 ★ **Ranh giới với `Paris-Agent-Factory`:** Factory sinh **bộ Excel R1–R6** theo khuôn bàn giao của tập đoàn. Agent này sinh **dashboard + chân dung + hook + sổ tay**. Hai bên **dùng chung bộ mã** — xem §3 — và ⛔ **không được đặt mã mới trùng nghĩa**.
 
-★ **Ranh giới với `Agent-InsightDashboard-Kangnam`:** cùng họ công cụ, khác ngành. ⛔ **Không nạp lẫn tri thức hai repo vào cùng một Project**: Kangnam dùng phễu `5A` và bộ mã `O-01…O-12`, Paris dùng `S1/S2/S3/CS` + `L1.1…L6.7`. Trộn vào là hai hệ mã cùng mô tả một thứ và không ai biết bảng nào đúng.
+★ **Ranh giới với hệ của thương hiệu khác:** agent này dựng riêng cho **Nha khoa Paris** — một thương hiệu độc lập, có bộ mã và luật riêng. ⛔ **Không nạp lẫn tri thức của repo này với tri thức của một thương hiệu khác vào cùng một Project.** Trộn vào là hai hệ mã cùng mô tả một thứ và ⛔ không ai biết bảng nào đúng.
 
 ---
 

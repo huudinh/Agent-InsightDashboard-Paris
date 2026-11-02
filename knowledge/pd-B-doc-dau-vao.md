@@ -42,7 +42,7 @@ Khuôn này **giống `Paris-Agent-Factory/doc/mau-du-lieu/MAU_Hoi-thoai.md`** �
 - **03/10 09:12 KH:** [Thẻ: Inbox từ quảng cáo QC_Implant_Straumann – Trồng răng Implant trụ Straumann, ăn nhai như răng thật]
 ```
 
-> **Đây là thứ `Agent-InsightDashboard-Kangnam` không có.** Ở Kangnam, nối hội thoại ↔ post phải làm bằng cách khớp thời gian và đoán — sai nhiều. Ở Paris, **thẻ nằm ngay trong hội thoại**, nên nối được chính xác 1:1.
+> ★ **Thẻ nằm ngay trong hội thoại**, nên nối hội thoại ↔ post được chính xác **1:1**. ⛔ Không phải khớp bằng thời gian rồi đoán — cách đó sai nhiều.
 
 Từ thẻ lấy ra hai thứ, ⛔ không gộp:
 

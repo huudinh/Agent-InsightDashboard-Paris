@@ -62,7 +62,7 @@ CHỈ được gắn chữ "chính hãng" cho BỐN hãng:
 
 → Khi chấm: gắn *"chính hãng"* cho vật liệu ngoài 4 hãng = **lỗi pháp lý**, cờ **`CĐ-P2`**, và `TC-9` trượt → **toàn hội thoại 0 điểm**.
 
-★ Đây là điểm dễ sai nhất của ngành nha khoa, và là điểm khác biệt lớn nhất so với bản thẩm mỹ.
+★ Đây là điểm dễ sai nhất của ngành nha khoa.
 
 ---
 
@@ -182,7 +182,7 @@ Mọi con số giá · % ưu đãi · điều kiện trả góp · lãi suất *
 
 - [ ] Tên bác sĩ trong hội thoại đã đối chiếu **3 bác sĩ** §4 chưa?
 - [ ] *"Chính hãng"* đã kiểm có thuộc **4 hãng** §3 chưa?
-- [ ] `TC-1` dùng khung **8h30–18h30** chưa (⛔ không phải 8h30–22h của bản thẩm mỹ)?
+- [ ] `TC-1` dùng khung **8h30–18h30** chưa — đúng giờ làm của Paris ở §5?
 - [ ] `L2.5` vs `L6.4` đã phân biệt bằng **7 tỉnh/thành** §5 chưa?
 - [ ] Né giá: đã chấm là **lỗi người** chưa (giá công khai), hay vẫn chấm `—`?
 - [ ] Con số giá trích từ hội thoại có ghi rõ *"nhân viên đã nói"* + ⚠️ chưa?

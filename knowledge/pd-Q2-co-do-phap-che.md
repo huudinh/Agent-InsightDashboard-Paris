@@ -37,7 +37,7 @@
 | **`CĐ-P10`** | **Lộ thông tin khách khác** | Nhắc tên/số/ca của người khác để làm ví dụ | Vi phạm riêng tư, mất niềm tin cả page |
 | **`CĐ-P11`** | **Gửi ảnh before–after chưa có giấy đồng ý** | Gửi ảnh case mà ⛔ không rõ đã duyệt chưa · ảnh lấy từ nguồn khác | `pd-E` §5: **danh sách case có giấy đồng ý là `⚠ chờ cấp`** → hiện ⛔ không có ảnh nào chắc chắn được phép |
 
-★ **Bốn cờ có dấu ★ là cờ riêng của ngành nha** — `Agent-InsightDashboard-Kangnam` ⛔ không có. `CĐ-P2` và `CĐ-P3` là hai cờ đặc trưng nhất: một cái về **vật liệu khách ⛔ không tự kiểm được**, một cái về **thời gian điều trị dài**.
+★ **Bốn cờ có dấu ★ là cờ riêng của ngành nha khoa.** `CĐ-P2` và `CĐ-P3` là hai cờ đặc trưng nhất: một cái về **vật liệu khách ⛔ không tự kiểm được**, một cái về **thời gian điều trị dài**.
 
 ---
 

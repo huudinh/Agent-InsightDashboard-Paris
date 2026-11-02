@@ -11,7 +11,7 @@
 | `insight-dashboard-paris/1` | `dashboard/data/insight-<ky>.json` | `insight` | Marketing · nội dung · ads |
 | `qc-trucpage-paris/1` | `dashboard/data/qc-<ky>.json` | `qc` | ⛔ **Chỉ** trưởng nhóm trực page |
 
-⛔ **Hai schema ⛔ không tương thích với nhau, và ⛔ không tương thích với `insight-dashboard-kangnam/1` hay `insight-dashboard-knqt/1`.** Hai thư mục `data/` riêng là **không** đủ — phải hai **file** riêng, vì tường ngăn là tường giữa hai file.
+⛔ **Hai schema ⛔ không tương thích với nhau, và ⛔ không tương thích với schema của bất kỳ hệ dashboard nào khác.** Hai thư mục `data/` riêng là **không** đủ — phải hai **file** riêng, vì tường ngăn là tường giữa hai file.
 
 ⚠️ Trang `dashboard/index.html` **⛔ không bao giờ sửa**. Mỗi kỳ chỉ sinh thêm file JSON; trang tự đọc `bo_cuc` trong file rồi dựng đúng bộ tab.
 
