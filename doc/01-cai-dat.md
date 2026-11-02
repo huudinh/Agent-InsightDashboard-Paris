@@ -1,5 +1,8 @@
 # 01 · Cài đặt
 
+📘 **Bản có nút Copy từng prompt:** <https://claude.ai/artifact/B1qQBgUixjBjVwiiDwDTQJ>
+*(9 mục · 6 prompt dán nguyên văn · 8 câu kiểm sau khi cài — dễ dùng hơn file này)*
+
 Ba cách dùng agent này. Chọn một.
 
 > ⚠️ Agent này dựng riêng cho **Nha khoa Paris** (`nhakhoaparis.vn`) — một thương hiệu độc lập, có bộ mã và luật riêng. ⛔ **Không nạp lẫn tri thức của repo này với tri thức của một thương hiệu khác vào cùng một Project** — khác bộ mã, khác luật hiển thị giá, khác giờ làm. Trộn vào là hai hệ mã cùng mô tả một thứ và ⛔ không ai biết bảng nào đúng.
@@ -21,7 +24,7 @@ Ba cách dùng agent này. Chọn một.
 
 ## B · ChatGPT Custom GPT
 
-Ô **Instructions** giới hạn 8.000 ký tự → dán [`SYSTEM-PROMPT-NGAN.md`](../SYSTEM-PROMPT-NGAN.md) *(7.058 ký tự)*. Phần còn lại nạp vào **Knowledge** như cách A.
+Ô **Instructions** giới hạn 8.000 ký tự → dán [`SYSTEM-PROMPT-NGAN.md`](../SYSTEM-PROMPT-NGAN.md) *(7.062 ký tự)*. Phần còn lại nạp vào **Knowledge** như cách A.
 
 Sau mỗi lần sửa bản ngắn, chạy:
 

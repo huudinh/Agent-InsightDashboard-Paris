@@ -4,6 +4,10 @@
 
 `v1.0` · 31/10/2026 · ngành **nha khoa**
 
+### 📘 [**Hướng dẫn cài đặt & prompt mẫu →**](https://claude.ai/artifact/B1qQBgUixjBjVwiiDwDTQJ)
+*(9 mục · 3 tab nền tảng · 6 prompt dán nguyên văn · 19 nút Copy — dễ dùng hơn đọc repo)*
+> ⚠️ Artifact đang **riêng tư**. Người khác chỉ mở được sau khi anh chia sẻ qua menu Share trên trang.
+
 ---
 
 ## ★ Hai luồng và tường ngăn
@@ -176,12 +180,14 @@ Chỉ có ở repo này: `CD1…CDn` (chân dung **của kỳ**) · `TC-1…TC-1
 
 ## Cài đặt
 
-Xem [`doc/01-cai-dat.md`](doc/01-cai-dat.md). Ba cách: Claude Project · ChatGPT Custom GPT · Gemini Gem.
+📘 **Bản có nút Copy từng prompt:** <https://claude.ai/artifact/B1qQBgUixjBjVwiiDwDTQJ>
+
+Hoặc xem [`doc/01-cai-dat.md`](doc/01-cai-dat.md). Ba cách: Claude Project · ChatGPT Custom GPT · Gemini Gem.
 
 | Thẻ bộ não | Ký tự | Dùng cho |
 |---|---|---|
-| [`SYSTEM-PROMPT.md`](SYSTEM-PROMPT.md) | 9.076 | Claude Project · Gemini Gem |
-| [`SYSTEM-PROMPT-NGAN.md`](SYSTEM-PROMPT-NGAN.md) | 7.058 | ChatGPT (ô Instructions giới hạn 8.000) |
+| [`SYSTEM-PROMPT.md`](SYSTEM-PROMPT.md) | 9.070 | Claude Project · Gemini Gem |
+| [`SYSTEM-PROMPT-NGAN.md`](SYSTEM-PROMPT-NGAN.md) | 7.062 | ChatGPT (ô Instructions giới hạn 8.000) |
 
 ```bash
 python tools/dem-ngan.py   # kiểm bản ngắn còn trong giới hạn

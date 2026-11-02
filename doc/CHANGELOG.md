@@ -94,3 +94,11 @@ Hai nguyên nhân: bộ từ khoá quá hẹp, **và** đọc sai tiêu chí. `P
 - `so-tay/` chưa có bộ sinh tự động (`ST-CN` · `ST-TN` · `ST-HT` hiện viết tay theo `prompts/prompt-so-tay.md`).
 - Chưa có `goi/GOP-tri-thuc.md` (bản gộp cho nền tảng giới hạn số file).
 - Phễu `ket_noi` · `dat_lich` · `den_kham` = `null` — ⛔ **chưa đo được show-up**, và ⛔ không lấy *"đặt lịch"* thay.
+
+---
+
+## v1.0.1 — 02/11/2026
+
+- **Bỏ mọi định vị chéo thương hiệu.** Nha khoa Paris là thương hiệu độc lập — repo ⛔ không còn trình bày nó như "bản nha khoa" của công cụ một thương hiệu khác. Sửa 15 chỗ trong 11 file; cảnh báo kỹ thuật (⛔ không nạp lẫn tri thức hai thương hiệu, ⛔ không dùng `5A`/`O-01…O-12`, schema ⛔ không tương thích) **giữ nguyên giá trị**, chỉ viết lại ở mức chung. Đối chiếu ở mức **ngành** (phễu nha khoa có thêm bước đến khám; dải giá rộng hơn) thì giữ — đó là tri thức của chính Paris trong `P3` §3 và `P4` §3.
+- **Thêm trang hướng dẫn cài đặt & prompt mẫu:** <https://claude.ai/artifact/B1qQBgUixjBjVwiiDwDTQJ> — 9 mục, 3 tab nền tảng, 6 prompt dán nguyên văn, 19 nút Copy. Hai luồng được **mã màu** (xanh = luồng I, vàng = luồng Q) chạy suốt trang để tường ngăn đọc được bằng mắt. ⚠️ Artifact đang **riêng tư**.
+- **Sửa số ký tự đã lệch** trong `README.md` và `doc/01-cai-dat.md` sau lần sửa trên: `SYSTEM-PROMPT.md` 9.076 → **9.070**, bản ngắn 7.058 → **7.062** (vẫn trong giới hạn 8.000 của ChatGPT).
