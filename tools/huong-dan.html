@@ -1,0 +1,1164 @@
+<title>Insight Dashboard Paris</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&display=swap">
+<style>
+:root{
+  --ground:#dce3ee; --card:#ffffff;
+  --ink:#131a2e; --ink-2:#3c4563; --muted:#6b7391;
+  --blue:#2a52be; --blue-dark:#152f73; --blue-deep:#06101f; --blue-wash:#eaf0fc;
+  --gold:#8a6f22; --gold-wash:#f8f1d8;
+  --red-dark:#c11b26; --red-wash:#fdeaeb;
+  --ok:#2f6b46; --ok-wash:#e4f1e9;
+  --line:#d7e2fa; --line-soft:#e4e1d8;
+  --band:#06101f; --band-2:#040a16; --band-ink:#eaf0fc; --band-accent:#8fb0f5;
+  --on-blue:#ffffff; --on-red:#ffffff;
+  --radius:10px;
+  --disp:"Bricolage Grotesque","Be Vietnam Pro",system-ui,sans-serif;
+  --body:"Be Vietnam Pro",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#070c1c; --card:#0e1527;
+    --ink:#eef2fb; --ink-2:#c6cfe6; --muted:#8e9ab8;
+    --blue:#8fb0f5; --blue-dark:#b3c8f9; --blue-deep:#0c1d4d; --blue-wash:#1c2a4e;
+    --gold:#ddc072; --gold-wash:#2e2715;
+    --red-dark:#f9adb1; --red-wash:#3a1b21;
+    --ok:#8fd0a9; --ok-wash:#17301f;
+    --line:#2c3a62; --line-soft:#243150;
+    --band:#0c1d4d; --band-2:#040a16;
+    --on-blue:#07102a; --on-red:#2a0a0e;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#070c1c; --card:#0e1527;
+  --ink:#eef2fb; --ink-2:#c6cfe6; --muted:#8e9ab8;
+  --blue:#8fb0f5; --blue-dark:#b3c8f9; --blue-deep:#0c1d4d; --blue-wash:#1c2a4e;
+  --gold:#ddc072; --gold-wash:#2e2715;
+  --red-dark:#f9adb1; --red-wash:#3a1b21;
+  --ok:#8fd0a9; --ok-wash:#17301f;
+  --line:#2c3a62; --line-soft:#243150;
+  --band:#0c1d4d; --band-2:#040a16;
+  --on-blue:#07102a; --on-red:#2a0a0e;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);
+  font-size:15px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding-inline:16px;padding-block:0 80px}
+
+/* ── Băng tiêu đề ─────────────────────────────── */
+.band{background:var(--band);color:var(--band-ink);margin-inline:-16px;padding:34px 16px 30px;
+  border-bottom:3px solid var(--blue)}
+.band .inner{max-width:1000px;margin:0 auto}
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--band-accent);margin:0 0 10px}
+h1{font-family:var(--disp);font-size:clamp(26px,5.4vw,40px);line-height:1.1;margin:0 0 12px;
+  font-weight:800;letter-spacing:-.02em;text-wrap:balance}
+.band p{margin:0;max-width:62ch;color:#c3d1ee;font-size:15.5px}
+.band .meta{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.band .meta span{font-family:var(--mono);font-size:11.5px;padding:4px 9px;border-radius:5px;
+  background:rgba(143,176,245,.14);color:var(--band-accent);border:1px solid rgba(143,176,245,.26)}
+
+/* ── Điều hướng ───────────────────────────────── */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--ground);
+  border-bottom:1px solid var(--line);margin-inline:-16px;padding:0 16px}
+nav .inner{max-width:1000px;margin:0 auto;display:flex;gap:2px;overflow-x:auto;
+  scrollbar-width:none}
+nav .inner::-webkit-scrollbar{display:none}
+nav a{flex:0 0 auto;padding:12px 11px;font-size:13.5px;font-weight:600;color:var(--muted);
+  text-decoration:none;border-bottom:2px solid transparent;white-space:nowrap}
+nav a:hover{color:var(--ink)}
+nav a.on{color:var(--blue);border-bottom-color:var(--blue)}
+
+/* ── Mục ──────────────────────────────────────── */
+section{padding-top:38px;scroll-margin-top:72px}
+h2{font-family:var(--disp);font-size:clamp(20px,3.4vw,27px);line-height:1.18;margin:0 0 6px;
+  font-weight:700;letter-spacing:-.015em;text-wrap:balance}
+h2 .num{font-family:var(--mono);font-size:.56em;color:var(--blue);font-weight:600;
+  margin-right:9px;vertical-align:.18em}
+.lede{color:var(--ink-2);margin:0 0 20px;max-width:66ch}
+h3{font-family:var(--disp);font-size:17px;font-weight:700;margin:26px 0 9px;letter-spacing:-.01em}
+p{margin:0 0 13px}
+.wrap a{color:var(--blue-dark);text-decoration-thickness:1px;text-underline-offset:2px}
+
+/* ── Hộp ──────────────────────────────────────── */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px 20px;margin-bottom:14px}
+.callout{border-radius:var(--radius);padding:14px 17px;margin:14px 0;font-size:14.5px;
+  border-left:4px solid}
+.callout p:last-child{margin-bottom:0}
+.callout.stop{background:var(--red-wash);border-left-color:var(--red-dark);color:var(--ink)}
+.callout.warn{background:var(--gold-wash);border-left-color:var(--gold);color:var(--ink)}
+.callout.ok{background:var(--ok-wash);border-left-color:var(--ok);color:var(--ink)}
+.callout.info{background:var(--blue-wash);border-left-color:var(--blue);color:var(--ink)}
+.callout b{font-weight:700}
+
+/* ── Hai luồng ────────────────────────────────── */
+.luong-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);
+  border-radius:var(--radius);overflow:hidden;background:var(--card);margin:18px 0}
+.luong{padding:18px 18px 20px}
+.luong.i{border-right:3px dashed var(--line)}
+.luong .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  font-weight:700;padding:4px 8px;border-radius:5px;display:inline-block;margin-bottom:10px}
+.luong.i .tag{background:var(--blue);color:var(--on-blue)}
+.luong.q .tag{background:var(--gold);color:var(--on-blue)}
+.luong h4{font-family:var(--disp);font-size:16px;margin:0 0 4px;font-weight:700}
+.luong .who{font-size:13px;color:var(--muted);margin:0 0 12px}
+.luong ul{margin:0;padding-left:19px;font-size:14px}
+.luong li{margin-bottom:4px}
+.wall{text-align:center;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--red-dark);font-weight:700;padding:11px 16px;
+  background:var(--red-wash);border-top:1px solid var(--line);grid-column:1/-1}
+@media (max-width:620px){
+  .luong-grid{grid-template-columns:1fr}
+  .luong.i{border-right:0;border-bottom:3px dashed var(--line)}
+}
+
+/* ── Tab ──────────────────────────────────────── */
+.tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:-1px}
+.tabs button{font:inherit;font-size:13.5px;font-weight:600;padding:9px 14px;cursor:pointer;
+  background:transparent;color:var(--muted);border:1px solid transparent;
+  border-radius:8px 8px 0 0}
+.tabs button:hover{color:var(--ink)}
+.tabs button[aria-selected="true"]{background:var(--card);color:var(--blue);
+  border-color:var(--line);border-bottom-color:var(--card)}
+.panels{background:var(--card);border:1px solid var(--line);border-radius:0 var(--radius) var(--radius);
+  padding:18px 20px}
+.panels>div{display:none}
+.panels>div.on{display:block}
+.panels>div>:first-child{margin-top:0}
+
+/* ── Khối mã + nút Copy ───────────────────────── */
+.code{margin:12px 0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  background:var(--band-2)}
+.code .bar{display:flex;align-items:center;gap:10px;padding:8px 10px 8px 13px;
+  background:var(--blue-deep);border-bottom:1px solid rgba(143,176,245,.18)}
+.code .name{font-family:var(--mono);font-size:12px;color:var(--band-accent);font-weight:600;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.code .note{font-family:var(--mono);font-size:11px;color:#7f8db0;margin-left:auto;
+  white-space:nowrap}
+.code button{font:inherit;font-family:var(--mono);font-size:11.5px;font-weight:600;
+  padding:5px 11px;border-radius:6px;cursor:pointer;flex:0 0 auto;
+  background:var(--blue);color:var(--on-blue);border:0}
+.code button:hover{filter:brightness(1.1)}
+.code button.done{background:var(--ok);color:#06220f}
+.code pre{margin:0;padding:14px 15px;overflow-x:auto;font-family:var(--mono);
+  font-size:12.5px;line-height:1.62;color:#dce6fb;white-space:pre}
+@media (max-width:620px){
+  .code .note{display:none}
+  .code pre{font-size:11.5px}
+}
+
+/* ── Bảng ─────────────────────────────────────── */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);margin:14px 0;
+  background:var(--card)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:10px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--blue-wash);font-weight:700;font-size:12.5px;letter-spacing:.02em;
+  white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td code,th code,p code,li code{font-family:var(--mono);font-size:12.5px;
+  background:var(--blue-wash);padding:1px 5px;border-radius:4px}
+.chip{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:700;
+  padding:2px 7px;border-radius:5px;white-space:nowrap}
+.chip.i{background:var(--blue);color:var(--on-blue)}
+.chip.q{background:var(--gold);color:var(--on-blue)}
+.chip.stop{background:var(--red-dark);color:var(--on-red)}
+.chip.ok{background:var(--ok);color:#06220f}
+.chip.wait{background:var(--gold-wash);color:var(--gold);border:1px solid var(--gold)}
+
+/* ── Danh sách file ───────────────────────────── */
+.files{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:9px;margin:14px 0}
+.file{border:1px solid var(--line);border-radius:8px;padding:10px 12px;background:var(--card)}
+.file .fn{font-family:var(--mono);font-size:12.5px;font-weight:700;color:var(--blue-dark)}
+.file .fd{font-size:12.5px;color:var(--muted);margin-top:2px;line-height:1.45}
+.file.star{border-color:var(--blue);box-shadow:inset 3px 0 0 var(--blue)}
+
+ul.tight{margin:0 0 13px;padding-left:20px}
+ul.tight li{margin-bottom:5px}
+.steps{counter-reset:s;list-style:none;margin:0 0 13px;padding:0}
+.steps li{counter-increment:s;position:relative;padding-left:32px;margin-bottom:11px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:1px;width:22px;height:22px;
+  border-radius:50%;background:var(--blue);color:var(--on-blue);font-family:var(--mono);
+  font-size:12px;font-weight:700;display:grid;place-items:center}
+footer{margin-top:46px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;
+  color:var(--muted)}
+:focus-visible{outline:2.5px solid var(--blue);outline-offset:2px;border-radius:4px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="band">
+  <div class="inner">
+    <p class="eyebrow">Nha khoa Paris · nhakhoaparis.vn</p>
+    <h1>Insight Dashboard Paris</h1>
+    <p>Đọc hội thoại chat của khách được nhập vào, đọc <b>đúng một lần</b>, rồi từ cùng một lần đọc sinh ra <b>hai bộ đầu ra tách rời nhau</b>: một bộ nói về <b>khách</b>, một bộ nói về <b>người trực page</b>.</p>
+    <div class="meta">
+      <span>v1.1</span><span>12 sổ tri thức</span><span>5 prompt</span>
+      <span>4 lệnh</span><span>4 cổng chặn</span><span>10 câu kiểm</span>
+      <span>an toàn trước bán hàng</span><span>dữ liệu sức khoẻ</span>
+    </div>
+  </div>
+</div>
+
+<nav>
+  <div class="inner">
+    <a href="#ai" class="on">Bạn là ai</a>
+    <a href="#hailuong">Hai luồng</a>
+    <a href="#caidat">Cài đặt</a>
+    <a href="#dulieu">Dữ liệu</a>
+    <a href="#lenh">Bốn lệnh</a>
+    <a href="#prompt">Prompt mẫu</a>
+    <a href="#cong">Bốn cổng</a>
+    <a href="#kiem">8 câu kiểm</a>
+    <a href="#slot">Slot chờ</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- ═══════════════ 1 ═══════════════ -->
+<section id="ai">
+  <h2><span class="num">01</span>Bạn là ai</h2>
+  <p class="lede">Trang này có ba người đọc, và mỗi người chỉ cần một phần.</p>
+
+  <div class="tbl"><table>
+    <thead><tr><th>Bạn là</th><th>Bạn cần đọc</th><th>Bạn nhận được gì</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><b>Người cài agent</b></td>
+        <td>Mục <a href="#caidat">02 Cài đặt</a> → <a href="#dulieu">03 Dữ liệu</a> → <a href="#kiem">08 Kiểm</a></td>
+        <td>Agent chạy được trong Claude Project, ChatGPT hoặc Gemini</td>
+      </tr>
+      <tr>
+        <td><b>Marketing · nội dung · ads</b></td>
+        <td>Lệnh <code>INSIGHT</code> ở mục <a href="#lenh">04</a></td>
+        <td><span class="chip i">LUỒNG I</span> chân dung khách · rào cản · ngân hàng hook · số ads</td>
+      </tr>
+      <tr>
+        <td><b>Trưởng nhóm trực page</b></td>
+        <td>Lệnh <code>QC</code> ở mục <a href="#lenh">04</a></td>
+        <td><span class="chip q">LUỒNG Q</span> điểm 10 tiêu chí · cờ đỏ pháp chế · sổ tay từng người</td>
+      </tr>
+    </tbody>
+  </table></div>
+
+  <div class="callout stop">
+    <p><b>⛔ Hai luồng ⛔ không gửi lẫn cho nhau.</b> Báo cáo insight ⛔ <b>không bao giờ</b> chứa tên nhân viên; báo cáo QC ⛔ không chứa chân dung hay hook. Lý do ở mục <a href="#hailuong">01b</a> — và đó là lý do repo này tồn tại.</p>
+  </div>
+
+  <h3>⛔ Agent này không phải ai</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Việc</th><th>Của ai</th></tr></thead>
+    <tbody>
+      <tr><td>Chấm chất lượng <b>cuộc gọi</b> (có audio, ngữ điệu)</td><td><code>Agent-QC-Telesale</code></td></tr>
+      <tr><td>Tối ưu <b>từ khoá &amp; landing page</b> Google Ads</td><td><code>Agent-AdsOptimize-NhaKhoaParis</code></td></tr>
+      <tr><td>Sinh bộ <b>Excel R1–R6</b> theo khuôn bàn giao</td><td><code>Paris-Agent-Factory</code></td></tr>
+      <tr><td>Trả lời khách · thao tác CRM</td><td>⛔ Không agent nào — hệ này chỉ <b>đọc dữ liệu đã xảy ra</b></td></tr>
+      <tr><td>Báo giá ca cụ thể</td><td>⛔ Bác sĩ, sau khi khám và chụp phim</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- ═══════════════ 2 ═══════════════ -->
+<section id="hailuong">
+  <h2><span class="num">01b</span>Hai luồng và tường ngăn</h2>
+  <p class="lede">Tách luồng ⛔ không phải để chia tab cho dễ xem. Nó giải quyết một chuyện cụ thể: <b>cùng một bằng chứng, hai luồng đọc ra hai nghĩa trái nhau.</b></p>
+
+  <div class="luong-grid">
+    <div class="luong i">
+      <span class="tag">Luồng I · Insight khách</span>
+      <h4>Chủ thể: KHÁCH</h4>
+      <p class="who">→ Marketing · nội dung · ads</p>
+      <ul>
+        <li>Chân dung của kỳ <code>CD1…CDn</code></li>
+        <li>Rào cản <code>SỢ · NGỜ · NGẠI</code></li>
+        <li>Câu hỏi ngầm sau câu khách gõ</li>
+        <li>Ma trận ưu tiên · ngân hàng hook</li>
+        <li>Số ads · phễu đến khám</li>
+      </ul>
+    </div>
+    <div class="luong q">
+      <span class="tag">Luồng Q · QC trực page</span>
+      <h4>Chủ thể: NHÂN VIÊN CÓ TÊN</h4>
+      <p class="who">→ Trưởng nhóm trực page</p>
+      <ul>
+        <li>10 tiêu chí <code>TC-1…TC-10</code></li>
+        <li>Điểm thang 10 · xếp loại A/B/C/D</li>
+        <li>11 cờ đỏ <code>CĐ-P1…CĐ-P11</code></li>
+        <li>Sổ tay riêng từng người</li>
+        <li>Việc hệ thống · ô chờ đối chiếu</li>
+      </ul>
+    </div>
+    <div class="wall">⛔ Tường ngăn · không file nào chứa cả tên nhân viên lẫn lời khách</div>
+  </div>
+
+  <h3>Ví dụ thật — hội thoại <code>HT-002</code></h3>
+  <div class="code">
+    <div class="bar"><span class="name">HT-002 · V-05 bọc sứ</span><span class="note">4 lượt</span></div>
+    <pre>KH:  bọc sứ bao nhiêu tiền
+NV:  Dạ chào anh, anh để lại số điện thoại em tư vấn chi tiết ạ
+KH:  cứ nói giá đi đã
+NV:  Dạ anh inbox lại giúp em nhé</pre>
+  </div>
+
+  <div class="tbl"><table>
+    <thead><tr><th>Luồng</th><th>Đọc ra</th><th>Việc phải làm</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="chip i">I</span></td>
+        <td>Khách vào từ post <i>"nụ cười mới chỉ sau 1 lần hẹn"</i> rồi hỏi giá ngay → <b>post hứa nhanh mà trang đích ⛔ không có giá</b>. Đây là phát hiện về <b>nội dung</b>.</td>
+        <td>Sửa post · thêm khung giá</td>
+      </tr>
+      <tr>
+        <td><span class="chip q">Q</span></td>
+        <td>Xin số trước khi hỏi tình trạng → trượt <code>TC-5</code>. Né giá hai lượt → <code>TC-9</code>? <b>Chưa chắc</b> — phải tra xem bảng giá đã cấp cho dòng sứ đó chưa.</td>
+        <td>Đã có giá → <b>lỗi người</b>, vào sổ tay. Chưa cấp → ⛔ <b>lỗi hệ, không trừ điểm</b></td>
+      </tr>
+    </tbody>
+  </table></div>
+
+  <div class="callout stop">
+    <p><b>⚠️ Gộp hai luồng là ép người đọc chọn một trong hai nghĩa.</b> Và trong thực tế họ luôn chọn nghĩa của luồng Q — vì nó có tên người, nghe cụ thể hơn. Kết quả: lỗi nội dung và lỗi hệ thống bị ghi thành lỗi nhân viên, kỳ nào cũng vậy, và ⛔ không ai sửa post.</p>
+  </div>
+
+  <h3>Ba luật cứng, ⛔ không có ngoại lệ</h3>
+  <div class="code">
+    <div class="bar"><span class="name">Tường ngăn · pd-F §3</span><button type="button" data-copy>Copy</button></div>
+    <pre>① Cột `nv` (tên nhân viên) ⛔ KHÔNG BAO GIỜ vào bất cứ đầu ra nào của luồng I.
+   ⛔ Không vào JSON, không vào HTML, không vào ghi chú, không vào ví dụ.
+   → Phát hiện nào chỉ giải thích được bằng cách chỉ ra AI LÀM
+     thì ⛔ KHÔNG phải phát hiện insight. Chuyển sang luồng Q.
+
+② Chân dung · hook · số ads ⛔ KHÔNG vào bảng chấm điểm.
+   Nhân viên trả lời khách TRƯỚC khi chân dung tồn tại.
+
+③ Cờ đỏ đi qua tường được, nhưng MỘT CHIỀU và BỊ LỌC:
+   luồng I chỉ nhận mã + số lượt + HT-nnn + nhóm V-xx hay gặp.
+   ⛔ Không nguyên văn, ⛔ không tên người.</pre>
+  </div>
+
+  <h3>Cách viết đúng khi luồng I phải nói về chất lượng tư vấn</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>⛔ Sai — lọt tên</th><th>✅ Đúng — ở mức hiện tượng</th></tr></thead>
+    <tbody><tr>
+      <td><i>"Chị Hà trả lời 'bọc sứ không đau và không hại gì' — sai"</i></td>
+      <td><i>"6/14 hội thoại nhóm <code>V-05</code> được trả lời bằng tính từ trấn an thay vì cơ chế mài răng (<code>HT-004</code>, <code>HT-019</code>…). Khách hỏi lại lần hai rồi rơi."</i></td>
+    </tr></tbody>
+  </table></div>
+  <div class="callout info">
+    <p><b>Bản đúng mạnh hơn bản sai, ⛔ không phải yếu hơn.</b> <i>"6/14 hội thoại"</i> là một vấn đề nội dung sửa được bằng một tuyến bài. <i>"Chị Hà"</i> là vấn đề của một người, và nó ⛔ không nói gì về 13 hội thoại còn lại.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ 3 ═══════════════ -->
+<section id="caidat">
+  <h2><span class="num">02</span>Cài đặt — chọn một nền tảng</h2>
+  <p class="lede">Ba cách, cùng một bộ tri thức. Khác nhau ở chỗ dán thẻ bộ não vào đâu.</p>
+
+  <div class="tabs" role="tablist" data-tabs="cd">
+    <button type="button" role="tab" aria-selected="true">A · Claude Project</button>
+    <button type="button" role="tab" aria-selected="false">B · ChatGPT</button>
+    <button type="button" role="tab" aria-selected="false">C · Gemini Gem</button>
+  </div>
+  <div class="panels" data-panels="cd">
+
+    <div class="on">
+      <div class="callout ok"><p><b>✅ Khuyến nghị.</b> Không giới hạn ký tự ở ô Custom instructions, nạp được cả 12 sổ.</p></div>
+      <ol class="steps">
+        <li>Tạo Project mới, tên: <b>Insight Dashboard Paris</b>.</li>
+        <li>Dán toàn bộ <code>SYSTEM-PROMPT.md</code> <span class="chip ok">11.236 ký tự</span> vào ô <b>Custom instructions</b>.</li>
+        <li>Nạp vào <b>Knowledge</b>: 12 file trong <code>knowledge/</code> + 5 file trong <code>prompts/</code>.</li>
+        <li>★ Nạp thêm <b>4 module nền của thương hiệu</b> từ <code>Paris-Agent-Factory/knowledge/</code>: <code>P2</code> · <code>P4</code> · <code>P6</code> · <code>P8</code>. Đây là nguồn gốc của mọi bộ mã.</li>
+        <li>Nạp file dữ liệu của kỳ khi chạy: hội thoại + số ads.</li>
+      </ol>
+      <div class="callout warn"><p><b>⚠️ <code>P8</code> thắng khi mâu thuẫn</b> với sổ của repo này. <code>P8</code> là thước đo của cả hệ báo cáo Paris — nếu sổ nói khác <code>P8</code> về cách chấm, làm theo <code>P8</code> và ghi lại chỗ mâu thuẫn.</p></div>
+    </div>
+
+    <div>
+      <div class="callout warn"><p><b>⚠️ Ô Instructions giới hạn 8.000 ký tự</b> → dùng bản ngắn, ⛔ không dùng bản đầy đủ.</p></div>
+      <ol class="steps">
+        <li>Dán <code>SYSTEM-PROMPT-NGAN.md</code> <span class="chip cho">7.900 / 8.000</span> vào ô <b>Instructions</b>.</li>
+        <li>Phần còn lại nạp vào <b>Knowledge</b> như cách A.</li>
+        <li>Sau mỗi lần sửa bản ngắn, chạy lại bộ đếm để chắc còn trong giới hạn.</li>
+      </ol>
+      <div class="callout warn"><p><b>⚠️ Bản ngắn chỉ còn 100 ký tự dư.</b> Lần thêm luật sau phải <b>bỏ bớt một luật cũ</b>, hoặc dùng hẳn bản đầy đủ nếu ô Instructions của anh đã được nâng giới hạn.</p></div>
+      <div class="code">
+        <div class="bar"><span class="name">kiểm bản ngắn</span><button type="button" data-copy>Copy</button></div>
+        <pre>python tools/dem-ngan.py</pre>
+      </div>
+    </div>
+
+    <div>
+      <ol class="steps">
+        <li>Ô <b>Chỉ dẫn</b>: dán <code>SYSTEM-PROMPT.md</code> (bản đầy đủ).</li>
+        <li>Knowledge như cách A.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h3>12 sổ tri thức — nạp hết vào Knowledge</h3>
+  <p>Ba nhóm. Nhóm lõi đọc một lần; hai nhóm sau là hai luồng.</p>
+  <div class="files">
+    <div class="file star"><div class="fn">pd-A</div><div class="fd">★ Vai trò · hai luồng · quy trình · bốn cổng · bộ mã dùng chung</div></div>
+    <div class="file"><div class="fn">pd-B</div><div class="fd">Khuôn đầu vào · ẩn danh 8 thứ · kiểm mẫu 4 câu</div></div>
+    <div class="file"><div class="fn">pd-C</div><div class="fd">Bảng dữ kiện gốc · luật một lần đọc · 3 luật ghi đè độ nóng</div></div>
+    <div class="file"><div class="fn">pd-I1</div><div class="fd">Chân dung của kỳ · CỔNG 0 · ⛔ vì sao không dùng N1…N6</div></div>
+    <div class="file"><div class="fn">pd-I2</div><div class="fd">Câu hỏi ngầm · 3 rào cản · ★ luật chống lặp vòng % HOT*</div></div>
+    <div class="file"><div class="fn">pd-I3</div><div class="fd">Phễu nha khoa có bước "đến khám" · ★ post hứa gì ↔ khách hỏi gì</div></div>
+    <div class="file"><div class="fn">pd-I4</div><div class="fd">Ma trận độ nóng × V1/V2/V3 · CỔNG 1 · hook · cờ pháp chế</div></div>
+    <div class="file star"><div class="fn">pd-Q1</div><div class="fd">★★ 10 tiêu chí TC · bảng tra lỗi hệ · 4 rào an toàn</div></div>
+    <div class="file"><div class="fn">pd-Q2</div><div class="fd">11 cờ đỏ · CỔNG 2 · câu miễn trừ</div></div>
+    <div class="file"><div class="fn">pd-Q3</div><div class="fd">3 loại sổ tay · ★ "việc không phải của bạn"</div></div>
+    <div class="file"><div class="fn">pd-D</div><div class="fd">Hai schema · hai file · ba quy tắc hiển thị</div></div>
+    <div class="file"><div class="fn">pd-E</div><div class="fd">Module thương hiệu Paris · ★ 7 slot dữ kiện chưa cấp</div></div>
+    <div class="file star"><div class="fn">pd-F</div><div class="fd">★★ Tường ngăn — cái gì đi qua được, cái gì không</div></div>
+  </div>
+  <div class="callout info">
+    <p>★ <b>Dựng agent cho thương hiệu nha khoa khác = thay <code>pd-E</code></b>, ⛔ không sửa 11 sổ còn lại.</p>
+  </div>
+
+  <h3>⛔ Một điều ⛔ không được làm khi cài</h3>
+  <div class="callout stop">
+    <p><b>⛔ Không nạp lẫn tri thức của repo này với tri thức của một thương hiệu khác vào cùng một Project.</b> Khác bộ mã, khác luật hiển thị giá, khác giờ làm. Trộn vào là hai hệ mã cùng mô tả một thứ và ⛔ không ai biết bảng nào đúng.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ 4 ═══════════════ -->
+<section id="dulieu">
+  <h2><span class="num">03</span>Dữ liệu mỗi kỳ</h2>
+  <p class="lede">Một file bắt buộc, một file nên có. Khuôn hội thoại <b>giống hệt bản xuất anh đang dùng</b> — ⛔ đừng đổi khuôn.</p>
+
+  <div class="code">
+    <div class="bar"><span class="name">du-lieu/ · ⛔ đã bị .gitignore chặn</span></div>
+    <pre>du-lieu/
+├── hoi-thoai.md         ① bắt buộc — khuôn ở pd-B §2
+├── ads-facebook.csv     ② nên có   — cột ở pd-B §5
+└── danh-sach-post.csv   ③ tuỳ</pre>
+  </div>
+
+  <h3>Khuôn một hội thoại</h3>
+  <div class="code">
+    <div class="bar"><span class="name">hoi-thoai.md</span><button type="button" data-copy>Copy</button></div>
+    <pre>## &lt;STT&gt;. &lt;Tên KH&gt; — &lt;DD/MM HH:MM&gt;
+- Phụ trách: &lt;tên NV&gt; · Có SĐT: &lt;Có|Không&gt; · Số tin: &lt;n&gt;
+- **&lt;DD/MM HH:MM&gt; KH:** &lt;nội dung khách&gt;
+- **&lt;DD/MM HH:MM&gt; NV (&lt;tên NV&gt;):** &lt;nội dung nhân viên&gt;</pre>
+  </div>
+
+  <h3>★ Thẻ nguồn quảng cáo — cột đắt nhất của luồng I</h3>
+  <div class="code">
+    <div class="bar"><span class="name">dòng thẻ trong hội thoại</span></div>
+    <pre>- **03/11 09:12 KH:** [Thẻ: Inbox từ quảng cáo QC_Implant_Straumann –
+  Trồng răng Implant trụ Straumann, ăn nhai như răng thật]</pre>
+  </div>
+  <p>Thẻ nằm ngay trong hội thoại nên nối hội thoại ↔ post chính xác <b>1:1</b> — ⛔ không phải khớp bằng thời gian rồi đoán. Từ thẻ tách ra <b>hai</b> cột, ⛔ không gộp:</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Cột</th><th>Ví dụ</th><th>Dùng để</th></tr></thead>
+    <tbody>
+      <tr><td><code>post_ads</code></td><td><code>QC_Implant_Straumann</code></td><td>Nối với số ads → CPI/CPL theo post</td></tr>
+      <tr><td><code>loi_hua_post</code></td><td><i>"ăn nhai như răng thật"</i></td><td>★ Đối chiếu <b>post hứa gì</b> ↔ <b>khách hỏi gì ngay sau đó</b></td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout info">
+    <p>★ Cột <code>loi_hua_post</code> cho đọc được câu: <i>"post hứa <b>nụ cười mới chỉ sau 1 lần hẹn</b>, và 9/11 khách vào từ post đó hỏi giá ở tin đầu rồi rơi"</i> — một kết luận về <b>nội dung</b>, ⛔ không về người.</p>
+  </div>
+
+  <h3>⛔ Tám thứ phải bỏ trước khi ghi ra bất cứ đâu</h3>
+  <div class="code">
+    <div class="bar"><span class="name">ẩn danh · pd-B §3 · áp cho CẢ HAI luồng</span><button type="button" data-copy>Copy</button></div>
+    <pre>tên thật khách · số điện thoại · ảnh khách · email · địa chỉ nhà
+link Facebook cá nhân · mã đơn/hồ sơ · tên người nhà khách nhắc tới</pre>
+  </div>
+  <div class="callout warn">
+    <p><b>★ Hai cái dễ lọt nhất ở ngành nha:</b></p>
+    <ul class="tight">
+      <li><b>Vị trí răng + mốc thời gian</b> — <i>"mất răng số 6 hàm dưới bên phải 2 năm"</i> là mô tả <b>nhận dạng được</b> khi nhóm chỉ có 1–2 hội thoại → rút về <i>"mất răng hàm dưới"</i>.</li>
+      <li><b>Tên người nhà</b> — giữ quan hệ + tuổi (cần cho chân dung), ⛔ bỏ mọi tên riêng.</li>
+    </ul>
+    <p>⛔ Và ⛔ không nạp CCCD · hồ sơ bệnh án · ảnh X-quang của khách lên công cụ công cộng.</p>
+  </div>
+
+  <h3>Chạy thử ngay khi chưa có dữ liệu thật</h3>
+  <div class="code">
+    <div class="bar"><span class="name">bộ 16 hội thoại mẫu</span><button type="button" data-copy>Copy</button></div>
+    <pre>python tools/pd.py doc     template/MAU_hoi-thoai.md --ky "03-16/11"
+python tools/pd.py ads     template/MAU_ads-facebook.csv --ky "03-16/11"
+python tools/pd.py insight --ky "03-16/11"
+python tools/pd.py qc      --ky "03-16/11"</pre>
+  </div>
+  <p>File mẫu <b>cài sẵn</b> các tình huống bộ công cụ phải bắt được: 11 cờ đỏ · lỗi hệ · ngoài giờ · ba luật ghi đè độ nóng · <code>L2.5</code> · tin chưa được chạm · và <b>một câu miễn trừ</b> (nhân viên từ chối gửi ảnh chưa duyệt — ⛔ phải <b>không</b> bị gắn cờ). Sửa file thì ⛔ đừng bỏ các tình huống đó.</p>
+</section>
+
+<!-- ═══════════════ 5 ═══════════════ -->
+<section id="lenh">
+  <h2><span class="num">04</span>Bốn lệnh</h2>
+  <p class="lede"><code>ĐỌC</code> chạy một lần. Sau đó <code>INSIGHT</code> và <code>QC</code> chạy <b>độc lập</b>, lúc nào cũng được, bao nhiêu lần cũng được — cả hai đọc lại từ cùng một bảng nên ⛔ không bao giờ lệch số.</p>
+
+  <div class="tabs" role="tablist" data-tabs="lenh">
+    <button type="button" role="tab" aria-selected="true">ĐỌC</button>
+    <button type="button" role="tab" aria-selected="false">INSIGHT</button>
+    <button type="button" role="tab" aria-selected="false">QC</button>
+    <button type="button" role="tab" aria-selected="false">ADS</button>
+  </div>
+  <div class="panels" data-panels="lenh">
+
+    <div class="on">
+      <p><b>Bước duy nhất đọc hội thoại.</b> Hai luồng sau đó đọc lại từ kết quả của bước này.</p>
+      <div class="code">
+        <div class="bar"><span class="name">ĐỌC → out/doc-hoi-thoai.json</span><button type="button" data-copy>Copy</button></div>
+        <pre>python tools/pd.py doc du-lieu/hoi-thoai.md --ky "01-15/11"</pre>
+      </div>
+      <p>In ra <b>bốn câu kiểm mẫu</b> trước khi đọc: cỡ mẫu · khoảng ngày · <b>mẫu có bị lọc không</b> · phân bố nhân viên.</p>
+      <div class="callout warn"><p><b>⚠️ Câu kiểm thứ ③ hay bị bỏ qua nhất.</b> Bản xuất chỉ gồm <i>"hội thoại dài"</i> thì mẫu <b>đã thiên về phía nóng</b> — nó thổi phồng mọi post, và thổi <b>không đều nhau</b>. Và mọi nhân viên đều trông giỏi hơn thực tế, vì hội thoại họ làm rơi sau một lượt đã bị loại khỏi mẫu. Trường hợp đó ⛔ <b>không phân loại A/B/C/D</b>.</p></div>
+    </div>
+
+    <div>
+      <p><span class="chip i">LUỒNG I</span> Dừng ở <b>CỔNG 0</b> (duyệt chân dung) rồi <b>CỔNG 1</b> (duyệt ma trận).</p>
+      <div class="code">
+        <div class="bar"><span class="name">INSIGHT → out/bao-cao-insight.json</span><button type="button" data-copy>Copy</button></div>
+        <pre>python tools/pd.py insight --ky "01-15/11"
+python tools/pd.py kiem    out/bao-cao-insight.json   # CỔNG T</pre>
+      </div>
+      <div class="callout ok"><p>★ <b>Luồng Q chạy xong được trong khi luồng I còn chờ anh duyệt chân dung.</b> Hai cổng của luồng I ⛔ không chặn luồng Q — đây là lợi ích thật của việc tách luồng, ⛔ không phải hiệu ứng phụ.</p></div>
+    </div>
+
+    <div>
+      <p><span class="chip q">LUỒNG Q</span> Dừng ở <b>CỔNG 2</b> (soát cờ đỏ pháp chế).</p>
+      <div class="code">
+        <div class="bar"><span class="name">QC → out/bao-cao-qc.json · so-tay/</span><button type="button" data-copy>Copy</button></div>
+        <pre>python tools/pd.py qc   --ky "01-15/11"
+python tools/pd.py kiem out/bao-cao-qc.json   # CỔNG T</pre>
+      </div>
+      <div class="callout stop"><p><b>⛔ File <code>qc-*.json</code> ⛔ KHÔNG publish ra link công khai.</b> Nó có <b>tên nhân viên</b> kèm điểm và cờ đỏ. Gửi file, cho đúng trưởng nhóm.</p></div>
+    </div>
+
+    <div>
+      <p>Đọc số quảng cáo của kỳ. Luồng I <b>vẫn chạy</b> khi chưa có file này — nhưng ⛔ không có con số <code>CPI</code>/<code>CPL</code> nào, kể cả <i>"khoảng"</i> hay <i>"ước"</i>.</p>
+      <div class="code">
+        <div class="bar"><span class="name">ADS → out/doc-ads.json</span><button type="button" data-copy>Copy</button></div>
+        <pre>python tools/pd.py ads du-lieu/ads-facebook.csv --ky "01-15/11"</pre>
+      </div>
+      <div class="callout warn"><p><b>⚠️ Phễu nha khoa dừng ở "ĐẾN KHÁM"</b>, ⛔ không phải doanh thu — quyết định tiền thật xảy ra <b>trên ghế khám</b>, ⛔ không trong inbox. ⛔ <b>Không lấy "đặt lịch" thay cho "đến khám"</b> → ghi <code>⚠ chưa đo được show-up</code> và <b>để trống</b>.</p></div>
+    </div>
+  </div>
+
+  <div class="callout stop">
+    <p><b>⛔ Không có lệnh <code>AUTO</code> chạy cả hai luồng ra một file</b> — cố tình không có. Một file thì tường ngăn ⛔ không tồn tại. Và <code>AUTO</code> sẽ bắt luồng Q <b>chờ một cái duyệt ⛔ không liên quan gì đến nó</b>.</p>
+  </div>
+
+  <h3>★ Bản dashboard một file gửi được</h3>
+  <div class="code">
+    <div class="bar"><span class="name">⛔ không cần máy chủ tĩnh</span><button type="button" data-copy>Copy</button></div>
+    <pre>python tools/gui-dashboard.py out/bao-cao-insight.json
+# → out/dashboard-insight-&lt;ky&gt;.html</pre>
+  </div>
+</section>
+
+<!-- ═══════════════ 6 ═══════════════ -->
+<section id="prompt">
+  <h2><span class="num">05</span>Prompt mẫu — dán nguyên văn</h2>
+  <p class="lede">Năm prompt, mỗi cái cho một bước. Dán kèm file dữ liệu của kỳ.</p>
+
+  <div class="tabs" role="tablist" data-tabs="pr">
+    <button type="button" role="tab" aria-selected="true">ĐỌC</button>
+    <button type="button" role="tab" aria-selected="false">INSIGHT · chặng 1</button>
+    <button type="button" role="tab" aria-selected="false">INSIGHT · chặng 2</button>
+    <button type="button" role="tab" aria-selected="false">QC</button>
+    <button type="button" role="tab" aria-selected="false">Sổ tay</button>
+    <button type="button" role="tab" aria-selected="false">CỔNG T</button>
+  </div>
+  <div class="panels" data-panels="pr">
+
+    <div class="on">
+      <div class="code">
+        <div class="bar"><span class="name">prompts/prompt-doc.md</span><span class="note">một lần đọc</span><button type="button" data-copy>Copy</button></div>
+        <pre>ĐỌC hội thoại kỳ &lt;KỲ&gt;.
+
+Làm đúng thứ tự:
+
+① KIỂM MẪU — in ra TRƯỚC khi đọc:
+   ① cỡ mẫu: bao nhiêu HT · bao nhiêu bị loại · vì sao loại
+   ② khoảng ngày: ngày đầu → ngày cuối
+   ③ mẫu bị lọc? — file có HT nào chỉ 1 lượt khách không?
+      ⛔ KHÔNG CÓ hội thoại ngắn là dấu hiệu file ĐÃ BỊ LỌC
+   ④ phân bố nhân viên: ai bao nhiêu HT, ai đủ 10 để phân loại
+
+② ĐỌC TỪNG HỘI THOẠI — ĐÚNG MỘT LẦN. Mỗi HT ghi ra một hàng đủ các ô:
+
+   Ô CHUNG   : ht · ngày · giờ · số lượt KH/NV · có SĐT
+               v_rang (V-01…V-11) · nhom_gt (V1/V2/V3)
+               bitmask 5 chữ số · do_nong · do_nong_sao
+               co_do · loi_he
+   Ô LUỒNG I : l_code (L1.1…L6.7) · giai_doan (S1/S2/S3/CS)
+               rao_can (SỢ/NGỜ/NGẠI) · nhom_khach (N1…N6)
+               cau_hoi_ngam · post_ads · loi_hua_post
+               trich_khach (ĐÃ ẨN DANH) · dau_gia_dinh · cd = null
+   Ô LUỒNG Q : nv · phut_tra_loi_dau · trong_gio
+               tc (TC-1…TC-10: ✓/✗/—/?) · bang_chung · ghi_chu_he
+
+③ IN RA kết quả kiểm mẫu + phân bố ba trục. ⛔ DỪNG tại đây.
+
+★ BA LUẬT CỦA BƯỚC NÀY:
+① v_rang xét THEO THỨ TỰ V-01 → V-11, đúng nhóm đầu tiên thì lấy,
+  ⛔ không xét tiếp. ⛔ Không lấy nhóm khớp nhiều từ khoá nhất.
+② Mọi hàng PHẢI có bitmask. ⛔ Không có bitmask thì ⛔ không ai kiểm
+  lại được điểm. Và mọi hàng PHẢI có do_nong_sao.
+③ cd = null cho MỌI hàng. ⛔ Không gán chân dung ở bước này.
+  ⛔ Không dùng nhom_khach (N1…N6) thay cho chân dung.
+
+★ BA LUẬT GHI ĐÈ ĐỘ NÓNG — ⛔ đừng bỏ:
+① đã đặt lịch khám / đang đến phòng khám  → HOT bất kể điểm
+② đã có phim X-quang, hoặc đã khám nơi khác và có phác đồ/báo giá
+                                          → HOT bất kể điểm
+③ đang đau cấp (V-06)                     → tối thiểu WARM
+⚠ Luật ② là luật dễ bỏ sót và đắt nhất: khách đã qua giai đoạn
+  chẩn đoán, chỉ còn CHỌN NƠI LÀM — lead nóng nhất của ngành nha.</pre>
+      </div>
+    </div>
+
+    <div>
+      <div class="code">
+        <div class="bar"><span class="name">INSIGHT chặng 1 → dừng ở CỔNG 0</span><button type="button" data-copy>Copy</button></div>
+        <pre>INSIGHT kỳ &lt;KỲ&gt;. Chặng 1.
+
+Đọc lại từ out/doc-hoi-thoai.json. ⛔ KHÔNG đọc lại hội thoại.
+
+① IN BỐN BẢNG NGUYÊN LIỆU:
+   ① cụm chữ khách tự nói — xuất hiện ≥3 lần, GIỮ NGUYÊN chữ khách gõ
+   ② câu hỏi đầu tiên của khách — phân bố
+   ③ phân bố ba trục: V-01…V-11 | V1/V2/V3 | S1/S2/S3/CS | SỢ/NGỜ/NGẠI
+   ④ dấu hiệu người thứ ba — số HT có "bố/mẹ/con/vợ/chồng/người nhà"
+
+② PHÁC HỌA 4–7 CHÂN DUNG. Mỗi thẻ đủ BẢY ô:
+   mã · tên (★ LẤY TỪ CHỮ CỦA KHÁCH) · họ là ai · nỗi sợ thật ·
+   dấu hiệu nhận ra · hệ số giá trị · ★ ≥3 HT-nnn + trích ẩn danh
+
+③ IN dòng CD0 dự kiến + nhóm N nào VẮNG MẶT trong kỳ.
+
+⛔ DỪNG. Chờ tôi gõ DUYỆT CHÂN DUNG / SỬA CD&lt;n&gt; … / GỘP … / TÁCH …
+
+★ BỐN LUẬT PHÁC HỌA:
+① 4–7 chân dung. Ít hơn 4 là chia thô; nhiều hơn 7 thì nhóm nào cũng
+  dưới ngưỡng mẫu.
+② Mỗi chân dung ≥5 HT mới được viết thẻ insight. Dưới 5 → giữ trong
+  bản phác họa, ghi "⚠ chưa đủ mẫu", ⛔ KHÔNG xoá.
+③ ★ XẾP TỪ HẸP ĐẾN RỘNG khi gán. Chân dung rộng HÚT HẾT hội thoại của
+  chân dung hẹp nếu gán rộng-trước. V-01 (làm lại ca lỗi) và V-11
+  (chưa rõ) là hai nhóm LUÔN bị hút — gán chúng TRƯỚC.
+④ CD0 > 25% mẫu → bản phác họa CHƯA ĐỦ, phác lại.
+
+★ ⛔ KHÔNG dùng N1…N6 làm chân dung.
+  N1…N6 là nhóm khách BIẾT TRƯỚC từ hồ sơ thương hiệu.
+  CD là chân dung PHÁC HỌA TỪ CHỮ KHÁCH CỦA CHÍNH KỲ NÀY.
+  Dùng N thay CD là LỖI IM LẶNG: mọi bảng vẫn khớp tổng, biểu đồ vẫn
+  đẹp, nhưng báo cáo chỉ nói lại điều đã biết và ⛔ không phát hiện
+  gì mới.
+
+★ Tên chân dung: ⛔ KHÔNG phải nhân khẩu học.
+  ⛔ "Nữ 30–40 nội thành"  → đó là tệp quảng cáo
+  ✅ "Em làm ở chỗ khác rồi, giờ muốn sửa"</pre>
+      </div>
+    </div>
+
+    <div>
+      <div class="code">
+        <div class="bar"><span class="name">INSIGHT chặng 2 → dừng ở CỔNG 1</span><button type="button" data-copy>Copy</button></div>
+        <pre>Chặng 2.
+
+④ GÁN cd cho từng HT, theo thứ tự HẸP → RỘNG. In dòng CD0 số thật.
+
+⑤ BẢNG CHÂN DUNG: CD · tên · n HT · % mẫu · V chủ đạo ·
+   HOT · ★ HOT* · % có SĐT
+
+⑥ THẺ INSIGHT từng CD ≥5 HT.
+   ★ Ô "insight một câu" phải viết TỪ GÓC NHÌN KHÁCH, bắt đầu "Tôi…".
+     Đọc lên mà nghe như lời người bán thì ⛔ chưa phải insight.
+
+⑦ MA TRẬN CD × RÀO CẢN. ★ Đếm theo LƯỢT, GHI CÁCH ĐẾM ở đầu bảng.
+   ★ Phải có cột HOT* cạnh cột HOT.
+
+⑧ L6.7 NGỜ VẬT LIỆU — dòng riêng, kèm con số:
+   "n HT ngờ vật liệu — m được nêu bằng chứng thật, n−m chỉ nhận
+    trấn an chung"
+   ★ Con số n−m là NỘI DUNG PHẢI LÀM NGAY.
+
+⑨ SỐ ADS (nếu có file): Chi → CPM → CTR → CPI → CPL →
+   CP-ĐẶT-LỊCH → CP-ĐẾN-KHÁM.
+   ★ Bảng "POST HỨA GÌ ↔ KHÁCH HỎI GÌ NGAY SAU ĐÓ" — phần giá trị nhất.
+   ⚠ Phễu PHẢI có cột "đến khám". ⛔ KHÔNG lấy "đặt lịch" thay.
+
+⑩ BA VẤN ĐỀ CỐT LÕI, xếp theo SỐ HT bị ảnh hưởng. Mỗi vấn đề đủ
+   bốn phần: hiện tượng · bằng chứng (≥3 HT-nnn) · đọc ra gì ·
+   ★ AI SỬA
+   ⚠ Ô "ai sửa" chỉ được là Marketing (nội dung) hoặc Hệ thống
+     (cấp dữ kiện). ⛔ KHÔNG BAO GIỜ là tên nhân viên. Nếu câu trả lời
+     tự nhiên là "trực page phải làm tốt hơn" thì vấn đề đó ⛔ không
+     thuộc luồng I — chuyển sang luồng Q, hoặc viết lại ở mức hiện tượng.
+
+⑪ MA TRẬN ƯU TIÊN — bảng việc, bảy cột, kèm CÁCH XẾP.
+   ★ Xếp theo ĐỘ CHẶN × GIÁ TRỊ (V1 > V2 > V3).
+   ⛔ KHÔNG tự phát minh hệ số rồi nhân ra "điểm ưu tiên".
+   ⚠ Chưa đo được show-up → xếp theo ĐỘ CHẶN THUẦN và NÓI RÕ.
+
+⑫ MỤC VIỆC HỆ THỐNG — riêng, có tên người chịu trách nhiệm cấp dữ kiện.
+
+⛔ DỪNG. Chờ tôi gõ DUYỆT / BỎ &lt;n&gt; / ĐỔI THỨ TỰ … / CHỈ LÀM &lt;n&gt;, &lt;m&gt;</pre>
+      </div>
+    </div>
+
+    <div>
+      <div class="code">
+        <div class="bar"><span class="name">prompts/prompt-qc.md → dừng ở CỔNG 2</span><button type="button" data-copy>Copy</button></div>
+        <pre>QC kỳ &lt;KỲ&gt;.
+
+Đọc lại từ out/doc-hoi-thoai.json. ⛔ KHÔNG đọc lại hội thoại.
+⛔ KHÔNG dùng chân dung / hook / số ads — nhân viên trả lời khách
+   TRƯỚC khi chân dung tồn tại.
+
+① KIỂM MỘT LẦN Ở ĐẦU KỲ:
+   Bản xuất có PHẦN GHI CHÚ BÀN GIAO không?
+   ⛔ Không có → TC-7 và TC-8 là "—" cho MỌI hội thoại, và ghi rõ ở
+     đầu báo cáo: "kỳ này chấm trên 8 tiêu chí".
+   ⚠ Chấm ✗ cho TC-7/TC-8 trên bản xuất không chứa ghi chú là cho
+     0 điểm oan cho CẢ KHỐI.
+
+② QUY 10 Ô TC THÀNH ĐIỂM:
+   Điểm một HT = (số ✓) ÷ (số ✓ + số ✗) × 10
+   ⚠ "—" và "?" LOẠI KHỎI MẪU SỐ. ⛔ Không tính là trượt.
+   ⚠ TC-9 trượt → HT đó 0 điểm, bất kể 9 tiêu chí kia.
+
+③ PHÂN LOẠI: A ≥9,0 · B 8,0–8,9 · C 6,5–7,9 · D <6,5
+   ⛔ <5 HT: không chấm. 5–9 HT: chấm từng HT, KHÔNG phân loại.
+   ⛔ Mẫu bị lọc → KHÔNG phân loại A/B/C/D.
+   ⚠ Một cờ đỏ trong kỳ → ⛔ không được xếp loại A dù điểm cao.
+
+④ SOÁT 11 CỜ ĐỎ. Mỗi cờ đủ SÁU Ô:
+   ① nguyên văn · ② ai · ③ ngữ cảnh · ④ sai ở đâu ·
+   ⑤ ★ CÂU ĐÚNG · ⑥ người xử lý đích danh + hạn
+   ⚠ Ô ⑤ ⛔ không được bỏ. Báo cờ mà không đưa câu đúng thì nhân viên
+     sẽ tự tìm cách nói khác, và thường là một câu sai khác.
+   ★ Với MỖI cờ, hỏi thêm: "nhân viên tự nghĩ ra, hay đang NHẮC LẠI
+     chữ của post ads / tài liệu đào tạo?" — nếu là cái thứ hai thì
+     GỐC LỖI Ở NỘI DUNG, gửi sang luồng I.
+
+⑤ DANH SÁCH Ô "?" — mỗi ô đủ NĂM thứ: HT-nnn · nguyên văn ·
+   câu hỏi cần trả lời · ba nhánh kết luận · người đối chiếu
+
+⑥ VIỆC HỆ THỐNG — gom theo NGUYÊN NHÂN, ⛔ không theo người.
+   Mỗi dòng: số ô · ô nào · ai cấp · ★ "cấp rồi thì gỡ được gì"
+   + số HT "chưa được chạm" (⛔ không chấm được vào ai, nhưng PHẢI có số)
+
+⑦ BA TIÊU CHÍ YẾU NHẤT CỦA KHỐI → nội dung đào tạo kỳ sau.
+   ⚠ LỌC TRƯỚC KHI XẾP: tiêu chí mà phần lớn ô trượt là LỖI HỆ thì
+     ⛔ KHÔNG được đưa vào đào tạo — nó thuộc ST-HT.
+   ★ Cách kiểm: "nếu khối được đào tạo hoàn hảo về việc này thì tỷ lệ
+     đạt có lên được không?" Nếu "không, vì vẫn chưa có dữ kiện" →
+     việc hệ thống.
+
+⛔ DỪNG ở CỔNG 2. Chờ tôi gõ DUYỆT PHÁP CHẾ / ĐÃ GỠ &lt;mã&gt; … / CHỜ &lt;mã&gt;</pre>
+      </div>
+      <div class="callout warn">
+        <p><b>★ Câu miễn trừ — ⛔ đừng gắn cờ cho người làm ĐÚNG.</b> Câu <i>"về ảnh case thì em <b>xin phép xác nhận lại</b> danh sách ảnh được phép sử dụng rồi gửi chị, vì ảnh khách <b>phải có sự đồng ý</b> của họ"</i> khớp từ khoá <code>CĐ-P11</code> nhưng là <b>làm đúng</b>. Cụm miễn trừ: <i>xin phép xác nhận lại · chưa dám nói · phải có sự đồng ý · được phép sử dụng · bác sĩ xác định sau · tuỳ tình trạng · phải khám mới · em không dám</i>.</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="code">
+        <div class="bar"><span class="name">ST-CN · sổ tay cá nhân, sáu phần</span><button type="button" data-copy>Copy</button></div>
+        <pre>Sinh sổ tay kỳ &lt;KỲ&gt;. BA LOẠI SỔ, ⛔ KHÔNG TRỘN:
+  ST-CN · cá nhân       → từng nhân viên
+  ST-TN · trưởng nhóm   → trưởng nhóm trực page
+  ST-HT · việc hệ thống → người giữ dữ kiện
+                          ★ ⛔ KHÔNG chứa tên nhân viên
+
+ST-CN gồm sáu phần:
+
+① BẠN ĐANG Ở ĐÂU
+   Điểm · loại · số HT · tiêu chí mạnh nhất · tiêu chí yếu nhất
+   ⛔ KHÔNG so với người khác. ⛔ KHÔNG "xếp thứ n/m".
+   ⛔ KHÔNG kể cả dạng "điểm trung bình khối là 7,8".
+
+② MỘT VIỆC (hai, nếu loại C) — đúng tiêu chí yếu nhất.
+   Viết thành việc LÀM ĐƯỢC NGAY, ⛔ không phải lời khuyên.
+   ⛔ "Cần tạo tin cậy tốt hơn"
+   ✅ "Khi khách hỏi 'có chính hãng không', trả lời bằng BA THỨ
+      KIỂM ĐƯỢC: tên hãng · mã trụ in trên phiếu · được xem phiếu
+      trước khi cấy. ⛔ Đừng nói 'chị yên tâm'."
+
+③ HAI ĐOẠN CHAT MẪU
+   Một đoạn CỦA CHÍNH BẠN (câu bạn làm tốt) + một đoạn mẫu.
+   ⚠ Đoạn "của chính bạn" phải là câu THẬT trong hội thoại của người
+     đó. ⛔ Không có câu nào tốt → BỎ Ô NÀY, ⛔ ĐỪNG BỊA.
+
+④ BA CÂU ĐỪNG NÓI — chỉ ba câu LIÊN QUAN đến nhóm dịch vụ người này
+   hay gặp. ⛔ Không dán cả bảng từ cấm.
+
+⑤ ★ VIỆC KHÔNG PHẢI CỦA BẠN
+   Các ô "—" lỗi hệ trong hội thoại của CHÍNH người này. Nói thẳng:
+   "n ô trong kỳ của bạn là '—' vì hệ chưa cấp <bảng giá dòng sứ /
+    số năm bảo hành / …>. Những ô đó ⛔ KHÔNG trừ điểm bạn, và
+    ⛔ KHÔNG phải việc bạn phải sửa."
+
+⑥ KỲ SAU NHÌN GÌ — đúng MỘT chỉ số. ⛔ Không phải "nâng điểm tổng".</pre>
+      </div>
+      <div class="callout info">
+        <p>★ <b>Phần ⑤ là phần quan trọng nhất.</b> Hệ đang có <a href="#slot">7 slot dữ kiện chưa được cấp</a> — nhân viên <b>biết rõ</b> mình đang bị hỏi những câu mình ⛔ không có gì để trả lời. Một sổ tay ⛔ không nói ra điều đó thì <b>mất uy tín ngay từ trang đầu</b>, và khi đó năm phần kia cũng ⛔ không được đọc.</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="code">
+        <div class="bar"><span class="name">CỔNG T · sáu câu kiểm tường ngăn</span><button type="button" data-copy>Copy</button></div>
+        <pre>CỔNG T — kiểm tường ngăn cho &lt;tên file&gt;.
+
+① TÊN NHÂN VIÊN
+   Tìm MỌI tên nhân viên trong file sắp xuất của luồng I.
+   Tìm thấy dù một lần → ⛔ DỪNG, xoá, xuất lại.
+   ⚠ Kiểm cả trong trích dẫn và trong TÊN FILE.
+
+② THÔNG TIN KHÁCH
+   Tám thứ (tên thật · SĐT · ảnh · email · địa chỉ · link cá nhân ·
+   mã đơn · tên người nhà) — ⛔ không có ở file nào của CẢ HAI luồng,
+   kể cả sổ tay riêng.
+
+③ FILE INSIGHT CÓ ĐIỂM SỐ KHÔNG
+   Khoá nv · tc · diem · loai · bang_chung trong JSON insight
+   → ⛔ PHẢI KHÔNG TỒN TẠI.
+   ⚠ ⛔ Không phải "để rỗng" — phải KHÔNG CÓ KHOÁ ĐÓ.
+     Khoá rỗng là khoá sẽ có ngày được điền.
+
+④ FILE QC CÓ LỜI KHÁCH DÀI KHÔNG
+   Trích dẫn khách trong báo cáo QC chỉ giữ ĐÚNG phần làm bằng chứng
+   cho ô ✗ đang xét. ⛔ Không chép cả hội thoại.
+   Và khoá chan_dung · hook · ma_tran · ads → ⛔ PHẢI KHÔNG TỒN TẠI.
+
+⑤ NHÓM MỎNG
+   Nhóm dưới 10 HT → đã ẩn tỷ lệ chưa?
+   Nhân viên dưới 10 HT → đã bỏ phân loại chưa?
+   Một V-xx chỉ có 1–2 HT có nhận ra được cá nhân không?
+
+⑥ CÂU CHÂN BẢNG
+   Mọi bảng điểm của luồng Q có đúng câu này ở chân chưa:
+   "Điểm dùng để phân việc kèm cặp. Không phải căn cứ kỷ luật hay
+    xếp hạng công khai."</pre>
+      </div>
+      <div class="callout stop">
+        <p><b>⚠️ Câu ① và ③ phải chạy BẰNG MÁY.</b> Hàm <code>kiem_tuong_ngan()</code> chạy đúng sáu câu trên và <b>từ chối ghi file</b> nếu trượt — nên mọi lần ghi JSON đều đi qua <code>ghi_json()</code>. Chạy tay thì ⛔ <b>sẽ có kỳ quên</b>, và lọt tên nhân viên vào báo cáo insight là lỗi ⛔ không gỡ được sau khi đã gửi đi.</p>
+      </div>
+      <div class="code">
+        <div class="bar"><span class="name">chạy CỔNG T</span><button type="button" data-copy>Copy</button></div>
+        <pre>python tools/pd.py kiem out/bao-cao-insight.json
+python tools/pd.py kiem out/bao-cao-qc.json</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ 7 ═══════════════ -->
+<section id="cong">
+  <h2><span class="num">06</span>Bốn cổng chặn</h2>
+  <p class="lede">Ở mỗi cổng agent <b>in ra thứ cần duyệt, rồi dừng</b>. ⛔ Không tự duyệt thay anh.</p>
+
+  <div class="tbl"><table>
+    <thead><tr><th>Cổng</th><th>Luồng</th><th>Chặn gì</th><th>Vì sao</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><b>CỔNG 0</b></td><td><span class="chip i">I</span></td>
+        <td>⛔ Không gán chân dung, không viết thẻ insight, không dựng ma trận khi <b>bản phác họa chưa được duyệt</b></td>
+        <td>Hệ ⛔ không có bộ chân dung mặc định. Chia khách sai thì mọi bảng sau đều sai theo, và ⛔ không ai nhìn ra vì bảng nào cũng khớp tổng</td>
+      </tr>
+      <tr>
+        <td><b>CỔNG 1</b></td><td><span class="chip i">I</span></td>
+        <td>⛔ Không viết hook khi <b>ma trận ưu tiên chưa được duyệt</b></td>
+        <td>Viết 30 hook cho đúng tệp mà khối ⛔ không định làm là ném đi một tuần</td>
+      </tr>
+      <tr>
+        <td><b>CỔNG 2</b></td><td><span class="chip q">Q</span></td>
+        <td>⛔ Không phát sổ tay, không đăng hook khi còn <b>cờ 🔴 chưa gỡ</b></td>
+        <td>Một câu <i>"răng sứ dùng trọn đời"</i> trong sổ tay sẽ được 20 nhân viên nhắn lại <b>nguyên văn</b> cho 300 khách</td>
+      </tr>
+      <tr>
+        <td><b>CỔNG T</b> ★</td><td><span class="chip i">I</span> <span class="chip q">Q</span></td>
+        <td>⛔ Không xuất file nào khi chưa qua <b>6 câu kiểm tường ngăn</b> — chạy <b>bằng máy</b></td>
+        <td>Cổng riêng của repo này. Một file chứa cả tên nhân viên lẫn lời khách là lỗi ⛔ không gỡ được sau khi đã gửi đi</td>
+      </tr>
+    </tbody>
+  </table></div>
+
+  <div class="callout ok">
+    <p>★ <b>CỔNG 0 và CỔNG 1 chỉ chặn luồng I.</b> Luồng Q ⛔ <b>không</b> chờ hai cổng đó — chấm điểm ⛔ không cần biết chân dung. Nghĩa là <b>luồng Q chạy xong được trong khi luồng I còn đang chờ anh duyệt</b>.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ 8 ═══════════════ -->
+<section id="kiem">
+  <h2><span class="num">07</span>Kiểm sau khi cài — 8 câu</h2>
+  <p class="lede">Hỏi agent 8 câu. Trả lời sai câu nào thì nạp lại file tương ứng.</p>
+
+  <div class="tbl"><table>
+    <thead><tr><th>Câu hỏi</th><th>Phải trả lời đúng</th><th>Nằm ở</th></tr></thead>
+    <tbody>
+      <tr><td>★★ <i>"Khách trồng Implant <b>tại Paris</b> 8 tháng trước, giờ trụ lung lay và nướu sưng, khách bức xúc — chấm nhân viên thế nào?"</i></td>
+        <td>⛔ <b>Không chấm <code>TC-5</code> và <code>TC-9</code></b> — hai ô là <code>—</code>. Đây là <b>khiếu nại</b>, ⛔ không phải cơ hội bán. Thêm nữa, trụ lung lay là <b>dấu hiệu an toàn</b> → <b>chuyển bác sĩ</b>, ⛔ không báo giá, ⛔ không bán thêm. ★ Chấm vì <i>"⛔ không xin được số"</i> ở đây là <b>chấm sai việc</b>. <br>⚠️ Nhưng khách làm ở <b>nơi khác</b> thì <b>khác</b> — đó là ca tư vấn mới, rào <code>NGỜ</code> nặng, <b>vẫn chấm bình thường</b></td>
+        <td><code>pd-E</code> §3b</td></tr>
+      <tr><td>★★ <i>"Lưu nguyên văn đoạn khách kể đã bọc sứ ở đâu, bị gì vào báo cáo được không?"</i></td>
+        <td>⛔ <b>Không.</b> Tiền sử điều trị · bệnh nền · thuốc · ảnh răng · phim X-quang là <b>dữ liệu sức khoẻ</b> theo <b>Luật 91/2025/QH15</b> → chỉ lưu <b>nhãn + một câu bằng chứng ngắn</b>, giới hạn người xem, cần đồng ý xử lý. <br>★ Nhân viên <b>phải hỏi</b> (<code>TC-3</code> yêu cầu đúng điều đó) nhưng báo cáo <b>chỉ lưu nhãn</b> — hai việc khác nhau</td>
+        <td><code>pd-B</code> §3b</td></tr>
+      <tr><td>★ <i>"Báo cáo insight có được nêu tên nhân viên làm ví dụ không?"</i></td>
+        <td>⛔ <b>Không, không bao giờ</b>, kể cả <i>"một ví dụ thôi"</i>. Dùng <code>HT-nnn</code>. Phát hiện nào chỉ giải thích được bằng tên người thì ⛔ không phải insight → chuyển luồng Q</td>
+        <td><code>pd-F</code> §3·§8</td></tr>
+      <tr><td>★ <i>"Chạy <code>AUTO</code> cho tôi cả hai luồng ra một file"</i></td>
+        <td>⛔ <b>Không có lệnh đó</b> — cố tình. Một file thì tường ngăn ⛔ không tồn tại</td>
+        <td><code>pd-F</code> §2</td></tr>
+      <tr><td><i>"Chân dung lấy ở đâu ra?"</i></td>
+        <td>⛔ Không có bộ dựng sẵn — phác họa từ chính hội thoại của kỳ, duyệt ở CỔNG 0. ⛔ Không dùng <code>N1…N6</code> làm chân dung</td>
+        <td><code>pd-I1</code> §1</td></tr>
+      <tr><td>★ <i>"Khách hỏi giá, trực page nói 'để lại số em tư vấn' — chấm sao?"</i></td>
+        <td><code>TC-9</code> = <code>✗</code> <i>(lỗi người)</i> — giá <b>đã công khai</b> tại <code>/hoan-my-bang-gia-dich-vu-nha-khoa.html</code>. Ngoại lệ <code>?</code>: dòng trụ/dòng sứ chưa có trong bảng</td>
+        <td><code>pd-E</code> §6</td></tr>
+      <tr><td>★ <i>"Khách hỏi bảo hành mấy năm, nhân viên không trả lời — trừ điểm chứ?"</i></td>
+        <td>⛔ <b>Không.</b> Hệ <b>chưa cấp</b> số năm bảo hành → chấm <code>—</code>, đẩy lên <i>"việc hệ thống"</i>. Trừ điểm là <b>chấm sai người</b></td>
+        <td><code>pd-Q1</code> §4</td></tr>
+      <tr><td>★ <i>"Nhân viên nói 'sứ bên em chính hãng hết' — sao?"</i></td>
+        <td>Cờ <code>CĐ-P2</code> → <code>TC-9</code> trượt → <b>toàn hội thoại 0 điểm</b>. <i>"Chính hãng"</i> chỉ dùng cho <b>Straumann · Invisalign · Nacera · Ormco</b></td>
+        <td><code>pd-E</code> §3</td></tr>
+      <tr><td>★ <i>"Nhóm <code>V-03</code> có % HOT cao hơn <code>V-11</code> — kết luận được gì?"</i></td>
+        <td>⛔ <b>Chưa gì cả</b> — đó là <b>lặp vòng</b>: <code>V-11</code> ⛔ không được cộng tín hiệu ①. Phải xem cột <code>HOT*</code>. Bỏ ① mà chênh lệch biến mất → nói thẳng <i>"⛔ không có bằng chứng"</i></td>
+        <td><code>pd-I2</code> §4</td></tr>
+      <tr><td><i>"Lead HOT cạo vôi với lead WARM All-On, ưu tiên ai?"</i></td>
+        <td><b>WARM·V1</b> — giá trị kỳ vọng cao hơn <code>HOT·V3</code>. ⛔ Không xếp lead chỉ bằng độ nóng</td>
+        <td><code>pd-I4</code> §1</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="callout stop">
+    <p><b>★ Hai câu đầu là hai câu mới (03/11/2026), và là hai câu quan trọng nhất.</b> Chúng chặn hai thứ ⛔ không gỡ được sau khi đã xảy ra: một <b>ca khiếu nại có dấu hiệu an toàn</b> bị chấm như một cơ hội bán, và <b>bệnh sử của khách</b> bị chép nguyên văn vào một file sẽ được gửi đi.</p>
+  </div>
+
+  <div class="callout warn">
+    <p><b>★ Câu 7 là câu agent sai tự tin nhất.</b> Nó trông hệt một lỗi tư vấn. Nhưng hệ đang có <a href="#slot">7 slot dữ kiện chưa được cấp</a> — nghĩa là một phần đáng kể ô trượt <code>TC-4</code>/<code>TC-9</code> thực ra là <b>lỗi hệ</b>. <b>Đào tạo ⛔ không chữa được việc thiếu văn bản.</b></p>
+  </div>
+
+  <h3>★★ Năm luật thêm — 03/11/2026</h3>
+  <p>Năm luật dưới đây mới vào kỳ này. Hai luật đầu <b>chống thiệt hại</b>; ba luật sau <b>chống kết luận sai</b>.</p>
+
+  <div class="tbl"><table>
+    <thead><tr><th>Luật</th><th>Nội dung</th><th>Nằm ở</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="chip stop">⑪</span> <b>An toàn trước bán hàng</b></td>
+        <td>Dấu hiệu an toàn <i>(đau · sưng · áp xe · trụ lung lay · biến chứng · bệnh nền · thuốc · mang thai)</i> → <b>chuyển bác sĩ</b>, ⛔ không tư vấn bán, ⛔ không báo giá.<br>★ Và <code>V-01</code> <i>"làm lại ca lỗi"</i> có <b>hai loại ⛔ không giống nhau</b>: làm ở <b>nơi khác</b> = ca tư vấn mới <i>(chấm bình thường)</i>; làm <b>tại Paris</b> = <b>khiếu nại</b> → <code>TC-5</code> và <code>TC-9</code> chấm <code>—</code>. Mục này <b>đứng trên mọi mục khác</b>.</td>
+        <td><code>pd-E</code> §3b</td>
+      </tr>
+      <tr>
+        <td><span class="chip stop">⑫</span> <b>Dữ liệu sức khoẻ</b></td>
+        <td>Tiền sử điều trị · bệnh nền · thuốc · ảnh răng · phim X-quang · chẩn đoán nơi khác là <b>dữ liệu sức khoẻ</b> theo <b>Luật 91/2025/QH15</b>: chỉ lưu <b>nhãn + câu bằng chứng ngắn</b> · giới hạn người xem · cần đồng ý xử lý.<br>★ Nhân viên <b>phải hỏi</b>, báo cáo <b>chỉ lưu nhãn</b>.</td>
+        <td><code>pd-B</code> §3b</td>
+      </tr>
+      <tr>
+        <td><span class="chip cho">⑬</span> <b>Một quyết định — một sổ</b></td>
+        <td>Hai công thức cho một quyết định thì <b>chắc chắn lệch nhau</b>, và khi lệch thì ⛔ không ai biết bảng nào đúng — vì <b>cả hai vẫn khớp tổng</b>. Thang đã có thì <b>dùng lại</b>, ⛔ không đẻ thang thứ hai; thay thì mục cũ <b>NGHỈ</b>, ⛔ không chạy song song.<br>⚠️ Ba cặp hay bị trộn: <b>ưu tiên chân dung ↔ SLA</b> · <b>chân dung ↔ rào cản</b> · <b>độ nóng ↔ nhóm giá trị</b>.</td>
+        <td><code>pd-A</code> §3b</td>
+      </tr>
+      <tr>
+        <td><span class="chip cho">⑭</span> <b>Ba nhãn, ⛔ đừng trộn</b></td>
+        <td><b>Chân dung</b> <i>(khách LÀ AI)</i> × <b><code>L-code</code>/rào cản</b> <i>(đang VƯỚNG GÌ)</i> × <b>độ nóng</b> → hành động.<br>⛔ Không có chân dung nào tên là một <b>trở ngại</b>: <i>"em ở Thanh Hóa"</i> là <code>L2.5</code>; <i>"đang xem thêm vài nơi"</i> là <code>L6.2</code>.<br>★ Và phác họa chân dung theo kỳ là <b>chế độ tạm</b> — mã đổi nghĩa mỗi kỳ nên ⛔ không so được giữa các kỳ.</td>
+        <td><code>pd-I1</code> §1 · §1c</td>
+      </tr>
+      <tr>
+        <td><span class="chip cho">⑮</span> <b>Ưu tiên chỉ từ dữ liệu</b></td>
+        <td>⛔ Không chân dung/dịch vụ nào được gán ưu tiên <b>trước</b>. Chỉ số = <b>độ nóng trung bình</b> + <b>tỷ lệ đến khám thật</b>; ngưỡng <b>≥30 HT</b> và <b>≥5 lượt đến khám</b>.<br>★ Ưu tiên đổi <b>ngân sách · nội dung · đào tạo</b> — ⛔ <b>KHÔNG đổi SLA khách</b>. Một khách <i>"ưu tiên thấp"</i> mà <b>đang đau cấp</b> thì vẫn gọi ngay.</td>
+        <td><code>pd-I4</code> §2b</td>
+      </tr>
+    </tbody>
+  </table></div>
+
+  <h3>★ Khuôn ba nhịp — áp cho hook và cho câu mẫu trong sổ tay</h3>
+  <div class="code">
+    <div class="bar"><span class="name">pd-I4 §4 · pd-Q3 §2</span><button type="button" data-copy>Copy</button></div>
+    <pre>&lt;điều khách sợ, BẰNG CHỮ CỦA KHÁCH&gt;  →  &lt;điều mình làm khác&gt;  →  &lt;bằng chứng&gt;
+
+Ví dụ đủ ba nhịp, cho rào L6.7 ngờ vật liệu:
+  "Em nghe nói nhiều nơi tráo trụ"
+  → mỗi trụ ở Paris có MÃ RIÊNG in trên phiếu bảo hành, chị được xem
+    phiếu TRƯỚC KHI CẤY
+  → Paris là đối tác của Straumann.   (HT-001)
+
+Thiếu nhịp ③ → câu đó chỉ là lời hứa.
+Thiếu nhịp ① → nó là lời người bán.
+Thiếu nhịp ② → ⛔ không có gì để khách chọn mình.
+
+★ Viết bằng CHỮ CỦA KHÁCH. Khách ⛔ không tìm "nụ cười hài hoà" —
+  khách tìm "bọc sứ có phải mài hết răng thật không".
+
+★ Trạng thái duyệt gắn trên TỪNG CÂU, ⛔ không theo cả tuyến:
+  ✅ đã duyệt · 🟠 chờ duyệt / chờ pháp chế · ⏸ chờ dữ kiện &lt;slot&gt;</pre>
+  </div>
+  <div class="callout info">
+    <p>⚠️ <b>Một tuyến nội dung có thể gồm câu đã duyệt và câu chưa duyệt.</b> Duyệt theo tuyến là cách để một câu 🟠 đi ra ngoài dưới vỏ một tuyến 🟢.</p>
+  </div>
+
+  <h3>Tám điều riêng của ngành nha — ⛔ không được quên</h3>
+  <div class="code">
+    <div class="bar"><span class="name">đặc thù ngành nha khoa</span><button type="button" data-copy>Copy</button></div>
+    <pre>① BA TRỤC ⛔ KHÔNG GỘP: L-code · độ nóng · V1/V2/V3.
+  ★ Một lead HOT·V3 (cạo vôi) ⛔ không bằng WARM·V1 (All-On).
+  Gộp lại thì V3 đông và dễ chốt sẽ CHE MẤT việc V1 đang rò.
+  V1 ⛔ không đánh giá bằng tốc độ chốt — nuôi tới 90 ngày.
+
+② L6.7 NGỜ VẬT LIỆU — mã riêng ngành nha, ⛔ không gộp vào L6.2.
+  Khách ⛔ KHÔNG tự kiểm được vật liệu trong miệng mình.
+  ★ Nêu tên hãng CHƯA ĐỦ — phải cho thứ khách TỰ KIỂM được:
+    tên dòng · mã trụ/phôi trên phiếu · được xem phiếu trước khi cấy.
+
+③ "CHÍNH HÃNG" LÀ TUYÊN BỐ PHÁP LÝ, ⛔ không phải từ marketing.
+  Chỉ 4 hãng: Straumann · Invisalign · Nacera · Ormco.
+  Gắn sai → cờ CĐ-P2, TC-9 trượt → TOÀN HỘI THOẠI 0 ĐIỂM.
+
+④ ⛔ KHÔNG hứa thời gian điều trị cứng ("niềng xong 12 tháng") → CĐ-P3.
+  ⛔ KHÔNG chẩn đoán qua ảnh → CĐ-P4. ⛔ KHÔNG chốt giá ca → CĐ-P5.
+  ⛔ KHÔNG nêu bác sĩ ngoài 3 người được duyệt → CĐ-P6.
+
+⑤ GIÁ ĐÃ CÔNG KHAI tại /hoan-my-bang-gia-dich-vu-nha-khoa.html
+  → né giá hẳn là LỖI NGƯỜI. Nhưng giá dòng trụ/dòng sứ CHƯA CẤP → ô "?".
+
+⑥ CTA MẠNH NHẤT: mời ĐI KHÁM + CHỤP PHIM, nhấn "chưa phải điều trị".
+  Khám là bước có giá trị thật với khách mà chưa phải trả tiền lớn.
+  Hội thoại nhảy thẳng vào báo giá là tư vấn sai nhịp.
+
+⑦ ★★ AN TOÀN TRƯỚC BÁN HÀNG — đứng trên mọi điều trên.
+  Dấu hiệu an toàn (đau · sưng · áp xe · trụ lung lay · biến chứng ·
+  bệnh nền · thuốc · mang thai) → CHUYỂN BÁC SĨ, ⛔ không tư vấn bán,
+  ⛔ không báo giá, ⛔ không bán thêm.
+  ★ V-01 "làm lại ca lỗi" có HAI loại, ⛔ không giống nhau:
+    · làm ở NƠI KHÁC → ca tư vấn mới, rào NGỜ nặng (N5). Chấm bình thường
+    · làm TẠI PARIS  → KHIẾU NẠI. TC-5 và TC-9 chấm "—"
+  ⚠ Chấm nhân viên vì "⛔ không xin được số" trong một ca khiếu nại
+    là CHẤM SAI VIỆC. Nhân viên ĐÚNG khi ⛔ không bán.
+
+⑧ ★★ DỮ LIỆU SỨC KHOẺ — Luật 91/2025/QH15.
+  Tiền sử điều trị · bệnh nền · thuốc · ảnh răng · phim X-quang là
+  DỮ LIỆU SỨC KHOẺ → chỉ lưu NHÃN + câu bằng chứng ngắn · giới hạn
+  người xem · cần đồng ý xử lý.
+  ★ Nhân viên PHẢI HỎI (TC-3) nhưng báo cáo CHỈ LƯU NHÃN.
+
+★ Ba bác sĩ được nêu tên: TS-BS. Đàm Ngọc Trâm · BS. Hồ Hiệp Anh Tuấn
+  · BS.CKI Nguyễn Ngọc Linh. Tên khác → CĐ-P6 + ⚠ Cần xác minh từ Paris.
+
+★ Bảy tỉnh/thành: Hà Nội · Hải Phòng · Quảng Ninh · Vinh · Đà Nẵng
+  · TP.HCM · Bình Dương. Khách NGOÀI → L2.5; TRONG mà bảo xa → L6.4.</pre>
+  </div>
+</section>
+
+<!-- ═══════════════ 9 ═══════════════ -->
+<section id="slot">
+  <h2><span class="num">08</span>Bảy slot dữ kiện còn chờ</h2>
+  <p class="lede">Mỗi slot còn trống là một nhóm ô <code>—</code>/<code>?</code> trong luồng Q và một khe nội dung trong luồng I.</p>
+
+  <div class="tbl"><table>
+    <thead><tr><th>#</th><th>Slot</th><th>Chặn gì</th><th>Ai cấp</th></tr></thead>
+    <tbody>
+      <tr><td>①</td><td>Bảng giá theo từng <b>dòng trụ / dòng sứ</b></td><td>Ô <code>?</code> của <code>TC-9</code> · cờ <code>CĐ-P5</code></td><td>Marketing / Kế toán</td></tr>
+      <tr><td>②</td><td><b>Số năm bảo hành</b> theo dịch vụ</td><td>Ô <code>—</code> của <code>TC-4</code> · ★ cờ <code>CĐ-P8</code></td><td>Khoa Chuyên môn</td></tr>
+      <tr><td>③</td><td>Danh sách <b>case before–after có giấy đồng ý</b></td><td>★ Cờ <code>CĐ-P11</code> · mọi hook before–after đứng 🟠</td><td>Marketing + Pháp chế</td></tr>
+      <tr><td>④</td><td>Cơ sở đủ năng lực <b>All-On / ghép xương</b></td><td>Định tuyến khách tỉnh — <b>ca đắt nhất</b> (<code>V-02</code>)</td><td>Vận hành</td></tr>
+      <tr><td>⑤</td><td>Số <b>giấy xác nhận nội dung quảng cáo</b></td><td>Mọi hook có phát ngôn y khoa đứng 🟠</td><td>Pháp chế</td></tr>
+      <tr><td>⑥</td><td>Điều kiện &amp; <b>lãi suất trả góp</b></td><td>Ô <code>—</code> của <code>TC-4</code> với rào <code>L6.3</code></td><td>Kế toán</td></tr>
+      <tr><td>⑦</td><td><b>Mốc KPI</b> (xin số · show-up · chốt phác đồ)</td><td>⛔ Không so được <i>"đạt / chưa đạt"</i></td><td>Paris</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="callout stop">
+    <p><b>★ Slot ② và ③ là hai slot sinh cờ đỏ.</b> Nhân viên bị khách hỏi mà hệ chưa cấp dữ kiện thì chỉ có hai đường: <b>im</b> (trượt <code>TC-4</code>) hoặc <b>nói một con số nghe được</b> (cờ <code>CĐ-P8</code> / <code>CĐ-P11</code>). Cả hai đều bị trừ. ⛔ <b>Đào tạo ⛔ không chữa được việc này</b> — cấp hai slot đó thì cờ tự hết.</p>
+  </div>
+
+  <div class="callout warn">
+    <p><b>⚠️ Mốc KPI chưa được Paris chốt thì ghi <code>⚠ chưa có mốc so sánh</code></b> — ⛔ tuyệt đối không tự đặt mốc rồi kết luận <i>"đạt / không đạt"</i>. Năm mốc có số trong <code>P8</code> §7 (78% · 50% · 95% · 90% · 8/10) là <b>mốc kế thừa từ hệ CSKH tập đoàn, chưa được Paris xác nhận cho ngành nha</b> — mọi lần so vào phải ghi rõ điều đó.</p>
+  </div>
+
+  <div class="callout info">
+    <p><b>⏸ Slot chờ ≥3 kỳ → đưa lên ĐẦU báo cáo</b>, ⛔ không để trong phụ lục.</p>
+  </div>
+</section>
+
+<footer>
+  <p><b>Insight Dashboard Paris</b> · v1.1 · Nha khoa Paris · <code>nhakhoaparis.vn</code></p>
+  <p>Trang này là hướng dẫn cài đặt. Nó ⛔ không chứa dữ liệu khách và ⛔ không chứa tên nhân viên — cùng luật với mọi đầu ra của hệ.</p>
+</footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ── Tab ── */
+  document.querySelectorAll("[data-tabs]").forEach(function(bar){
+    var key = bar.getAttribute("data-tabs");
+    var panels = document.querySelector('[data-panels="' + key + '"]');
+    if (!panels) return;
+    var btns = Array.prototype.slice.call(bar.querySelectorAll("button"));
+    var divs = Array.prototype.slice.call(panels.children);
+    btns.forEach(function(b, i){
+      b.addEventListener("click", function(){
+        btns.forEach(function(x){ x.setAttribute("aria-selected", "false"); });
+        divs.forEach(function(d){ d.classList.remove("on"); });
+        b.setAttribute("aria-selected", "true");
+        if (divs[i]) divs[i].classList.add("on");
+      });
+    });
+  });
+
+  /* ── Nút Copy ── */
+  document.querySelectorAll("button[data-copy]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var box = btn.closest(".code");
+      var pre = box && box.querySelector("pre");
+      if (!pre) return;
+      var txt = pre.textContent;
+      function xong(){
+        var cu = btn.textContent;
+        btn.textContent = "✓ Đã copy";
+        btn.classList.add("done");
+        setTimeout(function(){ btn.textContent = cu; btn.classList.remove("done"); }, 1800);
+      }
+      function duPhong(){
+        try {
+          var ta = document.createElement("textarea");
+          ta.value = txt;
+          ta.setAttribute("readonly", "readonly");
+          ta.style.position = "fixed";
+          ta.style.opacity = "0";
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand("copy");
+          document.body.removeChild(ta);
+          xong();
+        } catch (e) {
+          btn.textContent = "Chọn rồi Ctrl+C";
+          setTimeout(function(){ btn.textContent = "Copy"; }, 2200);
+        }
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(txt).then(xong, duPhong);
+      } else {
+        duPhong();
+      }
+    });
+  });
+
+  /* ── Điều hướng: đánh dấu mục đang xem ── */
+  var links = Array.prototype.slice.call(document.querySelectorAll("nav a"));
+  var secs = links.map(function(a){ return document.querySelector(a.getAttribute("href")); });
+  function danhDau(){
+    var moc = window.scrollY + 110, idx = 0;
+    secs.forEach(function(s, i){ if (s && s.offsetTop <= moc) idx = i; });
+    links.forEach(function(a, i){ a.classList.toggle("on", i === idx); });
+  }
+  var cho = false;
+  window.addEventListener("scroll", function(){
+    if (cho) return;
+    cho = true;
+    requestAnimationFrame(function(){ danhDau(); cho = false; });
+  }, { passive: true });
+  danhDau();
+})();
+</script>

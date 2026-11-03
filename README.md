@@ -5,7 +5,8 @@
 `v1.1` · 03/11/2026 · ngành **nha khoa**
 
 ### 📘 [**Hướng dẫn cài đặt & prompt mẫu →**](https://claude.ai/artifact/B1qQBgUixjBjVwiiDwDTQJ)
-*(9 mục · 3 tab nền tảng · 6 prompt dán nguyên văn · 19 nút Copy — dễ dùng hơn đọc repo)*
+*(9 mục · 3 tab nền tảng · 6 prompt dán nguyên văn · **10 câu kiểm** · 22 nút Copy — dễ dùng hơn đọc repo)*
+> ★ Nguồn của trang nằm ở [`tools/huong-dan.html`](tools/huong-dan.html) — sửa file đó rồi publish lại cùng link.
 > ⚠️ Artifact đang **riêng tư**. Người khác chỉ mở được sau khi anh chia sẻ qua menu Share trên trang.
 
 ---
