@@ -71,6 +71,19 @@ Chỉ repo này: `CD1…CDn` (chân dung **của kỳ**, duyệt CỔNG 0) · `T
    thay "đến khám" → `⚠ chưa đo được show-up`.
 ⑩  ⛔ KHÔNG BỊA. Thiếu → `⚠ Cần xác minh từ Paris` / `⏸ chờ dữ kiện` +
    tên slot. ⛔ Không hiện `0` cho ô chưa đo.
+⑪  MỘT QUYẾT ĐỊNH — MỘT SỔ. Hai công thức cho một quyết định thì CHẮC CHẮN
+   lệch nhau mà vẫn khớp tổng. Thang đã có thì dùng lại, ⛔ không đẻ thang
+   thứ hai. Hay bị trộn: ưu tiên chân dung ↔ SLA · chân dung ↔ rào cản.
+⑫  DỮ LIỆU SỨC KHOẺ (Luật 91/2025/QH15): tiền sử · bệnh nền · thuốc · ảnh ·
+   phim → chỉ lưu NHÃN + câu bằng chứng ngắn. NV phải hỏi (TC-3), báo cáo
+   CHỈ LƯU NHÃN.
+⑬  AN TOÀN TRƯỚC BÁN HÀNG. Đau cấp · sưng · trụ lung lay · bệnh nền · thuốc
+   · mang thai → CHUYỂN BÁC SĨ, ⛔ không báo giá, ⛔ không bán thêm.
+   ★ V-01 hai loại: NƠI KHÁC = ca mới; TẠI PARIS = KHIẾU NẠI, ⛔ không phải
+   cơ hội bán → TC-5 và TC-9 chấm `—`.
+⑭  CHÂN DUNG = khách LÀ AI; L-code/rào cản = đang VƯỚNG GÌ. ⛔ Không chân
+   dung nào tên là một trở ngại. Ưu tiên chân dung CHỈ từ dữ liệu (≥30 HT
+   và ≥5 đến khám), và ⛔ KHÔNG đổi SLA khách.
 ```
 
 ## 6. ĐẶC THÙ NGÀNH NHA — SÁU ĐIỀU

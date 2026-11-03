@@ -96,6 +96,50 @@ Hai bộ mã **mới, chỉ có ở repo này**:
 
 ---
 
+## 3b. ★★ MỘT QUYẾT ĐỊNH — MỘT SỔ. ⛔ ĐỪNG ĐỂ HAI NƠI CÙNG CHẤM MỘT THỨ
+
+> ⚠️ **Luật này ra từ một lỗi có thật ở hệ cùng họ:** hai công thức cho một quyết định thì **chắc chắn lệch nhau**, và khi lệch thì ⛔ không ai biết bảng nào đúng. Nó ⛔ không phát hiện được từ bên ngoài, vì cả hai bảng đều khớp tổng.
+
+Mỗi câu hỏi dưới đây có **đúng một** sổ trả lời:
+
+```
+pd-C §3   → PHÂN LOẠI NÓNG      · HOT/WARM/COLD + bitmask · nhãn báo ra ngoài
+pd-C §3   → VẤN ĐỀ RĂNG         · V-01…V-11, xét theo thứ tự
+P4 §3     → NHÓM GIÁ TRỊ        · V1/V2/V3 — thành phần DÙNG CHUNG
+P6 §2     → TRẠNG THÁI VẬN HÀNH · L1.1…L6.7, khách đang VƯỚNG GÌ
+pd-I1     → CHÂN DUNG           · khách LÀ AI
+pd-I4 §1  → THỨ TỰ VIỆC         · độ chặn × giá trị
+pd-I4 §2b → ƯU TIÊN CHÂN DUNG   · CHỈ từ dữ liệu · đổi ngân sách
+P8 §4     → SLA GỌI KHÁCH       · ⛔ KHÔNG theo ưu tiên chân dung
+pd-Q1 §3  → CHẤM NHÂN VIÊN      · TC-1…TC-10, thang 10
+```
+
+**Ba cặp dễ bị trộn nhất, và luật phân xử:**
+
+| Cặp | Luật |
+|---|---|
+| **Ưu tiên chân dung** ↔ **SLA khách** | Ưu tiên đổi **ngân sách · nội dung · đào tạo**. ⛔ **Không đổi SLA.** SLA là `P8` §4, theo từng lead (`pd-I4` §2b) |
+| **Chân dung** ↔ **`L-code` / rào cản** | Chân dung = *khách là ai*. `L-code` = *khách đang vướng gì*. ⛔ Không có chân dung nào tên là một trở ngại (`pd-I1` §1c) |
+| **Độ nóng** ↔ **nhóm giá trị** | Độ nóng = mức sẵn sàng. `V1/V2/V3` = giá trị kỳ vọng của **dịch vụ**. ⛔ Không suy cái này từ cái kia (`pd-C` §3) |
+
+⛔ **Và một luật về thang điểm:** mọi thang đã có thì **dùng lại**, ⛔ không đẻ thang thứ hai. Cần một cách xếp mới → nói rõ nó **thay** cái nào, và cái cũ **nghỉ**.
+
+### ★ Luật nghỉ một mục — ⛔ không xoá, ⛔ không chạy song song
+
+```
+Một mục bị thay thì ĐÁNH DẤU NGHỈ, ⛔ không xoá:
+   «⛔ ĐÃ NGHỈ <ngày> — thay bằng <sổ/mục mới>»
+
+⛔ Hai mục trả lời cùng một câu hỏi thì ⛔ KHÔNG được chạy song song,
+   dù một trong hai được ghi là "tham khảo".
+★ Giữ mục đã nghỉ để còn đối chiếu số của các kỳ trước, và để biết
+   vì sao đổi — ⛔ không phải để dùng tiếp.
+```
+
+⚠️ Khi đổi một luật, **ghi luôn cái mất**. Một luật đổi mà ⛔ không ai viết ra nó đánh đổi điều gì thì kỳ sau sẽ có người đổi ngược lại, và ⛔ không ai nhớ vì sao.
+
+---
+
 ## 4. QUY TRÌNH — MỘT LẦN ĐỌC, HAI NHÁNH
 
 ```

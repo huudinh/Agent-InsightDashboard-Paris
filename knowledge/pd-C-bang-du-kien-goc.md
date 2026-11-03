@@ -61,6 +61,7 @@ Nếu hai luồng mỗi luồng tự đọc hội thoại, sẽ xảy ra đúng 
         "loi_hua_post": "ăn nhai như răng thật",
         "trich_khach": ["trụ của mình là trụ gì ạ, có chính hãng không. em nghe nói nhiều nơi tráo trụ"],
         "dau_gia_dinh": false,
+        "lam_o_dau": "noi-khac",
         "cd": null
       },
 
@@ -103,6 +104,31 @@ Xét **theo thứ tự ưu tiên từ `V-01` xuống `V-11`**, đúng nhóm đ�
 ★ Hai luật ghi đè, ⛔ không được bỏ:
 - Khách nói **sửa lại ca cũ** → luôn `V-01`, kể cả có nêu dịch vụ gì. Vì cách tư vấn hoàn toàn khác.
 - Khách vừa nói **mất răng** vừa nói **đau** → `V-03`, ghi chú *"kèm đau"*.
+
+### ★★ Thứ tự kiểm **là một phần của luật**
+
+```
+Xét theo THỨ TỰ V-01 → V-11. Nhóm khớp ĐẦU TIÊN quyết định.
+⛔ Không chấm điểm. ⛔ Không lấy nhóm trúng nhiều từ khoá nhất.
+
+① Tiền sử can thiệp · ca đã làm hỏng     ← xét TRƯỚC  (V-01)
+② Tình trạng răng · mục tiêu thẩm mỹ     ← xét SAU    (V-02…V-10)
+```
+
+> ⚠️ **Đảo thứ tự là xếp một ca sửa hỏng thành ca làm lần đầu** — rồi tư vấn sai, báo giá sai, và **mất một khách đã từng bị hỏng một lần**. Đây là nhóm ngờ nặng nhất của ngành nha (`N5`, `pd-I2` §3).
+
+⛔ Thứ tự này để **nhận diện đúng**, ⛔ **không phải** thứ tự ưu tiên kinh doanh. Ưu tiên kinh doanh nằm ở `pd-I4` §1 và **chỉ tính từ dữ liệu**.
+
+### ★ Một hội thoại hỏi NHIỀU dịch vụ
+
+```
+Chọn dịch vụ khách hỏi SÂU NHẤT (nhiều lượt nhất · có mô tả tình trạng).
+Ghi các dịch vụ còn lại vào ô `dv_khac` để bán chéo.
+⛔ KHÔNG tách thành hai hội thoại — tổng mẫu sẽ lệch, và cùng một
+   người bị đếm hai lần trong mọi bảng.
+```
+
+★ Ngành nha rất hay gặp việc này: *"em muốn niềng, mà răng khôn có phải nhổ trước không, với cạo vôi luôn"* — ba dịch vụ, một người, một hội thoại. `pd-I3` §1 bảng cross-sell cho biết hướng tiếp theo tự nhiên.
 
 ### `nhom_gt` — V1 / V2 / V3
 

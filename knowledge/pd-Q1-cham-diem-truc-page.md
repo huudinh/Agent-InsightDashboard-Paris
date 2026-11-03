@@ -46,13 +46,15 @@ TẦNG 2 · từng nhân viên : quy ra điểm 0–10 khi đủ mẫu, rồi ph
 
 ⚠️ `—` **⛔ không phải** `✗`. Gộp hai cái này là cách làm cho một nhân viên trông tệ chỉ vì khách của bạn ấy ⛔ không hỏi giá.
 
-⚠️ `?` **⛔ không phải** `✗`. Đây là ký hiệu riêng của repo này, thêm vào vì ngành nha có nhiều dữ kiện **chưa được Paris cấp** (`pd-E` §5) — và ⛔ không có ký hiệu này thì mọi ô đó sẽ bị chấm `✗` oan.
+⚠️ `?` **⛔ không phải** `✗`. Đây là ký hiệu riêng của repo này, thêm vào vì ngành nha có nhiều dữ kiện **chưa được Paris cấp** (`pd-E` §7) — và ⛔ không có ký hiệu này thì mọi ô đó sẽ bị chấm `✗` oan.
 
 ---
 
 ## 3. ★ MƯỜI TIÊU CHÍ — ÁNH XẠ 1:1 VỚI `P8` §6
 
 ⚠️ **`P8` thắng khi mâu thuẫn.** `P8` sửa thì sổ này sửa theo.
+
+> ⚠️ **Sửa một tiêu chí thì sửa ở BA chỗ CÙNG LÚC:** sổ này · `tools/tu_dien.json` (bộ từ khoá nhận diện) · `tools/pd.py` (hàm `cham_tc`). Thang điểm nằm nhiều chỗ mà lệch nhau thì ⛔ **không ai biết báo cáo đang chấm theo bản nào** — và lệch kiểu đó ⛔ không có cách nào phát hiện từ bên ngoài, vì mọi bảng vẫn khớp tổng.
 
 | Mã | `P8` | Tiêu chí | Đạt khi | Trượt là lỗi gì |
 |---|---|---|---|---|

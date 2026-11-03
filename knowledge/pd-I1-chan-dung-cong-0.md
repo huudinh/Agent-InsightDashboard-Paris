@@ -4,22 +4,74 @@
 
 ---
 
-## 1. ⛔ VÌ SAO KHÔNG DÙNG `N1…N6` LÀM CHÂN DUNG
+## 1. ⚠️ PHÁC HỌA THEO KỲ LÀ **CHẾ ĐỘ TẠM** — 03/11/2026
 
-`P2` §3 đã có sáu nhóm khách: `N1` mất răng trung–cao niên · `N2` thẩm mỹ 22–40 · `N3` niềng · `N4` đau cấp · `N5` làm lại ca lỗi · `N6` gia đình & trẻ em.
+> ⚠️ **Mục này đã đổi.** Bản trước nói việc có một bộ chân dung cố định là sai nguyên tắc. Điều đó **⛔ không còn đúng**: cố định là **đích**, phác họa theo kỳ chỉ là **chế độ tạm vì Paris chưa có thư viện chân dung**.
 
-**Sáu nhóm đó đúng, và sổ này dùng chúng** — nhưng dùng làm **lưới kiểm**, ⛔ không làm chân dung.
+### Hai chế độ
 
-| | `N1…N6` — nhóm khách | `CD1…CDn` — chân dung của kỳ |
+| | **Chế độ TẠM** — đang chạy | **Đích** — khi có thư viện |
 |---|---|---|
-| Nguồn | Hồ sơ thương hiệu, **biết trước khi đọc** | **Chữ khách của chính kỳ này** |
-| Trả lời câu | *"Ngành nha có những loại khách nào"* | *"Kỳ này ai đang nhắn vào page, và họ đang nghĩ gì"* |
-| Đổi theo kỳ | ⛔ Không | ✅ Có |
-| Cần duyệt | ⛔ Không | ✅ **CỔNG 0** |
+| Nguồn | Agent phác họa từ hội thoại **của kỳ** | Một **thư viện cố định**, duyệt một lần ở cấp thương hiệu |
+| Mã | `CD1 … CDn` — ⚠️ **đổi nghĩa mỗi kỳ** | Mã đọc được, **cố định** (ví dụ `V01-NGO-LAM-LAI`) |
+| Duyệt | **CỔNG 0, mỗi kỳ** | Một lần · ⛔ **không còn CỔNG 0** |
+| So giữa các kỳ | ⛔ Không | ✅ Được |
+| Bàn giao cho Sale / pháp chế | ⛔ Không | ✅ Cùng một bộ mã |
 
-> ⚠️ **Dùng `N1…N6` làm chân dung là lỗi im lặng.** Mọi bảng vẫn khớp tổng, biểu đồ vẫn đẹp, nhưng báo cáo chỉ nói lại điều đã biết từ trước. Nó ⛔ không phát hiện được gì mới — mà phát hiện cái mới chính là việc duy nhất của luồng I.
+★ **Cái mất của chế độ tạm:** `CD3` của tháng 10 và `CD3` của tháng 11 là **hai thứ khác nhau** — ⛔ không vẽ được xu hướng, ⛔ không bàn giao được cho ai. Mỗi kỳ phải giải thích lại từ đầu.
 
-★ **Cách dùng `N1…N6` cho đúng:** sau khi phác họa `CD`, đối chiếu xem có nhóm `N` nào **không xuất hiện** trong kỳ. Nhóm vắng mặt là một phát hiện: *"`N6` gia đình & trẻ em — 0 hội thoại trong kỳ, dù đây là cửa vào LTV mạnh nhất. ⚠️ Kỳ này ⛔ không có post nào nhắm nhóm này."*
+★ **Cái được của chế độ tạm, và lý do nó vẫn chạy:** chân dung phác họa theo kỳ **bám sát tệp thật**, vì nó sinh ra từ chính tệp đó. Thư viện cố định ⛔ không có tính đó — nên thư viện phải qua **cổng ổn định** ở §5b trước khi dùng để chia ngân sách.
+
+### ⏸ Điều kiện để nghỉ CỔNG 0
+
+```
+CỔNG 0 nghỉ khi — và chỉ khi — có đủ ba thứ:
+① Một THƯ VIỆN CHÂN DUNG NHA KHOA của Paris, có mã cố định đọc được
+② Thư viện đó được duyệt MỘT LẦN ở cấp thương hiệu (⛔ không phải mỗi kỳ)
+③ Thư viện qua năm cổng ổn định của §5b
+
+⏸ Hiện CHƯA CÓ thứ nào trong ba thứ trên → CỔNG 0 VẪN CHẠY.
+⛔ Không tự dựng thư viện. Thiếu chân dung thì BÁO LẠI để bổ sung ở bản sau.
+```
+
+---
+
+## 1b. ⛔ VÌ SAO `N1…N6` ⛔ KHÔNG PHẢI THƯ VIỆN ẤY
+
+`P2` §3 có sáu nhóm khách: `N1` mất răng trung–cao niên · `N2` thẩm mỹ 22–40 · `N3` niềng · `N4` đau cấp · `N5` làm lại ca lỗi · `N6` gia đình & trẻ em.
+
+Sáu nhóm đó **đúng và cố định** — nhưng chúng ⛔ **không đủ làm thư viện chân dung**, vì chúng chia theo **dịch vụ + tuổi**, ⛔ không chia theo **tiền sử can thiệp × động cơ × hoàn cảnh mua**. Một nhóm `N1` gộp cả người mất một răng và người mất cả hàm, cả người tự quyết và người để con quyết.
+
+| | `N1…N6` — nhóm khách | Thư viện chân dung (⏸ chưa có) |
+|---|---|---|
+| Chia theo | Dịch vụ + tuổi | **Tiền sử can thiệp × động cơ × hoàn cảnh mua** |
+| Số lượng | 6 | Nhiều hơn — mỗi dịch vụ vài chân dung |
+| Trả lời câu | *"Ngành nha có những loại khách nào"* | *"Người đang nhắn là ai, và nói gì với người đó"* |
+
+★ **Cách dùng `N1…N6` cho đúng, cả hai chế độ:** làm **lưới kiểm**. Sau khi phác họa `CD`, đối chiếu xem nhóm `N` nào **không xuất hiện** trong kỳ. Nhóm vắng mặt là một phát hiện: *"`N6` gia đình & trẻ em — 0 hội thoại trong kỳ, dù đây là cửa vào LTV mạnh nhất. ⚠️ Kỳ này ⛔ không có post nào nhắm nhóm này."*
+
+---
+
+## 1c. ★★ BA NHÃN CHO MỘT HỘI THOẠI — ⛔ ĐỪNG TRỘN
+
+```
+CHÂN DUNG        ×   L-CODE / RÀO CẢN   ×   ĐỘ NÓNG      →   HÀNH ĐỘNG
+(đúng 1)             (P6 §2 · P2 §2)        (P8 §1)
+khách LÀ AI          khách đang            khách nóng        gọi ai trước ·
+                     VƯỚNG GÌ              tới đâu           nói gì
+```
+
+⛔ **Ba thứ dưới đây ⛔ KHÔNG phải chân dung** — đây là lỗi hay gặp nhất:
+
+| Khách nói | Dễ bị xếp thành | Thật ra là |
+|---|---|---|
+| *"em ở Thanh Hóa"* | một chân dung *"khách tỉnh"* | **`L2.5`** — trạng thái vận hành |
+| *"em đang xem thêm vài nơi"* | một chân dung *"khách so sánh"* | **`L6.2`** — rào cản `NGỜ` |
+| *"bọc sứ bao nhiêu tiền"* rồi im | một chân dung *"khách hỏi giá"* | **`V-11` + `L1.1`** — chưa đủ dữ kiện để biết họ là ai |
+
+> ★ Gộp chúng vào chân dung là trộn **khách là ai** với **khách đang ở đâu trong phễu**. Hai câu hỏi khác nhau, hai cách xử lý khác nhau — và khi trộn thì cùng một người xuất hiện ở hai chân dung tuỳ kỳ đó họ vướng gì.
+
+⚠️ **Dấu hiệu đã trộn:** tên chân dung mô tả **một trở ngại** (*"khách sợ đau"*, *"khách ở xa"*, *"khách chờ hỏi nhà"*) thay vì mô tả **một con người có hoàn cảnh**. Rào cản thuộc trục `L6.x`, ⛔ không thuộc trục chân dung.
 
 ---
 
@@ -120,6 +172,43 @@ Anh trả lời bằng một trong:
 ⛔ **Agent không tự duyệt thay anh.** ⛔ Không có trường hợp *"mẫu rõ ràng nên tôi gán luôn"*.
 
 ⚠️ **Và ⛔ không được lách CỔNG 0 bằng cách gọi nó tên khác** — ví dụ in ra "bảng phân nhóm khách sơ bộ" rồi dùng luôn. Bất cứ thứ gì chia khách thành nhóm **của kỳ này** rồi làm nền cho bảng khác đều là chân dung, và đều phải qua CỔNG 0.
+
+---
+
+## 5b. ★ NĂM CỔNG ỔN ĐỊNH — DÙNG CHO CẢ HAI CHẾ ĐỘ
+
+Một bộ chân dung *(phác họa của kỳ, hoặc thư viện khi có)* chỉ được coi là **ổn định** khi đạt **cả năm**:
+
+| # | Cổng | Ngưỡng |
+|---|---|---|
+| ① | Tỷ lệ **`CD0`** — hội thoại ⛔ không vào chân dung nào | ≤ **25%** *(`§4` luật ④)* |
+| ② | Chân dung có **độ khớp thấp nhất** | ≥ **70%** số HT trong nhóm đó thật sự khớp mô tả |
+| ③ | Chân dung **nhỏ nhất** | ≥ **5%** số hội thoại của kỳ |
+| ④ | Mỗi chân dung có **≥3 `HT-nnn`** làm bằng | `§3` ô cuối |
+| ⑤ | **Nỗi sợ thật** của các chân dung **khác nhau** | ⛔ Không có hai chân dung cùng một nỗi sợ |
+
+⛔ **Không đạt → gộp hoặc tách chân dung, sửa dấu hiệu nhận ra, phác lại.**
+⛔ **Chưa qua cổng ① thì ⛔ không dùng bảng chân dung để chia ngân sách hay xếp ưu tiên** — báo cáo phải tự gắn cờ việc này ở đầu trang.
+
+### ★★ Khi trượt cổng ① — chẩn đoán cho đúng
+
+> ⚠️ Đây là chỗ sai phổ biến nhất, và nó làm mất một kỳ.
+
+Phản xạ tự nhiên khi `CD0` quá cao là **thêm từ khoá** cho các chân dung. ⛔ **Thường là sai.** Phải đo trước:
+
+```
+① Độ dài trung vị chữ khách nói, CẢ hội thoại        → ? ký tự
+② Độ dài trung vị của riêng nhóm CD0                 → ? ký tự
+```
+
+| Nếu thấy | Thì nguyên nhân là | Việc chặn |
+|---|---|---|
+| Nhóm `CD0` **ngắn hơn hẳn** phần còn lại | ★ **Khách chưa nói đủ để biết họ là ai.** Họ gõ tên dịch vụ rồi hỏi giá, ⛔ không tả tình trạng | **Khai thác**, ⛔ không phải từ khoá: siết `TC-3` *(thu đủ 4 thông tin)* và tin mở của trực page |
+| Nhóm `CD0` **dài tương đương** | Bản phác họa thật sự còn thiếu một chân dung | Phác thêm / tách lại — ⛔ không nhét vào chân dung gần nhất |
+
+> ★ **Thêm từ khoá khi khách chưa nói gì là ÉP DỮ LIỆU, ⛔ không phải sửa bộ mã.** Nó làm `CD0` tụt xuống trên giấy mà ⛔ không làm báo cáo đúng hơn — và kỳ sau ⛔ không ai biết con số nào là thật.
+
+⚠️ Và một hệ quả đi qua tường ngăn: nếu nguyên nhân là **khách chưa nói đủ**, thì đó ⛔ **không phải lỗi của bộ mã luồng I** — nó là **việc của khai thác**, thuộc `TC-3` của luồng Q. Báo cáo insight nói ở mức hiện tượng (*"`n`% hội thoại ⛔ không đủ dữ kiện để biết khách là ai"*), ⛔ không nêu tên ai.
 
 ---
 

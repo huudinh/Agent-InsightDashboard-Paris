@@ -327,6 +327,34 @@ def gan_giai_doan(ht, v_rang, ds_l6, loi_kh):
     return "S1"
 
 
+def gan_lam_o_dau(loi_kh):
+    """pd-E §3b ② — "lam o dau" la du kien DOC LAP, ⛔ khong khoa sau V-01.
+
+      · lam o NOI KHAC  -> ca tu van moi, rao NGO nang (N5)
+      · lam TAI PARIS   -> KHIEU NAI. ⛔ Khong phai co hoi ban.
+
+    ⚠ Khoa o nay sau v_rang == "V-01" la sai: ca "trong implant o Paris, gio
+    tru bi lung lay" van la khieu nai du bo nhan V-xx co bat duoc "lam lai"
+    hay khong. Mot lo hong cua bo tu khoa ⛔ khong duoc bien thanh mot ca
+    khieu nai bi cham nhu co hoi ban.
+    """
+    t = TD.get("lam_o_dau", {})
+    if chua(loi_kh, t.get("tai_paris", [])):
+        return "tai-paris"
+    if chua(loi_kh, t.get("noi_khac", [])):
+        return "noi-khac"
+    return ""
+
+
+def dang_phan_nan(loi_kh):
+    return chua(loi_kh, TD.get("lam_o_dau", {}).get("phan_nan", []))
+
+
+def co_dau_hieu_an_toan(loi_kh):
+    """pd-E §3b ① — co dau hieu an toan thi CHUYEN BAC SI, ⛔ khong tu van ban."""
+    return chua(loi_kh, TD.get("an_toan_truoc_ban", {}).get("tu", []))
+
+
 N6_TRE_CA_NHA = ["cho con", "cho bé", "con em", "bé nhà em", "cháu em", "con gái em",
                  "con trai em", "răng sữa", "cả nhà", "gia đình em", "gói gia đình",
                  "bé", "trẻ em", "niềng cho con"]
@@ -476,7 +504,7 @@ XIN_SO = ["xin s[ốo]", "[đd]ể l[ạa]i s[ốo]", "cho em xin", "s[ốo] [đ
           "s[ốo] c[óo] zalo", "xin zalo"]
 
 
-def cham_tc(ht, v_rang, ds_l6, co_ghi_chu, co_do):
+def cham_tc(ht, v_rang, ds_l6, co_ghi_chu, co_do, lam_o_dau="", an_toan=None):
     """Tra ve (tc_dict, bang_chung_dict, ghi_chu_he_list).
 
     ✓ dat · ✗ chua dat · — khong ap dung HOAC loi he · ? cho doi chieu.
@@ -485,6 +513,10 @@ def cham_tc(ht, v_rang, ds_l6, co_ghi_chu, co_do):
     tc, bc, he = {}, {}, []
     loi_kh, loi_nv = ht["loi_kh"], ht["loi_nv"]
     tcd = TD["tc"]
+
+    # ★ pd-E §3b — hai tinh huong KHONG phai co hoi ban. Cham TC-5/TC-9 vao day
+    # la cham sai VIEC: nhan vien dung khi ⛔ khong xin so va ⛔ khong bao gia.
+    khong_phai_luong_ban = (lam_o_dau == "tai-paris") or bool(an_toan)
 
     # ── TC-1 · phan hoi <= 2' (chi trong 8h30-18h30; ngoai gio -> '—')
     if not ht["nv_tin"]:
@@ -560,7 +592,11 @@ def cham_tc(ht, v_rang, ds_l6, co_ghi_chu, co_do):
     # ── TC-5 · xin so co ly do CO LOI CHO KHACH
     co_xin = re.search("|".join(XIN_SO), khong_dau(loi_nv).replace("đ", "d"), re.I) \
         or chua(loi_nv, ["xin so", "de lai so", "cho em xin", "so co zalo"])
-    if not co_xin:
+    if khong_phai_luong_ban:
+        tc["TC-5"] = "—"
+        he.append("khong phai luong ban (%s)" % (("khieu nai tai Paris" if lam_o_dau == "tai-paris"
+                                                  else "dau hieu an toan: %s" % an_toan)))
+    elif not co_xin:
         tc["TC-5"] = "—"
     elif chua(loi_nv, tcd["TC-5_ly_do_xin_so"]["co_loi_cho_khach"]):
         tc["TC-5"] = "✓"
@@ -589,6 +625,9 @@ def cham_tc(ht, v_rang, ds_l6, co_ghi_chu, co_do):
     if co_do:
         tc["TC-9"] = "✗"
         bc["TC-9"] = [c["ma"] + ": " + c["nguyen_van"][:160] for c in co_do[:2]]
+    elif khong_phai_luong_ban:
+        # ⛔ Khong bao gia la DUNG o hai tinh huong nay — ⛔ khong tru diem.
+        tc["TC-9"] = "—"
     elif chua(loi_kh, TD["hoi_gia"]["tu"]):
         ne = chua(loi_nv, TD["ne_gia"]["cau_ne"])
         co_khung = re.search(r"\d[\d.,]*\s*(tri[ệe]u|tr\b|k\b|vn[đd])", khong_dau(loi_nv))
@@ -756,7 +795,9 @@ def lenh_doc(args):
         bits = cham_bitmask(ht, v_rang, loi_kh)
         nong, sao, ghi_de = gan_do_nong(bits, v_rang, loi_kh)
         co_do = soat_co_do(loi_nv)
-        tc, bc, he = cham_tc(ht, v_rang, ds_l6, co_ghi_chu, co_do)
+        lam_o_dau = gan_lam_o_dau(loi_kh)
+        an_toan = co_dau_hieu_an_toan(loi_kh)
+        tc, bc, he = cham_tc(ht, v_rang, ds_l6, co_ghi_chu, co_do, lam_o_dau, an_toan)
 
         t0 = phut(ht["kh_that"][0]["ngay"], ht["kh_that"][0]["gio"]) if ht["kh_that"] else None
         t1 = phut(ht["nv_tin"][0]["ngay"], ht["nv_tin"][0]["gio"]) if ht["nv_tin"] else None
@@ -770,6 +811,7 @@ def lenh_doc(args):
             "bitmask": "".join("1" if b else "0" for b in bits),
             "do_nong": nong, "do_nong_sao": sao, "ghi_de_nong": ghi_de,
             "co_do": [c["ma"] for c in co_do],
+            "dau_hieu_an_toan": an_toan or "",
             "loi_he": he,
             "loai_khoi_mau": ld or "",
 
@@ -785,6 +827,7 @@ def lenh_doc(args):
                                                                TD["hoi_gia"]["tu"])),
                 "trich_khach": [t["chu_that"][:240] for t in ht["kh_that"][:4]],
                 "dau_gia_dinh": dau_gd,
+                "lam_o_dau": lam_o_dau,
                 "doi_thu_neu": tat_ca_cum(loi_kh, TD["doi_thu"]["ten"]),
                 "cd": None,          # ⛔ null den khi anh duyet CONG 0 (pd-C §5)
             },

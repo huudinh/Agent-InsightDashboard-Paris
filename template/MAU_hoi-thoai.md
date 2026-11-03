@@ -4,7 +4,7 @@
 >
 > Dùng để: ① xem định dạng chuẩn · ② chạy thử trước khi đưa dữ liệu thật · ③ kiểm `tools/pd.py`.
 >
-> ★ File này **cài sẵn** các tình huống mà bộ công cụ phải bắt được: 11 cờ đỏ · lỗi hệ · ngoài giờ · luật ghi đè độ nóng · `L2.5` · tin chưa được chạm. Nếu sửa file, ⛔ đừng bỏ các tình huống đó.
+> ★ File này **cài sẵn** các tình huống mà bộ công cụ phải bắt được: 11 cờ đỏ · lỗi hệ · ngoài giờ · luật ghi đè độ nóng · `L2.5` · tin chưa được chạm · một **câu miễn trừ** (nhân viên từ chối gửi ảnh chưa duyệt — ⛔ phải **không** bị gắn cờ) · và một ca **làm tại Paris đang phàn nàn** (`HT-017` — ⛔ phải vào luồng khiếu nại, `TC-5`/`TC-9` chấm `—`). Nếu sửa file, ⛔ đừng bỏ các tình huống đó.
 
 ## Định dạng
 
@@ -172,3 +172,12 @@
 - **14/11 10:20 KH:** gồm cả mấy răng ạ
 - **14/11 10:22 NV (Nguyễn Hà):** Dạ chị để lại số em tư vấn chi tiết ạ
 - **14/11 10:30 KH:** thôi ạ
+
+## 17. Lưu Thị Hạnh — 15/11 09:05
+- Phụ trách: Trần Thu · Có SĐT: Không · Số tin: 6
+- **15/11 09:05 KH:** [Thẻ: Inbox từ quảng cáo QC_Implant_Straumann – Trồng răng Implant trụ Straumann, ăn nhai như răng thật]
+- **15/11 09:05 KH:** em trồng implant ở Paris cách đây 8 tháng, giờ trụ bị lung lay và nướu sưng. em bức xúc lắm
+- **15/11 09:06 NV (Trần Thu):** Dạ em rất xin lỗi chị về việc này ạ. Trường hợp trụ có dấu hiệu lung lay thì bác sĩ phải kiểm tra trực tiếp sớm nhất, em không dám nói trước nguyên nhân ạ. Chị làm ở cơ sở nào và bác sĩ nào thực hiện để em tra hồ sơ giúp chị?
+- **15/11 09:11 KH:** cơ sở Thái Thịnh ạ. em đau không ăn được
+- **15/11 09:12 NV (Trần Thu):** Dạ em ghi nhận ngay và chuyển bộ phận phụ trách của cơ sở Thái Thịnh ạ. Chị qua trong hôm nay được không, em xếp lịch ưu tiên để bác sĩ xem cho chị, chụp phim kiểm tra trụ và xử lý phần nướu đang sưng.
+- **15/11 09:15 KH:** chiều nay em qua được

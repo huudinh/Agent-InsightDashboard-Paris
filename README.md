@@ -2,7 +2,7 @@
 
 > Đọc hội thoại chat của khách **Nha khoa Paris** (`nhakhoaparis.vn`) được nhập vào, đọc **đúng một lần**, rồi từ cùng một lần đọc sinh ra **hai bộ đầu ra tách rời nhau**: một bộ nói về **khách**, một bộ nói về **người trực page**.
 
-`v1.0` · 31/10/2026 · ngành **nha khoa**
+`v1.1` · 03/11/2026 · ngành **nha khoa**
 
 ### 📘 [**Hướng dẫn cài đặt & prompt mẫu →**](https://claude.ai/artifact/B1qQBgUixjBjVwiiDwDTQJ)
 *(9 mục · 3 tab nền tảng · 6 prompt dán nguyên văn · 19 nút Copy — dễ dùng hơn đọc repo)*
@@ -186,8 +186,8 @@ Hoặc xem [`doc/01-cai-dat.md`](doc/01-cai-dat.md). Ba cách: Claude Project ·
 
 | Thẻ bộ não | Ký tự | Dùng cho |
 |---|---|---|
-| [`SYSTEM-PROMPT.md`](SYSTEM-PROMPT.md) | 9.070 | Claude Project · Gemini Gem |
-| [`SYSTEM-PROMPT-NGAN.md`](SYSTEM-PROMPT-NGAN.md) | 7.062 | ChatGPT (ô Instructions giới hạn 8.000) |
+| [`SYSTEM-PROMPT.md`](SYSTEM-PROMPT.md) | 11.236 | Claude Project · Gemini Gem |
+| [`SYSTEM-PROMPT-NGAN.md`](SYSTEM-PROMPT-NGAN.md) | 7.900 | ChatGPT (ô Instructions giới hạn 8.000) |
 
 ```bash
 python tools/dem-ngan.py   # kiểm bản ngắn còn trong giới hạn

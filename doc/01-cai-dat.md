@@ -24,7 +24,7 @@ Ba cách dùng agent này. Chọn một.
 
 ## B · ChatGPT Custom GPT
 
-Ô **Instructions** giới hạn 8.000 ký tự → dán [`SYSTEM-PROMPT-NGAN.md`](../SYSTEM-PROMPT-NGAN.md) *(7.062 ký tự)*. Phần còn lại nạp vào **Knowledge** như cách A.
+Ô **Instructions** giới hạn 8.000 ký tự → dán [`SYSTEM-PROMPT-NGAN.md`](../SYSTEM-PROMPT-NGAN.md) *(7.900 ký tự — ⚠️ chỉ còn 100 ký tự dư)*. Phần còn lại nạp vào **Knowledge** như cách A.
 
 Sau mỗi lần sửa bản ngắn, chạy:
 

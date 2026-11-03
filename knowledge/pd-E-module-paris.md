@@ -2,7 +2,13 @@
 
 > **Module brand-specific.** Đây là file duy nhất trong `knowledge/` chứa dữ kiện riêng của Nha khoa Paris. Dựng agent cho thương hiệu nha khoa khác = **thay file này**, ⛔ không sửa các sổ còn lại.
 >
-> Nguồn: `Paris-Agent-Factory/knowledge/P1·P4·P6` + `Agent-AdsOptimize-NhaKhoaParis/knowledge/np-rao-phap-ly`. ⚠️ **Khi nguồn sửa, file này sửa theo. ⛔ Không sửa ngược lại.**
+> Nguồn: `Paris-Agent-Factory/knowledge/P1·P4·P6` + `Agent-AdsOptimize-NhaKhoaParis/knowledge/np-rao-phap-ly`.
+>
+> ★ **Đây là sổ NHẬP TỪ NGOÀI.** Bốn luật đi kèm, ⛔ không được bỏ:
+> ① **Giữ nguyên văn** của nguồn, để còn đối chiếu với bản khối khác đang dùng.
+> ② ⚠️ **Khi nguồn sửa, file này sửa theo. ⛔ Không sửa ngược lại.**
+> ③ ⛔ **Repo ⛔ không tự đặt thêm** bác sĩ, hãng vật liệu, cơ sở, con số nào. Thiếu thì **báo lại để bổ sung ở bản sau**, ⛔ không tự điền.
+> ④ ★ Mọi điểm ghi `⚠ Cần xác minh từ Paris` phải được **chuyên môn và pháp chế xác nhận TRƯỚC khi dùng bất kỳ kịch bản liên quan** — nó chặn **cả câu thoại**, ⛔ không chỉ chặn con số.
 
 ---
 
@@ -63,6 +69,31 @@ CHỈ được gắn chữ "chính hãng" cho BỐN hãng:
 → Khi chấm: gắn *"chính hãng"* cho vật liệu ngoài 4 hãng = **lỗi pháp lý**, cờ **`CĐ-P2`**, và `TC-9` trượt → **toàn hội thoại 0 điểm**.
 
 ★ Đây là điểm dễ sai nhất của ngành nha khoa.
+
+---
+
+## 3b. ★★ AN TOÀN TRƯỚC BÁN HÀNG
+
+> ⚠️ Mục này **đứng trên** mọi mục khác của sổ này. Có dấu hiệu an toàn thì ⛔ **không tư vấn bán**, bất kể hội thoại đang ở chặng nào, bất kể nhóm giá trị là `V1`.
+
+```
+① DẤU HIỆU AN TOÀN → CHUYỂN BÁC SĨ, ⛔ KHÔNG TƯ VẤN BÁN.
+   đau cấp · sưng · áp xe · mủ (V-06)  ·  chảy máu không ngừng
+   bệnh nền khách tự nêu  ·  đang uống thuốc  ·  mang thai
+   trụ Implant có dấu hiệu đào thải  ·  biến chứng sau điều trị
+   → Mời khám sớm nhất. ⛔ Không báo giá. ⛔ Không bán thêm.
+
+② ĐÃ LÀM TẠI PARIS VÀ ĐANG PHÀN NÀN → LUỒNG KHIẾU NẠI, ⛔ KHÔNG LUỒNG BÁN.
+   ⚠ V-01 "làm lại ca lỗi" có HAI loại, và chúng ⛔ KHÔNG giống nhau:
+       · làm ở NƠI KHÁC   → ca tư vấn mới, rào NGỜ nặng (N5)
+       · làm TẠI PARIS    → KHIẾU NẠI. ⛔ Không chấm như một cơ hội bán,
+                            ⛔ không tính vào phễu, chuyển người có thẩm quyền
+   → Bảng dữ kiện gốc ghi rõ ở ô `i.lam_o_dau`: `noi-khac` | `tai-paris` | `chua-ro`
+```
+
+⚠️ **Hệ quả khi chấm:** hội thoại loại ② ⛔ **không chấm `TC-5`** (xin số để bán) và ⛔ **không chấm `TC-9`** (báo giá) — hai ô đó là `—`. Chấm nhân viên vì "⛔ không xin được số" trong một ca khiếu nại là **chấm sai việc**.
+
+★ `P2` §3 nhóm `N4` đã có câu này: *"**⛔ Không bán thêm** khi khách đang đau."* Mục này nói rộng ra cho mọi dấu hiệu an toàn.
 
 ---
 
@@ -132,7 +163,7 @@ Hà Nội · Hải Phòng · Quảng Ninh · Vinh (Nghệ An) · Đà Nẵng
 
 ---
 
-## 7. ★★ SÁU SLOT DỮ KIỆN CHƯA ĐƯỢC CẤP
+## 7. ★★ BẢY SLOT DỮ KIỆN CHƯA ĐƯỢC CẤP
 
 > ⚠️ **Đây là mục quan trọng nhất của file này khi chạy thật.** Mỗi slot còn trống là một nhóm ô `—`/`?` trong luồng Q và một khe nội dung trong luồng I.
 

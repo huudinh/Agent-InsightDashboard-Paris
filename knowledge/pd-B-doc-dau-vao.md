@@ -83,6 +83,34 @@ Trích dẫn trong mọi đầu ra phải ở dạng **đã ẩn danh**: chỉ c
 
 ---
 
+## 3b. ★★ TIỀN SỬ ĐIỀU TRỊ LÀ **DỮ LIỆU SỨC KHOẺ**
+
+> ⚠️ Mục này nặng hơn §3, và nó ⛔ **không phải chuyện ẩn danh** — nó là chuyện **loại dữ liệu**.
+
+Những thứ sau đây, trong hội thoại nha khoa, là **dữ liệu sức khoẻ** theo **Luật 91/2025/QH15**:
+
+```
+tiền sử điều trị ("em bọc 4 răng ở chỗ khác bị cộm")
+bệnh nền khách tự nêu ("em bị tiểu đường", "em đang uống thuốc")
+thuốc đang dùng · tình trạng mang thai
+ảnh răng · phim X-quang · kết quả scan
+chẩn đoán nơi khác đã đưa ra ("họ bảo xương hơi tiêu phải ghép")
+```
+
+**Ba luật bắt buộc:**
+
+| | Luật | Nghĩa trong repo này |
+|---|---|---|
+| ① | **Chỉ lưu NHÃN + câu bằng chứng ngắn** | Lưu `V-01` + một câu đủ chứng minh. ⛔ Không chép cả đoạn khách kể bệnh |
+| ② | **Giới hạn người xem** | Những ô này ⛔ không đi vào đầu ra của luồng I. Luồng Q chỉ giữ **đúng cặp câu** làm bằng cho ô `✗` đang xét |
+| ③ | **Cần đồng ý xử lý** | ⛔ Không đưa ảnh/phim của khách vào bất cứ file nào, kể cả sổ tay. ⛔ Không nạp lên công cụ công cộng |
+
+★ **Hệ quả cụ thể cho `TC-3`:** tiêu chí này yêu cầu *thu đủ 4 thông tin*, trong đó có **tiền sử điều trị**. Nhân viên **phải hỏi** — nhưng báo cáo **chỉ được lưu nhãn**. ⛔ Hai việc khác nhau: hỏi là đúng, lưu nguyên văn bệnh sử là sai.
+
+⚠️ **Và một thứ dễ quên:** khách tự nêu bệnh nền thì nhân viên ⛔ **không được trả lời thay bác sĩ** (cờ `CĐ-P7`) — nhưng câu khách nêu vẫn là dữ liệu sức khoẻ, vẫn chỉ lưu nhãn.
+
+---
+
 ## 4. CÁC Ô TỰ SUY RA — ⛔ KHÔNG HỎI NGƯỜI DÙNG
 
 Agent tự suy, ⛔ không được hỏi lại anh:

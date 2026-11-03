@@ -125,6 +125,21 @@ Hai bộ **chỉ có ở repo này**: `CD1…CDn` (chân dung **của kỳ**, du
 
 ⑩  ⛔ KHÔNG BỊA. Thiếu dữ kiện → `⚠ Cần xác minh từ Paris` hoặc
     `⏸ chờ dữ kiện` + tên slot. ⛔ Không hiện `0` cho ô chưa đo.
+
+⑪  MỘT QUYẾT ĐỊNH — MỘT SỔ. ⛔ Không để hai nơi cùng chấm một thứ.
+    Hai công thức cho một quyết định thì CHẮC CHẮN lệch nhau, và khi lệch
+    thì ⛔ không ai biết bảng nào đúng — vì cả hai vẫn khớp tổng.
+    Thang đã có thì DÙNG LẠI, ⛔ không đẻ thang thứ hai. Cần cách xếp mới
+    → nói rõ nó THAY cái nào, cái cũ NGHỈ (`pd-A` §3b).
+    ★ Ba cặp hay bị trộn: ưu tiên chân dung ↔ SLA khách · chân dung ↔
+      L-code/rào cản · độ nóng ↔ nhóm giá trị.
+
+⑫  DỮ LIỆU SỨC KHOẺ. Tiền sử điều trị · bệnh nền · thuốc · ảnh răng ·
+    phim X-quang · chẩn đoán nơi khác là DỮ LIỆU SỨC KHOẺ
+    (Luật 91/2025/QH15): chỉ lưu NHÃN + câu bằng chứng ngắn · giới hạn
+    người xem · cần đồng ý xử lý. ⛔ Không chép cả đoạn khách kể bệnh.
+    ★ Nhân viên PHẢI HỎI (TC-3) nhưng báo cáo CHỈ LƯU NHÃN — hai việc
+      khác nhau (`pd-B` §3b).
 ```
 
 ---
@@ -157,6 +172,31 @@ Hai bộ **chỉ có ở repo này**: `CD1…CDn` (chân dung **của kỳ**, du
 ⑥ CTA MẠNH NHẤT: mời ĐI KHÁM + CHỤP PHIM, nhấn rõ "chưa phải điều trị".
    Khám là bước có giá trị thật với khách mà chưa phải trả tiền lớn.
    Hội thoại nhảy thẳng vào báo giá là tư vấn sai nhịp.
+
+⑦ ★★ AN TOÀN TRƯỚC BÁN HÀNG — đứng trên mọi mục khác.
+   Dấu hiệu an toàn (đau cấp · sưng · áp xe · trụ lung lay · biến chứng ·
+   bệnh nền · thuốc · mang thai) → CHUYỂN BÁC SĨ, ⛔ không tư vấn bán,
+   ⛔ không báo giá, ⛔ không bán thêm.
+   ★ V-01 "làm lại ca lỗi" có HAI loại, ⛔ không giống nhau:
+     · làm ở NƠI KHÁC → ca tư vấn mới, rào NGỜ nặng (N5)
+     · làm TẠI PARIS  → KHIẾU NẠI. ⛔ Không phải cơ hội bán.
+   → Hai tình huống này chấm TC-5 và TC-9 là `—`. Chấm nhân viên vì
+     "⛔ không xin được số" trong một ca khiếu nại là CHẤM SAI VIỆC.
+     (`pd-E` §3b)
+
+⑧ CHÂN DUNG ≠ RÀO CẢN. Ba nhãn cho một hội thoại, ⛔ đừng trộn:
+   CHÂN DUNG (khách LÀ AI) × L-code/rào cản (khách đang VƯỚNG GÌ)
+   × độ nóng (nóng tới đâu) → hành động.
+   ⛔ Không có chân dung nào tên là một trở ngại ("khách sợ đau",
+   "khách ở xa"). "em ở Thanh Hóa" là `L2.5`, ⛔ không phải chân dung.
+   ★ Phác họa chân dung theo kỳ là CHẾ ĐỘ TẠM vì Paris chưa có thư viện
+     chân dung — cái mất là ⛔ không so được giữa các kỳ (`pd-I1` §1).
+
+⑨ ƯU TIÊN CHÂN DUNG CHỈ TÍNH TỪ DỮ LIỆU — độ nóng trung bình + tỷ lệ
+   ĐẾN KHÁM thật. ⛔ Không chân dung/dịch vụ nào được gán ưu tiên trước.
+   Dưới 30 HT hoặc dưới 5 lượt đến khám → "chưa đủ dữ liệu", ⛔ không
+   xếp hạng. ★ Ưu tiên đổi NGÂN SÁCH · NỘI DUNG · ĐÀO TẠO —
+   ⛔ KHÔNG đổi SLA khách (SLA là `P8` §4). (`pd-I4` §2b)
 ```
 
 ★ **Ba bác sĩ được nêu tên:** TS-BS. Đàm Ngọc Trâm · BS. Hồ Hiệp Anh Tuấn · BS.CKI Nguyễn Ngọc Linh. Tên khác → `CĐ-P6` + `⚠ Cần xác minh từ Paris`.

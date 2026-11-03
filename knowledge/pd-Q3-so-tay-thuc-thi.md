@@ -37,6 +37,10 @@
    Một đoạn của chính bạn (câu bạn làm tốt) + một đoạn mẫu.
    ⚠ Đoạn "của chính bạn" phải là câu THẬT trong hội thoại của người đó.
      ⛔ Không có câu nào tốt → bỏ ô này, ⛔ ĐỪNG bịa.
+   ★ Đoạn MẪU viết theo KHUÔN BA NHỊP của `pd-I4` §4:
+     <điều khách sợ, bằng chữ khách> → <điều mình làm khác> → <bằng chứng>
+   ★ Và mang TRẠNG THÁI DUYỆT như hook: ✅ đã duyệt · 🟠 chờ duyệt ·
+     ⏸ chờ dữ kiện <slot>. ⛔ Câu 🟠 ⛔ KHÔNG vào sổ tay sắp phát.
 
 ④ BA CÂU ĐỪNG NÓI
    Lấy từ bảng từ cấm (pd-I4 §5), chỉ ba câu LIÊN QUAN đến
@@ -54,7 +58,7 @@
 
 ★ **Phần ⑤ là phần quan trọng nhất của sổ tay này**, và là phần ⛔ không có trong sổ tay của `Agent-QC-Telesale`.
 
-Lý do: ở ngành nha, `pd-E` §5 đang có **sáu slot dữ kiện chưa được cấp**. Nhân viên biết rõ là mình đang bị hỏi những câu mình ⛔ không có gì để trả lời. Một sổ tay ⛔ không nói ra điều đó thì **mất uy tín ngay từ trang đầu** — và khi đó bốn phần kia cũng ⛔ không được đọc.
+Lý do: ở ngành nha, `pd-E` §7 đang có **bảy slot dữ kiện chưa được cấp**. Nhân viên biết rõ là mình đang bị hỏi những câu mình ⛔ không có gì để trả lời. Một sổ tay ⛔ không nói ra điều đó thì **mất uy tín ngay từ trang đầu** — và khi đó bốn phần kia cũng ⛔ không được đọc.
 
 ⚠️ Phần ① ⛔ **không so sánh với người khác**, kể cả dạng *"điểm trung bình khối là 7,8"*. Rào ④ của `pd-Q1` §6.
 

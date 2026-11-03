@@ -42,7 +42,16 @@
         "làm bên kia",
         "tháo ra làm lại",
         "sửa giúp em",
-        "khắc phục"
+        "khắc phục",
+        "trụ bị lung lay",
+        "trụ lung lay",
+        "trụ bị đào thải",
+        "nướu sưng quanh trụ",
+        "bị hở",
+        "bị đen viền",
+        "sứ bị rơi",
+        "sứ bị vỡ",
+        "mão bị bung"
       ]
     },
     "V-02": {
@@ -1077,6 +1086,80 @@
       "bảng giá công khai",
       "công khai tại bảng giá",
       "giá tham khảo"
+    ]
+  },
+  "lam_o_dau": {
+    "_doc": "pd-E §3b — V-01 co HAI loai va chung KHONG giong nhau. Lam o NOI KHAC = ca tu van moi, rao NGO nang. Lam TAI PARIS = KHIEU NAI, khong phai co hoi ban -> TC-5 va TC-9 cham '—'.",
+    "tai_paris": [
+      "làm ở paris",
+      "làm bên paris",
+      "bọc ở paris",
+      "niềng ở paris",
+      "trồng ở paris",
+      "em làm ở đây",
+      "làm chỗ mình",
+      "làm bên mình",
+      "bên mình làm cho em",
+      "paris làm cho em",
+      "em là khách của paris",
+      "em đã làm ở paris",
+      "điều trị ở paris",
+      "trồng implant ở paris",
+      "làm implant ở paris",
+      "ở paris cách đây",
+      "ở paris được",
+      "cơ sở thái thịnh",
+      "bên paris làm"
+    ],
+    "noi_khac": [
+      "ở chỗ khác",
+      "ở nơi khác",
+      "chỗ cũ",
+      "nơi cũ",
+      "phòng khám cũ",
+      "bác sĩ cũ",
+      "làm bên kia",
+      "nha khoa khác",
+      "chỗ kia",
+      "không muốn nói tên chỗ cũ",
+      "một nơi khác"
+    ],
+    "phan_nan": [
+      "phàn nàn",
+      "khiếu nại",
+      "thất vọng",
+      "không hài lòng",
+      "yêu cầu bồi thường",
+      "đòi lại tiền",
+      "trả lại tiền",
+      "làm hỏng của em",
+      "bên em làm sai",
+      "em bức xúc"
+    ]
+  },
+  "an_toan_truoc_ban": {
+    "_doc": "pd-E §3b ① — co dau hieu an toan thi CHUYEN BAC SI, khong tu van ban. Khong bao gia, khong ban them.",
+    "tu": [
+      "đau quá",
+      "nhức quá",
+      "sưng má",
+      "áp xe",
+      "có mủ",
+      "chảy máu không ngừng",
+      "chảy máu nhiều",
+      "đào thải",
+      "trụ bị lung lay",
+      "biến chứng",
+      "tiểu đường",
+      "huyết áp",
+      "tim mạch",
+      "loãng xương",
+      "đang uống thuốc",
+      "mang thai",
+      "có bầu",
+      "ung thư",
+      "viêm gan",
+      "dị ứng thuốc"
     ]
   }
 }

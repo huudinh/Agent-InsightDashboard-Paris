@@ -70,6 +70,43 @@ Mặc định: ĐỘ CHẶN × GIÁ TRỊ
 
 ---
 
+## 2b. ★★ ƯU TIÊN CHÂN DUNG **CHỈ TÍNH TỪ DỮ LIỆU** — 03/11/2026
+
+```
+⛔ KHÔNG chân dung nào, ⛔ KHÔNG dịch vụ nào được gán mức ưu tiên TRƯỚC.
+   Kể cả chân dung "nghe quan trọng", kể cả dịch vụ V1 đắt nhất.
+
+Chỉ số ưu tiên của một chân dung tính từ HAI thành phần đo được:
+   ① độ nóng trung bình của nhóm đó      (P8 §1)
+   ② tỷ lệ ĐẾN KHÁM thật của nhóm đó     (pd-I3 §1)
+
+⏸ Chưa đo được show-up → ⛔ KHÔNG tính được chỉ số này.
+   Khi đó xếp theo ĐỘ CHẶN (§2) và NÓI RÕ, ⛔ không suy ra ưu tiên.
+```
+
+### Ngưỡng — ⛔ dưới ngưỡng thì ⛔ không xếp hạng
+
+| Nhóm có | Agent được làm gì |
+|---|---|
+| **< 30 hội thoại** trong kỳ | ⛔ Ghi *"chưa đủ dữ liệu"*. ⛔ Không xếp hạng |
+| **< 5 lượt đến khám** | ⛔ Ghi *"chưa đủ dữ liệu"*. ⛔ Không xếp hạng |
+| Đủ cả hai | ✅ Xếp hạng được, kèm hai con số làm bằng |
+
+⚠️ Ngưỡng này **cao hơn** ngưỡng 10 HT của `pd-A` §7, và ⛔ không mâu thuẫn: 10 HT là đủ để **mô tả** một nhóm, nhưng ⛔ chưa đủ để **xếp nhóm này trên nhóm kia**. Xếp hạng là quyết định phân bổ tiền, nên ngưỡng phải cao hơn.
+
+### ★ Mức ưu tiên đổi cái gì — và ⛔ không đổi cái gì
+
+```
+✅ ĐỔI : ngân sách quảng cáo · thứ tự làm nội dung · nội dung đào tạo kịch bản
+⛔ KHÔNG ĐỔI : SLA phản hồi khách.
+```
+
+> ★ **SLA là của `P8` §4, theo độ nóng và nhóm giá trị của từng lead** — ⛔ không theo mức ưu tiên của chân dung. Một khách thuộc chân dung "ưu tiên thấp" mà đang **đau cấp** (`V-06`) thì vẫn gọi ngay, bất kể độ nóng, bất kể khung giờ.
+>
+> ⚠️ Trộn hai thứ này là lấy một quyết định về **ngân sách** để quyết một việc về **chăm khách**. Người bị ảnh hưởng là khách, ⛔ không phải cái bảng.
+
+---
+
 ## 3. ★ CỔNG 1 — DỪNG VÀ CHỜ
 
 Ma trận xong → agent **in ra rồi dừng**. ⛔ Không viết hook.
@@ -119,6 +156,39 @@ Nguyên liệu là bảng ① của `pd-I1` §2 — cụm chữ khách tự nói
 | *"Trụ Straumann chính hãng"* | *"Làm sao em biết trụ trong miệng em đúng là trụ đó?"* (×7 HT) |
 
 ★ Cột cuối của bảng trên là ví dụ của khuôn thứ tư ở `pd-I3` §5: khách ⛔ không cần nghe tên hãng to hơn, khách cần **cách tự kiểm**.
+
+### ★★ Khuôn ba nhịp của một câu gửi khách
+
+Mọi hook, và mọi **câu mẫu** trong sổ tay (`pd-Q3` §2 ô ②), viết theo đúng ba nhịp này:
+
+```
+<điều khách sợ, BẰNG CHỮ CỦA KHÁCH>  →  <điều mình làm khác>  →  <bằng chứng>
+```
+
+| Phải có | ⛔ Phải KHÔNG có |
+|---|---|
+| Một `HT-nnn` truy ngược được | Con số bảo hành *(slot ② chưa cấp)* |
+| **Chữ khách dùng**, ⛔ không phải tính từ | Cam kết kết quả chắc chắn |
+| Một điều **mình làm khác được** | Hứa thời gian điều trị cứng |
+| Qua **CỔNG 2** trước khi phát | Giá ca cụ thể · giá chưa có trong bảng hiện hành |
+
+> ★ **Viết bằng chữ của khách.** Khách ⛔ không tìm *"nụ cười hài hoà"* — khách tìm *"bọc sứ có phải mài hết răng thật không"*. Khách ⛔ không tìm *"vật liệu cao cấp"* — khách tìm *"làm sao em biết trụ trong miệng em đúng là trụ đó"*.
+
+★ **Ví dụ đủ ba nhịp**, cho rào `L6.7`:
+> *"Em nghe nói nhiều nơi tráo trụ"* **→** mỗi trụ ở Paris có **mã riêng in trên phiếu bảo hành**, chị được xem phiếu **trước khi cấy** **→** Paris là đối tác của Straumann. *(`HT-001`)*
+
+⚠️ Thiếu nhịp thứ ba thì câu đó chỉ là lời hứa. Thiếu nhịp thứ nhất thì nó là lời người bán. **Thiếu nhịp thứ hai thì ⛔ không có gì để khách chọn mình.**
+
+### ★ Trạng thái duyệt — gắn trên TỪNG CÂU, ⛔ không gắn theo cả tuyến
+
+```
+✅ «đã duyệt»                    → phát được
+🟠 «đề xuất – chưa duyệt»        → ⛔ KHÔNG phát ra ngoài
+🟠 «chờ pháp chế duyệt»          → ⛔ KHÔNG phát ra ngoài
+⏸ «chờ dữ kiện <slot>»          → ⛔ chưa viết được, ghi rõ chờ slot nào
+```
+
+⚠️ **Một tuyến nội dung có thể gồm câu đã duyệt và câu chưa duyệt.** Duyệt theo tuyến là cách để một câu 🟠 đi ra ngoài dưới vỏ một tuyến 🟢. Trạng thái nằm trên **từng câu**.
 
 ### Hook theo chặng — ⛔ đừng dùng lẫn
 
